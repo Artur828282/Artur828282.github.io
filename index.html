@@ -50,7 +50,7 @@
     .nav-container {
       max-width: 1200px;
       margin: auto;
-      padding: 14px 24px;
+      padding: 10px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -59,19 +59,16 @@
     .nav-logo {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       color: white;
       font-weight: bold;
       letter-spacing: 1px;
     }
 
     .nav-logo img {
-      width: 42px;
-      height: 42px;
+      width: 72px;
+      height: 72px;
       object-fit: contain;
-      background: white;
-      border-radius: 50%;
-      padding: 4px;
     }
 
     .nav-links a {
@@ -91,7 +88,7 @@
       color: white;
       display: flex;
       align-items: center;
-      padding: 120px 24px 80px;
+      padding: 140px 24px 80px;
     }
 
     .hero-container {
@@ -144,6 +141,7 @@
       font-size: 14px;
       letter-spacing: 1px;
       transition: 0.3s;
+      display: inline-block;
     }
 
     .btn-gold {
@@ -167,7 +165,6 @@
 
     .hero-image {
       text-align: center;
-      position: relative;
     }
 
     .hero-image img {
@@ -203,31 +200,6 @@
       height: 3px;
       background: var(--gold);
       margin: 0 auto;
-    }
-
-    .stats {
-      background: white;
-      padding: 45px 24px;
-      box-shadow: 0 10px 35px rgba(0,0,0,0.06);
-    }
-
-    .stats-grid {
-      max-width: 1100px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      text-align: center;
-    }
-
-    .stat h3 {
-      font-size: 30px;
-      color: var(--gold);
-    }
-
-    .stat p {
-      color: var(--navy);
-      font-weight: bold;
     }
 
     .about {
@@ -314,11 +286,23 @@
       border: 1px solid rgba(201,161,90,0.35);
       padding: 26px;
       border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .award-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
     }
 
     .award-card h3 {
       color: var(--light-gold);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .award-card p {
+      color: #e8e8e8;
+      font-size: 15px;
     }
 
     .resume {
@@ -365,8 +349,7 @@
     @media (max-width: 1000px) {
       .hero-container,
       .project-grid,
-      .awards-grid,
-      .stats-grid {
+      .awards-grid {
         grid-template-columns: 1fr 1fr;
       }
 
@@ -378,13 +361,17 @@
     @media (max-width: 700px) {
       .hero-container,
       .project-grid,
-      .awards-grid,
-      .stats-grid {
+      .awards-grid {
         grid-template-columns: 1fr;
       }
 
       .nav-links {
         display: none;
+      }
+
+      .nav-logo img {
+        width: 58px;
+        height: 58px;
       }
 
       .hero h1 {
@@ -444,27 +431,6 @@
       </div>
     </div>
   </header>
-
-  <section class="stats">
-    <div class="stats-grid">
-      <div class="stat">
-        <h3>3.9</h3>
-        <p>Fresno State GPA</p>
-      </div>
-      <div class="stat">
-        <h3>4.0</h3>
-        <p>FCC GPA</p>
-      </div>
-      <div class="stat">
-        <h3>CSWA</h3>
-        <p>SolidWorks Certified</p>
-      </div>
-      <div class="stat">
-        <h3>8</h3>
-        <p>Featured Projects</p>
-      </div>
-    </div>
-  </section>
 
   <section id="about" class="about">
     <div class="container">
@@ -583,20 +549,63 @@
       </div>
 
       <div class="awards-grid">
+
         <div class="award-card">
           <h3>CSWA Certification</h3>
-          <p>Certified SolidWorks Associate with experience in CAD modeling, assemblies, and engineering drawings.</p>
+          <p>
+            Certified SolidWorks Associate, showing proficiency in 3D modeling, assemblies,
+            engineering drawings, and design work using SolidWorks.
+          </p>
         </div>
 
         <div class="award-card">
-          <h3>SkillsUSA CAD Competition</h3>
-          <p>Placed 2nd in CAD competition through CAD and manufacturing club involvement.</p>
+          <h3>OSHA-10 Certification</h3>
+          <p>
+            Completed OSHA 10-Hour safety training covering workplace safety, hazard recognition,
+            and accident prevention in construction and industrial environments.
+          </p>
         </div>
 
         <div class="award-card">
-          <h3>LCOE Projects Day</h3>
-          <p>Presented research on stairway flow, congestion, and evacuation performance.</p>
+          <h3>Adult CPR / AED Certification</h3>
+          <p>
+            Certified in Adult CPR and AED response, demonstrating preparedness to respond to
+            emergency situations in professional and public settings.
+          </p>
         </div>
+
+        <div class="award-card">
+          <h3>1st Place — American Welding Society Competition</h3>
+          <p>
+            Awarded 1st place for a research and poster presentation focused on welding defects,
+            weld failure causes, and quality control in fabrication.
+          </p>
+        </div>
+
+        <div class="award-card">
+          <h3>2nd Place — SkillsUSA Drafting & GD&T Competition</h3>
+          <p>
+            Earned 2nd place in a drafting and GD&T competition, demonstrating technical drawing
+            accuracy, dimensioning skills, and engineering communication.
+          </p>
+        </div>
+
+        <div class="award-card">
+          <h3>3rd Place — FCOE 3D CAD Competition</h3>
+          <p>
+            Placed 3rd in a 3D CAD competition, showcasing design ability, modeling accuracy,
+            and experience with engineering design software.
+          </p>
+        </div>
+
+        <div class="award-card">
+          <h3>CTEC Pillars Award</h3>
+          <p>
+            Selected as the annual recipient of the CTEC Pillars Award, recognizing commitment to
+            the values of You Matter, Be Present, Raise the Bar, and Create an Impact.
+          </p>
+        </div>
+
       </div>
     </div>
   </section>
