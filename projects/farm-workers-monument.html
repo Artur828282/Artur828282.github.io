@@ -12,6 +12,7 @@
 body{font-family:Arial,sans-serif;background:var(--light);color:#222;line-height:1.7;}
 nav{background:var(--navy);padding:18px 30px;}
 nav a{color:white;text-decoration:none;font-weight:bold;}
+nav a:hover{color:var(--gold);}
 .hero{background:linear-gradient(135deg,var(--navy),var(--navy-light));color:white;text-align:center;padding:100px 20px;}
 .hero h1{font-size:52px;margin-bottom:15px;}
 .hero p{max-width:850px;margin:auto;color:#e0e0e0;}
@@ -22,15 +23,23 @@ nav a{color:white;text-decoration:none;font-weight:bold;}
 .gold-line{width:70px;height:3px;background:var(--gold);margin-bottom:25px;}
 .skills{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px;}
 .skill{background:var(--navy);color:white;padding:10px 16px;border-radius:30px;font-size:14px;}
-.back-btn{display:inline-block;margin-top:50px;background:var(--gold);color:var(--navy);text-decoration:none;padding:14px 22px;border-radius:4px;font-weight:bold;}
+.project-nav{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:50px;}
+.back-btn{display:inline-block;background:var(--gold);color:var(--navy);text-decoration:none;padding:14px 22px;border-radius:4px;font-weight:bold;}
+.back-btn:hover{background:#e2c88b;}
 footer{background:var(--navy);color:white;text-align:center;padding:25px;margin-top:80px;}
+
+@media (max-width:700px){
+  .hero h1{font-size:38px;}
+  .project-nav{flex-direction:column;}
+  .back-btn{text-align:center;}
+}
 </style>
 </head>
 
 <body>
 
 <nav>
-  <a href="../index.html">← Back to Portfolio</a>
+  <a href="../index.html#projects">← Back to Portfolio</a>
 </nav>
 
 <section class="hero">
@@ -42,7 +51,7 @@ footer{background:var(--navy);color:white;text-align:center;padding:25px;margin-
 
 <div class="container">
 
-  <img class="main-image" src="../Farm Workers Manument.png" alt="Farm Workers Monument">
+  <img class="main-image" src="../Farm%20Workers%20Manument.png" alt="Farm Workers Monument">
 
   <div class="section">
     <h2>Project Overview</h2>
@@ -95,7 +104,10 @@ footer{background:var(--navy);color:white;text-align:center;padding:25px;margin-
     </p>
   </div>
 
-  <a class="back-btn" href="../index.html#projects">Return to Projects</a>
+  <div class="project-nav">
+    <a class="back-btn" href="staircase-study.html">← Stairway Evacuation Study</a>
+    <a class="back-btn" href="metropolitan-cathedral.html">Metropolitan Cathedral →</a>
+  </div>
 
 </div>
 
