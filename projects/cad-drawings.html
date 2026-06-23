@@ -7,144 +7,34 @@
 <title>Manufacturing Drawings Archive | Artur Martirosyan</title>
 
 <style>
-:root{
-  --navy:#0b1f3a;
-  --navy-light:#142c54;
-  --gold:#c9a15a;
-  --light:#f8f8f6;
-}
+:root{--navy:#0b1f3a;--navy-light:#142c54;--gold:#c9a15a;--light:#f8f8f6;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Arial,sans-serif;background:var(--light);color:#222;line-height:1.7;}
+nav{background:var(--navy);padding:18px 30px;}
+nav a{color:white;text-decoration:none;font-weight:bold;}
+nav a:hover{color:var(--gold);}
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy-light));color:white;text-align:center;padding:100px 20px;}
+.hero h1{font-size:52px;margin-bottom:15px;}
+.hero p{max-width:850px;margin:auto;color:#e0e0e0;}
+.container{max-width:1100px;margin:auto;padding:80px 24px;}
+.main-image{width:100%;border-radius:12px;box-shadow:0 15px 35px rgba(0,0,0,.15);}
+.section{margin-top:70px;}
+.section h2{color:var(--navy);margin-bottom:15px;font-size:32px;}
+.gold-line{width:70px;height:3px;background:var(--gold);margin-bottom:25px;}
+.drawing-card{background:white;padding:30px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.08);margin-top:35px;}
+.drawing-card h3{color:var(--navy);margin-bottom:15px;font-size:24px;}
+.drawing-card img{width:100%;margin-top:20px;border-radius:10px;box-shadow:0 10px 25px rgba(0,0,0,.12);}
+.skills{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px;}
+.skill{background:var(--navy);color:white;padding:10px 16px;border-radius:30px;font-size:14px;}
+.project-nav{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:50px;}
+.back-btn{display:inline-block;background:var(--gold);color:var(--navy);text-decoration:none;padding:14px 22px;border-radius:4px;font-weight:bold;}
+.back-btn:hover{background:#e2c88b;}
+footer{background:var(--navy);color:white;text-align:center;padding:25px;margin-top:80px;}
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-body{
-  font-family:Arial,sans-serif;
-  background:var(--light);
-  color:#222;
-  line-height:1.7;
-}
-
-nav{
-  background:var(--navy);
-  padding:18px 30px;
-}
-
-nav a{
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-.hero{
-  background:linear-gradient(135deg,var(--navy),var(--navy-light));
-  color:white;
-  text-align:center;
-  padding:100px 20px;
-}
-
-.hero h1{
-  font-size:52px;
-  margin-bottom:15px;
-}
-
-.hero p{
-  max-width:850px;
-  margin:auto;
-  color:#e0e0e0;
-}
-
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:80px 24px;
-}
-
-.main-image{
-  width:100%;
-  border-radius:12px;
-  box-shadow:0 15px 35px rgba(0,0,0,.15);
-}
-
-.section{
-  margin-top:70px;
-}
-
-.section h2{
-  color:var(--navy);
-  margin-bottom:15px;
-  font-size:32px;
-}
-
-.gold-line{
-  width:70px;
-  height:3px;
-  background:var(--gold);
-  margin-bottom:25px;
-}
-
-.drawing-card{
-  background:white;
-  padding:30px;
-  border-radius:12px;
-  box-shadow:0 10px 30px rgba(0,0,0,.08);
-  margin-top:35px;
-}
-
-.drawing-card h3{
-  color:var(--navy);
-  margin-bottom:15px;
-  font-size:24px;
-}
-
-.drawing-card img{
-  width:100%;
-  margin-top:20px;
-  border-radius:10px;
-  box-shadow:0 10px 25px rgba(0,0,0,.12);
-}
-
-.skills{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:20px;
-}
-
-.skill{
-  background:var(--navy);
-  color:white;
-  padding:10px 16px;
-  border-radius:30px;
-  font-size:14px;
-}
-
-.project-nav{
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  flex-wrap:wrap;
-  margin-top:50px;
-}
-
-.back-btn{
-  display:inline-block;
-  background:var(--gold);
-  color:var(--navy);
-  text-decoration:none;
-  padding:14px 22px;
-  border-radius:4px;
-  font-weight:bold;
-}
-
-footer{
-  background:var(--navy);
-  color:white;
-  text-align:center;
-  padding:25px;
-  margin-top:80px;
+@media (max-width:700px){
+  .hero h1{font-size:38px;}
+  .project-nav{flex-direction:column;}
+  .back-btn{text-align:center;}
 }
 </style>
 </head>
@@ -152,7 +42,7 @@ footer{
 <body>
 
 <nav>
-  <a href="../index.html">← Back to Portfolio</a>
+  <a href="../index.html#projects">← Back to Portfolio</a>
 </nav>
 
 <section class="hero">
@@ -281,8 +171,8 @@ footer{
   </div>
 
   <div class="project-nav">
-    <a class="back-btn" href="armenian-firepit.html">← Previous Project</a>
-    <a class="back-btn" href="../index.html#projects">All Projects →</a>
+    <a class="back-btn" href="residential-house.html">← Residential Wood House Design</a>
+    <a class="back-btn" href="staircase-study.html">Stairway Evacuation Study →</a>
   </div>
 
 </div>
