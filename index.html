@@ -207,11 +207,32 @@
     }
 
     .about-content {
-      max-width: 850px;
+      max-width: 900px;
       margin: auto;
-      text-align: center;
       font-size: 18px;
       color: #444;
+      text-align: center;
+    }
+
+    .about-highlight {
+      margin-top: 35px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      text-align: left;
+    }
+
+    .highlight-box {
+      background: white;
+      padding: 24px;
+      border-left: 4px solid var(--gold);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      border-radius: 8px;
+    }
+
+    .highlight-box h3 {
+      color: var(--navy);
+      margin-bottom: 8px;
     }
 
     .projects {
@@ -231,21 +252,43 @@
       box-shadow: 0 8px 26px rgba(0,0,0,0.08);
       transition: 0.3s;
       border: 1px solid #eee;
+      display: block;
     }
 
     .project-card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-8px);
       border-color: var(--gold);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.14);
     }
 
-    .project-card img {
-      width: 100%;
+    .project-image {
+      overflow: hidden;
       height: 210px;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
+      transition: 0.4s;
+    }
+
+    .project-card:hover .project-image img {
+      transform: scale(1.07);
     }
 
     .project-content {
       padding: 20px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: bold;
+      margin-bottom: 10px;
     }
 
     .project-content h3 {
@@ -349,7 +392,8 @@
     @media (max-width: 1000px) {
       .hero-container,
       .project-grid,
-      .awards-grid {
+      .awards-grid,
+      .about-highlight {
         grid-template-columns: 1fr 1fr;
       }
 
@@ -361,7 +405,8 @@
     @media (max-width: 700px) {
       .hero-container,
       .project-grid,
-      .awards-grid {
+      .awards-grid,
+      .about-highlight {
         grid-template-columns: 1fr;
       }
 
@@ -442,16 +487,34 @@
       <div class="about-content">
         <p>
           I am a Civil Engineering student at California State University, Fresno, with experience in
-          structural analysis, CAD design, manufacturing, and fabrication. My work includes engineering
-          drawings, finite element analysis, physical modeling, welding, and research focused on real-world
-          structural and design challenges.
+          structural analysis, CAD design, manufacturing, and fabrication. I enjoy work that combines
+          technical thinking with hands-on building, whether that means running a simulation, creating
+          construction drawings, welding a steel frame, or developing a physical model.
         </p>
         <br>
         <p>
-          Through my internship, academic projects, and hands-on fabrication work, I have built a strong
-          interest in structural engineering and practical design solutions that connect technical analysis
-          with real construction and manufacturing needs.
+          My background includes engineering internship experience, research, technical drafting,
+          finite element analysis, welding, woodworking, 3D printing, and laser-cut model fabrication.
+          I am especially interested in structural engineering and practical design solutions that can
+          move from concept to real-world use.
         </p>
+
+        <div class="about-highlight">
+          <div class="highlight-box">
+            <h3>Engineering Analysis</h3>
+            <p>Structural analysis, simulation, load evaluation, and design problem solving.</p>
+          </div>
+
+          <div class="highlight-box">
+            <h3>CAD & Documentation</h3>
+            <p>Technical drawings, 3D modeling, fabrication plans, and manufacturing documentation.</p>
+          </div>
+
+          <div class="highlight-box">
+            <h3>Hands-On Fabrication</h3>
+            <p>Welding, woodworking, laser cutting, 3D printing, and physical model assembly.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -465,77 +528,101 @@
 
       <div class="project-grid">
 
-        <div class="project-card">
-          <img src="ROPS%20Simulation.png" alt="ROPS Simulation">
+        <a class="project-card" href="projects/rops-simulation.html">
+          <div class="project-image">
+            <img src="ROPS%20Simulation.png" alt="ROPS Simulation">
+          </div>
           <div class="project-content">
+            <span class="tag">Structural Analysis</span>
             <h3>ROPS Structural Analysis</h3>
             <p>Designed and analyzed a rollover protective structure under vertical, longitudinal, and lateral loading conditions.</p>
-            <a class="learn-more" href="projects/rops-simulation.html">Learn More →</a>
+            <span class="learn-more">Learn More →</span>
           </div>
-        </div>
+        </a>
 
-        <div class="project-card">
-          <img src="Staircase%20Study%20Poster.jpg" alt="Staircase Study">
+        <a class="project-card" href="projects/staircase-study.html">
+          <div class="project-image">
+            <img src="Staircase%20Study%20Poster.jpg" alt="Staircase Study">
+          </div>
           <div class="project-content">
+            <span class="tag">Research</span>
             <h3>Stairway Evacuation Study</h3>
             <p>Studied how congestion affects stairway movement, flow rate, and emergency evacuation performance.</p>
-            <a class="learn-more" href="projects/staircase-study.html">Learn More →</a>
+            <span class="learn-more">Learn More →</span>
           </div>
-        </div>
+        </a>
 
-        <div class="project-card">
-          <img src="Residential%20House%20.png" alt="Residential Wood House">
+        <a class="project-card" href="projects/residential-house.html">
+          <div class="project-image">
+            <img src="Residential%20House%20.png" alt="Residential Wood House">
+          </div>
           <div class="project-content">
+            <span class="tag">Structural Design</span>
             <h3>Residential Wood House Design</h3>
             <p>Completed structural design work for a residential wood-frame home using provided architectural drawings.</p>
-            <a class="learn-more" href="projects/residential-house.html">Learn More →</a>
+            <span class="learn-more">Learn More →</span>
           </div>
-        </div>
+        </a>
 
-        <div class="project-card">
-          <img src="Farm%20Workers%20Manument.png" alt="Farm Workers Monument">
+        <a class="project-card" href="projects/farm-workers-monument.html">
+          <div class="project-image">
+            <img src="Farm%20Workers%20Manument.png" alt="Farm Workers Monument">
+          </div>
           <div class="project-content">
+            <span class="tag">Design & Fabrication</span>
             <h3>Farm Workers Monument</h3>
             <p>Designed and fabricated a commemorative structure honoring the legacy and contributions of farm workers.</p>
-            <a class="learn-more" href="projects/farm-workers-monument.html">Learn More →</a>
+            <span class="learn-more">Learn More →</span>
           </div>
-        </div>
+        </a>
 
-        <div class="project-card">
-          <img src="Metropolitan.png" alt="Metropolitan Cathedral">
+        <a class="project-card" href="projects/metropolitan-cathedral.html">
+          <div class="project-image">
+            <img src="Metropolitan.png" alt="Metropolitan Cathedral">
+          </div>
           <div class="project-content">
+            <span class="tag">Architectural Model</span>
             <h3>Metropolitan Cathedral Model</h3>
             <p>Built a detailed scale model studying architectural form, foundation behavior, and unstable soil conditions.</p>
-            <a class="learn-more" href="projects/metropolitan-cathedral.html">Learn More →</a>
+            <span class="learn-more">Learn More →</span>
           </div>
-        </div>
+        </a>
 
-        <div class="project-card">
-          <img src="Stadium.png" alt="Stadium Model">
+        <a class="project-card" href="projects/stadium.html">
+          <div class="project-image">
+            <img src="Stadium.png" alt="Stadium Model">
+          </div>
           <div class="project-content">
+            <span class="tag">Concept Design</span>
             <h3>Stadium Design & Scale Model</h3>
             <p>Developed a conceptual stadium model exploring structural efficiency and spectator experience.</p>
-            <a class="learn-more" href="projects/stadium.html">Learn More →</a>
+            <span class="learn-more">Learn More →</span>
           </div>
-        </div>
+        </a>
 
-        <div class="project-card">
-          <img src="Armenain%20Firepit%20at%20Day.png" alt="Armenian Firepit">
+        <a class="project-card" href="projects/armenian-firepit.html">
+          <div class="project-image">
+            <img src="Armenain%20Firepit%20at%20Day.png" alt="Armenian Firepit">
+          </div>
           <div class="project-content">
+            <span class="tag">Metal Fabrication</span>
             <h3>Armenian Firepit</h3>
             <p>Designed and fabricated a commemorative firepit inspired by Tsitsernakabert, the Armenian Genocide Memorial.</p>
-            <a class="learn-more" href="projects/armenian-firepit.html">Learn More →</a>
+            <span class="learn-more">Learn More →</span>
           </div>
-        </div>
+        </a>
 
-        <div class="project-card">
-          <img src="Fixture%20P2.jpg" alt="Manufacturing Drawing">
+        <a class="project-card" href="projects/cad-drawings.html">
+          <div class="project-image">
+            <img src="Fixture%20P2.jpg" alt="Manufacturing Drawing">
+          </div>
           <div class="project-content">
+            <span class="tag">Technical Drafting</span>
             <h3>Manufacturing Drawings Archive</h3>
             <p>A collection of fabrication and manufacturing drawings created for production and assembly documentation.</p>
-            <a class="learn-more" href="projects/cad-drawings.html">Learn More →</a>
+            <span class="learn-more">Learn More →</span>
           </div>
-        </div>
+        </a>
 
       </div>
     </div>
@@ -552,58 +639,37 @@
 
         <div class="award-card">
           <h3>CSWA Certification</h3>
-          <p>
-            Certified SolidWorks Associate, showing proficiency in 3D modeling, assemblies,
-            engineering drawings, and design work using SolidWorks.
-          </p>
+          <p>Certified SolidWorks Associate, showing proficiency in 3D modeling, assemblies, engineering drawings, and design work using SolidWorks.</p>
         </div>
 
         <div class="award-card">
           <h3>OSHA-10 Certification</h3>
-          <p>
-            Completed OSHA 10-Hour safety training covering workplace safety, hazard recognition,
-            and accident prevention in construction and industrial environments.
-          </p>
+          <p>Completed OSHA 10-Hour safety training covering workplace safety, hazard recognition, and accident prevention.</p>
         </div>
 
         <div class="award-card">
           <h3>Adult CPR / AED Certification</h3>
-          <p>
-            Certified in Adult CPR and AED response, demonstrating preparedness to respond to
-            emergency situations in professional and public settings.
-          </p>
+          <p>Certified in Adult CPR and AED response, demonstrating preparedness to respond to emergency situations.</p>
         </div>
 
         <div class="award-card">
           <h3>1st Place — American Welding Society Competition</h3>
-          <p>
-            Awarded 1st place for a research and poster presentation focused on welding defects,
-            weld failure causes, and quality control in fabrication.
-          </p>
+          <p>Awarded 1st place for a research and poster presentation focused on welding defects, weld failure causes, and quality control.</p>
         </div>
 
         <div class="award-card">
           <h3>2nd Place — SkillsUSA Drafting & GD&T Competition</h3>
-          <p>
-            Earned 2nd place in a drafting and GD&T competition, demonstrating technical drawing
-            accuracy, dimensioning skills, and engineering communication.
-          </p>
+          <p>Earned 2nd place in a drafting and GD&T competition, demonstrating technical drawing accuracy and engineering communication.</p>
         </div>
 
         <div class="award-card">
           <h3>3rd Place — FCOE 3D CAD Competition</h3>
-          <p>
-            Placed 3rd in a 3D CAD competition, showcasing design ability, modeling accuracy,
-            and experience with engineering design software.
-          </p>
+          <p>Placed 3rd in a 3D CAD competition, showcasing design ability, modeling accuracy, and CAD software experience.</p>
         </div>
 
         <div class="award-card">
           <h3>CTEC Pillars Award</h3>
-          <p>
-            Selected as the annual recipient of the CTEC Pillars Award, recognizing commitment to
-            the values of You Matter, Be Present, Raise the Bar, and Create an Impact.
-          </p>
+          <p>Selected as the annual recipient for demonstrating the values of You Matter, Be Present, Raise the Bar, and Create an Impact.</p>
         </div>
 
       </div>
