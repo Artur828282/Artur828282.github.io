@@ -12,6 +12,7 @@
 body{font-family:Arial,sans-serif;background:var(--light);color:#222;line-height:1.7;}
 nav{background:var(--navy);padding:18px 30px;}
 nav a{color:white;text-decoration:none;font-weight:bold;}
+nav a:hover{color:var(--gold);}
 .hero{background:linear-gradient(135deg,var(--navy),var(--navy-light));color:white;text-align:center;padding:100px 20px;}
 .hero h1{font-size:52px;margin-bottom:15px;}
 .hero p{max-width:850px;margin:auto;color:#e0e0e0;}
@@ -22,16 +23,24 @@ nav a{color:white;text-decoration:none;font-weight:bold;}
 .gold-line{width:70px;height:3px;background:var(--gold);margin-bottom:25px;}
 .skills{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px;}
 .skill{background:var(--navy);color:white;padding:10px 16px;border-radius:30px;font-size:14px;}
-.gallery-placeholder{background:white;border:2px dashed #ccc;padding:40px;text-align:center;border-radius:10px;margin-top:20px;}
-.back-btn{display:inline-block;margin-top:50px;background:var(--gold);color:var(--navy);text-decoration:none;padding:14px 22px;border-radius:4px;font-weight:bold;}
+.note{background:white;border:1px solid #ddd;padding:24px;border-radius:10px;margin-top:25px;}
+.project-nav{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:50px;}
+.back-btn{display:inline-block;background:var(--gold);color:var(--navy);text-decoration:none;padding:14px 22px;border-radius:4px;font-weight:bold;}
+.back-btn:hover{background:#e2c88b;}
 footer{background:var(--navy);color:white;text-align:center;padding:25px;margin-top:80px;}
+
+@media (max-width:700px){
+  .hero h1{font-size:38px;}
+  .project-nav{flex-direction:column;}
+  .back-btn{text-align:center;}
+}
 </style>
 </head>
 
 <body>
 
 <nav>
-<a href="../index.html">← Back to Portfolio</a>
+<a href="../index.html#projects">← Back to Portfolio</a>
 </nav>
 
 <section class="hero">
@@ -115,9 +124,9 @@ and carefully assembled to create a detailed representation of the final stadium
 <h2>Project Gallery</h2>
 <div class="gold-line"></div>
 
-<div class="gallery-placeholder">
-Additional renderings, fabrication photos, model details,
-and design process images will be added here.
+<div class="note">
+Additional renderings, fabrication photos, model details, and design process images can be added here
+as the project archive grows.
 </div>
 </div>
 
@@ -131,9 +140,10 @@ digital modeling, fabrication planning, and physical model construction.
 </p>
 </div>
 
-<a class="back-btn" href="../index.html#projects">
-Return to Projects
-</a>
+<div class="project-nav">
+<a class="back-btn" href="metropolitan-cathedral.html">← Metropolitan Cathedral</a>
+<a class="back-btn" href="armenian-firepit.html">Armenian Firepit →</a>
+</div>
 
 </div>
 
