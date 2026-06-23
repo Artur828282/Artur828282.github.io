@@ -99,11 +99,6 @@
       grid-template-columns: 1.1fr 0.9fr;
       gap: 60px;
       align-items: center;
-      background: transparent;
-      box-shadow: none;
-      border: none;
-      padding: 0;
-
     }
 
     .eyebrow {
@@ -182,65 +177,27 @@
     }
 
     @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-.hero-container,
-.section-title,
-.about-content,
-    .current-work {
-  background: white;
-}
+    .hero-container,
+    .section-title,
+    .about-content,
+    .project-card,
+    .award-card,
+    .resume-box,
+    .contact p,
+    .contact-links {
+      animation: fadeUp 0.8s ease forwards;
+    }
 
-.current-card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 36px;
-  align-items: center;
-  background: var(--white);
-  padding: 34px;
-  border-radius: 14px;
-  box-shadow: 0 12px 34px rgba(0,0,0,.08);
-  border: 1px solid rgba(201,161,90,.35);
-}
-
-.current-card h3 {
-  color: var(--navy);
-  font-size: 28px;
-  margin: 12px 0;
-}
-
-.current-card p {
-  color: var(--muted);
-  margin-bottom: 24px;
-}
-
-.current-card img {
-  width: 100%;
-  border-radius: 12px;
-  object-fit: cover;
-}
-
-@media (max-width: 700px) {
-  .current-card {
-    grid-template-columns: 1fr;
-  }
-}
-.project-card,
-.award-card,
-.resume-box,
-.contact p,
-.contact-links {
-  animation: fadeUp 0.8s ease forwards;
-}
-    
     section {
       padding: 90px 24px;
     }
@@ -299,6 +256,39 @@
     .highlight-box h3 {
       color: var(--navy);
       margin-bottom: 8px;
+    }
+
+    .current-work {
+      background: white;
+    }
+
+    .current-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: center;
+      background: var(--white);
+      padding: 34px;
+      border-radius: 14px;
+      box-shadow: 0 12px 34px rgba(0,0,0,.08);
+      border: 1px solid rgba(201,161,90,.35);
+    }
+
+    .current-card h3 {
+      color: var(--navy);
+      font-size: 28px;
+      margin: 12px 0;
+    }
+
+    .current-card p {
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .current-card img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
     }
 
     .projects {
@@ -396,11 +386,20 @@
       padding: 26px;
       border-radius: 10px;
       transition: 0.3s;
+      text-align: center;
     }
 
     .award-card:hover {
       transform: translateY(-5px);
       border-color: var(--gold);
+    }
+
+    .award-card img {
+      width: 90px;
+      height: 90px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 20px;
     }
 
     .award-card h3 {
@@ -409,29 +408,23 @@
       font-size: 20px;
     }
 
-   .award-card p {
-    color: #000000;
-    font-size: 15px;
-    line-height: 1.6;
-
+    .award-card p {
+      color: #ffffff;
+      font-size: 15px;
+      line-height: 1.6;
     }
 
-    .award-card img{
-    width:90px;
-    height:90px;
-    object-fit:contain;
-    display:block;
-    margin:0 auto 20px;
-}
+    .section-divider {
+      width: 120px;
+      height: 2px;
+      background: var(--gold);
+      margin: 90px auto;
+      opacity: 0.55;
+    }
 
-.award-card{
-    text-align:center;
-}
-    
     .resume {
       background: white;
       text-align: center;
-      margin-top: 100px;
     }
 
     .resume-box {
@@ -474,7 +467,8 @@
       .hero-container,
       .project-grid,
       .awards-grid,
-      .about-highlight {
+      .about-highlight,
+      .current-card {
         grid-template-columns: 1fr 1fr;
       }
 
@@ -487,7 +481,8 @@
       .hero-container,
       .project-grid,
       .awards-grid,
-      .about-highlight {
+      .about-highlight,
+      .current-card {
         grid-template-columns: 1fr;
       }
 
@@ -601,28 +596,28 @@
   </section>
 
   <section class="current-work">
-  <div class="container">
-    <div class="section-title">
-      <h2>Currently Working On</h2>
-      <div class="gold-line"></div>
-    </div>
-
-    <div class="current-card">
-      <div>
-        <span class="tag">Active Project</span>
-        <h3>Residential Wood House Structural Design</h3>
-        <p>
-          I am currently developing the structural design for a residential wood-frame house.
-          So far, I have reviewed the architectural files, completed load calculations,
-          and created framing plans.
-        </p>
-        <a href="projects/residential-house.html" class="btn btn-gold">View Project</a>
+    <div class="container">
+      <div class="section-title">
+        <h2>Currently Working On</h2>
+        <div class="gold-line"></div>
       </div>
-      <img src="Residential%20House%20.png" alt="Residential House Design">
+
+      <div class="current-card">
+        <div>
+          <span class="tag">Active Project</span>
+          <h3>Residential Wood House Structural Design</h3>
+          <p>
+            I am currently developing the structural design for a residential wood-frame house.
+            So far, I have reviewed the architectural files, completed load calculations,
+            and created framing plans.
+          </p>
+          <a href="projects/residential-house.html" class="btn btn-gold">View Project</a>
+        </div>
+        <img src="Residential%20House%20.png" alt="Residential House Design">
+      </div>
     </div>
-  </div>
-</section>
-  
+  </section>
+
   <section id="projects" class="projects">
     <div class="container">
       <div class="section-title">
@@ -732,73 +727,70 @@
     </div>
   </section>
 
- <div class="awards-grid">
+  <section id="awards" class="awards">
+    <div class="container">
+      <div class="section-title">
+        <h2>Awards & Certifications</h2>
+        <div class="gold-line"></div>
+      </div>
 
-  <div class="award-card">
-    <img src="cswa.png" alt="CSWA">
-    <h3>CSWA Certification</h3>
-    <p>
-      Certified SolidWorks Associate demonstrating proficiency in 3D modeling,
-      assemblies, engineering drawings, and design principles.
-    </p>
-  </div>
+      <div class="awards-grid">
 
-  <div class="award-card">
-    <img src="osha.png" alt="OSHA">
-    <h3>OSHA-10 Certification</h3>
-    <p>
-      Completed OSHA 10-Hour safety training covering workplace safety,
-      hazard recognition, and accident prevention.
-    </p>
-  </div>
+        <div class="award-card">
+          <img src="cswa.png" alt="CSWA">
+          <h3>CSWA Certification</h3>
+          <p>Certified SolidWorks Associate demonstrating proficiency in 3D modeling, assemblies, engineering drawings, and design principles.</p>
+        </div>
 
-  <div class="award-card">
-    <img src="cpr.png" alt="CPR AED">
-    <h3>Adult CPR / AED Certification</h3>
-    <p>
-      Certified in CPR and AED response, demonstrating preparedness
-      for emergency situations.
-    </p>
-  </div>
+        <div class="award-card">
+          <img src="osha.png" alt="OSHA">
+          <h3>OSHA-10 Certification</h3>
+          <p>Completed OSHA 10-Hour safety training covering workplace safety, hazard recognition, and accident prevention.</p>
+        </div>
 
-  <div class="award-card">
-    <img src="welding.png" alt="AWS">
-    <h3>1st Place – AWS Competition</h3>
-    <p>
-      Awarded 1st place for a research and poster presentation focused on
-      welding defects, weld failures, and quality control methods.
-    </p>
-  </div>
+        <div class="award-card">
+          <img src="cpr.png" alt="CPR AED">
+          <h3>Adult CPR / AED Certification</h3>
+          <p>Certified in CPR and AED response, demonstrating preparedness for emergency situations.</p>
+        </div>
 
-  <div class="award-card">
-    <img src="skillsusa.png" alt="SkillsUSA">
-    <h3>2nd Place – SkillsUSA Drafting & GD&T</h3>
-    <p>
-      Recognized for technical drafting accuracy, GD&T application,
-      and engineering communication skills.
-    </p>
-  </div>
+        <div class="award-card">
+          <img src="welding.png" alt="AWS">
+          <h3>1st Place – AWS Competition</h3>
+          <p>Awarded 1st place for a research and poster presentation focused on welding defects, weld failures, and quality control methods.</p>
+        </div>
 
-  <div class="award-card">
-    <img src="fcoe.png" alt="FCOE">
-    <h3>3rd Place – FCOE 3D CAD Competition</h3>
-    <p>
-      Demonstrated design creativity, CAD modeling ability,
-      and technical problem-solving.
-    </p>
-  </div>
+        <div class="award-card">
+          <img src="skillsusa.png" alt="SkillsUSA">
+          <h3>2nd Place – SkillsUSA Drafting & GD&T</h3>
+          <p>Recognized for technical drafting accuracy, GD&T application, and engineering communication skills.</p>
+        </div>
 
-  <div class="award-card">
-    <img src="ctec.png" alt="CTEC">
-    <h3>CTEC Pillars Award</h3>
-    <p>
-      Awarded to one student annually who exemplifies:
-      You Matter, Be Present, Raise the Bar, and Create an Impact.
-    </p>
-  </div>
+        <div class="award-card">
+          <img src="fcoe.png" alt="FCOE">
+          <h3>3rd Place – FCOE 3D CAD Competition</h3>
+          <p>Demonstrated design creativity, CAD modeling ability, and technical problem-solving.</p>
+        </div>
 
-</div>
-  
+        <div class="award-card">
+          <img src="ctec.png" alt="CTEC">
+          <h3>CTEC Pillars Award</h3>
+          <p>Awarded to one student annually who exemplifies: You Matter, Be Present, Raise the Bar, and Create an Impact.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section id="resume" class="resume">
+    <div class="container">
+      <div class="section-title">
+        <h2>Resume</h2>
+        <div class="gold-line"></div>
+      </div>
+
       <div class="resume-box">
         <p>
           View or download my resume to learn more about my education, internship experience,
