@@ -7,153 +7,288 @@
 <title>Manufacturing Drawings Archive | Artur Martirosyan</title>
 
 <style>
-:root{--navy:#0b1f3a;--navy-light:#142c54;--gold:#c9a15a;--light:#f8f8f6;}
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:Arial,sans-serif;background:var(--light);color:#222;line-height:1.7;}
-nav{background:var(--navy);padding:18px 30px;}
-nav a{color:white;text-decoration:none;font-weight:bold;}
-.hero{background:linear-gradient(135deg,var(--navy),var(--navy-light));color:white;text-align:center;padding:100px 20px;}
-.hero h1{font-size:52px;margin-bottom:15px;}
-.hero p{max-width:850px;margin:auto;color:#e0e0e0;}
-.container{max-width:1100px;margin:auto;padding:80px 24px;}
-.main-image{width:100%;border-radius:12px;box-shadow:0 15px 35px rgba(0,0,0,.15);}
-.section{margin-top:70px;}
-.section h2{color:var(--navy);margin-bottom:15px;font-size:32px;}
-.gold-line{width:70px;height:3px;background:var(--gold);margin-bottom:25px;}
-.skills{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px;}
-.skill{background:var(--navy);color:white;padding:10px 16px;border-radius:30px;font-size:14px;}
-.gallery-placeholder{background:white;border:2px dashed #ccc;padding:40px;text-align:center;border-radius:10px;margin-top:20px;}
-.back-btn{display:inline-block;margin-top:50px;background:var(--gold);color:var(--navy);text-decoration:none;padding:14px 22px;border-radius:4px;font-weight:bold;}
-footer{background:var(--navy);color:white;text-align:center;padding:25px;margin-top:80px;}
+:root{
+  --navy:#0b1f3a;
+  --navy-light:#142c54;
+  --gold:#c9a15a;
+  --light:#f8f8f6;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:var(--light);
+  color:#222;
+  line-height:1.7;
+}
+
+nav{
+  background:var(--navy);
+  padding:18px 30px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.hero{
+  background:linear-gradient(135deg,var(--navy),var(--navy-light));
+  color:white;
+  text-align:center;
+  padding:100px 20px;
+}
+
+.hero h1{
+  font-size:52px;
+  margin-bottom:15px;
+}
+
+.hero p{
+  max-width:850px;
+  margin:auto;
+  color:#e0e0e0;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:80px 24px;
+}
+
+.main-image{
+  width:100%;
+  border-radius:12px;
+  box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+.section{
+  margin-top:70px;
+}
+
+.section h2{
+  color:var(--navy);
+  margin-bottom:15px;
+  font-size:32px;
+}
+
+.gold-line{
+  width:70px;
+  height:3px;
+  background:var(--gold);
+  margin-bottom:25px;
+}
+
+.drawing-card{
+  background:white;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  margin-top:35px;
+}
+
+.drawing-card h3{
+  color:var(--navy);
+  margin-bottom:15px;
+  font-size:24px;
+}
+
+.drawing-card img{
+  width:100%;
+  margin-top:20px;
+  border-radius:10px;
+  box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+.skills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:20px;
+}
+
+.skill{
+  background:var(--navy);
+  color:white;
+  padding:10px 16px;
+  border-radius:30px;
+  font-size:14px;
+}
+
+.project-nav{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-top:50px;
+}
+
+.back-btn{
+  display:inline-block;
+  background:var(--gold);
+  color:var(--navy);
+  text-decoration:none;
+  padding:14px 22px;
+  border-radius:4px;
+  font-weight:bold;
+}
+
+footer{
+  background:var(--navy);
+  color:white;
+  text-align:center;
+  padding:25px;
+  margin-top:80px;
+}
 </style>
 </head>
 
 <body>
 
 <nav>
-<a href="../index.html">← Back to Portfolio</a>
+  <a href="../index.html">← Back to Portfolio</a>
 </nav>
 
 <section class="hero">
-<h1>Manufacturing Drawings Archive</h1>
-<p>
-A collection of manufacturing and fabrication drawings developed to support production,
-assembly, quality control, and engineering communication.
-</p>
+  <h1>Manufacturing Drawings Archive</h1>
+  <p>
+    A collection of manufacturing, fabrication, reverse engineering, and assembly drawings
+    developed to support production, accuracy, and engineering communication.
+  </p>
 </section>
 
 <div class="container">
 
-<img class="main-image" src="../Fixture P2.jpg" alt="Manufacturing Drawing">
+  <img class="main-image" src="../Fixture%20P2.jpg" alt="Manufacturing Drawing Cover">
 
-<div class="section">
-<h2>Overview</h2>
-<div class="gold-line"></div>
+  <div class="section">
+    <h2>Project Overview</h2>
+    <div class="gold-line"></div>
 
-<p>
-This archive contains manufacturing and fabrication drawings created to communicate
-engineering designs clearly and accurately to production personnel, fabricators,
-and quality control teams.
-</p>
+    <p>
+      This archive contains manufacturing and fabrication drawings developed to support
+      production, assembly, reverse engineering, and quality control activities.
+      The collection demonstrates technical drafting, CAD modeling, manufacturing communication,
+      and the ability to transform engineering concepts into production-ready documentation.
+    </p>
 
-<br>
+    <br>
 
-<p>
-The collection demonstrates technical drafting skills, dimensional accuracy,
-drawing organization, and the ability to translate engineering concepts into
-clear manufacturing documentation.
-</p>
+    <p>
+      The drawings shown here were created for real-world manufacturing and fabrication
+      processes, ranging from custom fixture design to reverse engineered components and
+      assembly documentation.
+    </p>
+  </div>
 
-</div>
+  <div class="section">
+    <h2>Featured Drawings</h2>
+    <div class="gold-line"></div>
 
-<div class="section">
-<h2>Drawing Types</h2>
-<div class="gold-line"></div>
+    <div class="drawing-card">
+      <h3>Welding Fixture Design</h3>
+      <p>
+        Engineered and designed a custom welding fixture used in the shop to improve
+        part accuracy, consistency, and repeatability. The fixture was developed to help
+        prevent welding defects by holding components in the correct position during fabrication.
+      </p>
 
-<p>
-The archive includes a variety of engineering documents, including:
-</p>
+      <img src="../Fixture%20P1.jpg" alt="Welding Fixture Drawing P1">
+      <img src="../Fixture%20P2.jpg" alt="Welding Fixture Drawing P2">
+      <img src="../Fixture%20P3.jpg" alt="Welding Fixture Drawing P3">
+    </div>
 
-<br>
+    <div class="drawing-card">
+      <h3>Spray Nozzle Reverse Engineering</h3>
+      <p>
+        Reverse engineered an existing spray nozzle component by measuring the original part,
+        recreating the geometry in CAD, and producing a technical drawing for documentation
+        and manufacturing reference.
+      </p>
 
-<ul style="padding-left:25px;">
-<li>Fabrication Drawings</li>
-<li>Assembly Drawings</li>
-<li>Fixture Designs</li>
-<li>Production Documentation</li>
-<li>Dimensioned Technical Drawings</li>
-<li>GD&T-Based Documentation</li>
-</ul>
+      <img src="../Spray%20Nozzle.jpg" alt="Spray Nozzle Drawing">
+    </div>
 
-</div>
+    <div class="drawing-card">
+      <h3>Wire Harness Assembly</h3>
+      <p>
+        Created assembly documentation for a wire harness system, showing component organization,
+        assembly relationships, and the information needed to support production and proper installation.
+      </p>
 
-<div class="section">
-<h2>Engineering Importance</h2>
-<div class="gold-line"></div>
+      <img src="../Wire%20Harness.jpg" alt="Wire Harness Assembly Drawing">
+    </div>
 
-<p>
-Engineering drawings serve as the bridge between design and manufacturing.
-A successful drawing must communicate dimensions, tolerances, materials,
-assembly requirements, and fabrication details clearly enough for production
-to occur accurately and efficiently.
-</p>
+    <div class="drawing-card">
+      <h3>Valve Assembly</h3>
+      <p>
+        Developed assembly documentation for a valve system, identifying component relationships,
+        assembly requirements, and manufacturing details needed for production and maintenance.
+      </p>
 
-<br>
+      <img src="../Valve.jpg" alt="Valve Assembly Drawing">
+    </div>
+  </div>
 
-<p>
-This collection reflects real-world manufacturing documentation practices and
-the importance of precise engineering communication.
-</p>
+  <div class="section">
+    <h2>Engineering Importance</h2>
+    <div class="gold-line"></div>
 
-</div>
+    <p>
+      Engineering drawings are the bridge between design and manufacturing. A successful drawing
+      must communicate dimensions, tolerances, materials, assembly requirements, and fabrication
+      details clearly enough for accurate production.
+    </p>
 
-<div class="section">
-<h2>Software & Skills</h2>
-<div class="gold-line"></div>
+    <br>
 
-<div class="skills">
-<div class="skill">SolidWorks</div>
-<div class="skill">AutoCAD</div>
-<div class="skill">GD&T</div>
-<div class="skill">Technical Drafting</div>
-<div class="skill">Manufacturing Documentation</div>
-<div class="skill">Engineering Communication</div>
-</div>
+    <p>
+      This project demonstrates the ability to create documentation that supports shop work,
+      quality control, and clear communication between engineering and fabrication teams.
+    </p>
+  </div>
 
-</div>
+  <div class="section">
+    <h2>Software & Skills</h2>
+    <div class="gold-line"></div>
 
-<div class="section">
-<h2>Drawing Archive</h2>
-<div class="gold-line"></div>
+    <div class="skills">
+      <div class="skill">SolidWorks</div>
+      <div class="skill">AutoCAD</div>
+      <div class="skill">Technical Drafting</div>
+      <div class="skill">Manufacturing Documentation</div>
+      <div class="skill">Reverse Engineering</div>
+      <div class="skill">Fixture Design</div>
+      <div class="skill">Assembly Drawings</div>
+      <div class="skill">Engineering Communication</div>
+    </div>
+  </div>
 
-<div class="gallery-placeholder">
-Additional fabrication drawings, assembly drawings,
-fixture drawings, and manufacturing documentation
-will be added here over time.
-</div>
+  <div class="section">
+    <h2>Skills Demonstrated</h2>
+    <div class="gold-line"></div>
 
-</div>
+    <p>
+      This archive demonstrates technical drafting, design documentation, fixture development,
+      reverse engineering, assembly communication, and manufacturing awareness.
+    </p>
+  </div>
 
-<div class="section">
-<h2>Skills Demonstrated</h2>
-<div class="gold-line"></div>
-
-<p>
-This archive demonstrates technical drafting, engineering communication,
-GD&T application, manufacturing awareness, and the ability to create
-professional engineering documentation suitable for production environments.
-</p>
-
-</div>
-
-<a class="back-btn" href="../index.html#projects">
-Return to Projects
-</a>
+  <div class="project-nav">
+    <a class="back-btn" href="armenian-firepit.html">← Previous Project</a>
+    <a class="back-btn" href="../index.html#projects">All Projects →</a>
+  </div>
 
 </div>
 
 <footer>
-© 2026 Artur Martirosyan
+  © 2026 Artur Martirosyan
 </footer>
 
 </body>
