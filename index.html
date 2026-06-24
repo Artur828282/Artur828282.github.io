@@ -377,47 +377,131 @@
     .awards-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 28px;
     }
 
-    .award-card {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(201,161,90,0.35);
-      padding: 26px;
-      border-radius: 10px;
-      transition: 0.3s;
+    .flip-card {
+      background: transparent;
+      height: 360px;
+      perspective: 1000px;
+    }
+
+    .flip-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform .7s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-front,
+    .flip-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 14px;
+      backface-visibility: hidden;
+      overflow: hidden;
+      border: 1px solid rgba(201,161,90,.45);
+      box-shadow: 0 12px 30px rgba(0,0,0,.18);
+    }
+
+    .flip-front {
+      background: rgba(255,255,255,.08);
+      padding: 28px;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
-    .award-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--gold);
+    .flip-front img {
+      width: 105px;
+      height: 105px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 22px;
+      background: white;
+      padding: 12px;
+      border-radius: 14px;
     }
-
-    .award-card img {
-      width:90px;
-      height:90px;
-      object-fit:contain;
-      display:block;
-      margin:0 auto 20px;
-
-      background:white;
-      padding:12px;
-      border-radius:12px;
-      box-shadow:0 4px 12px rgba(0,0,0,.15);
-
-    }
-
-    .award-card h3 {
+    
+    .flip-front h3 {
       color: var(--light-gold);
-      margin-bottom: 10px;
       font-size: 20px;
+      margin-bottom: 12px;
     }
 
-    .award-card p {
-      color: #ffffff;
+    .flip-front p {
+      color: white;
       font-size: 15px;
       line-height: 1.6;
+    }
+
+    .flip-back {
+      background: white;
+      transform: rotateY(180deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+    }
+
+    .flip-back img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .text-back {
+      background: white;
+      color: var(--navy);
+      text-align: center;
+      padding: 35px;
+      flex-direction: column;
+    }
+
+    .text-back h3 {
+      color: var(--navy);
+      margin-bottom: 15px;
+    }
+
+    .text-back p {
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    .education-divider {
+      width: 140px;
+      height: 2px;
+      background: var(--gold);
+      margin: 80px auto;
+      opacity: .6;
+    }
+
+    .education-title {
+      margin-bottom: 45px;
+    }
+
+    @media (max-width: 1000px) {
+      .awards-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .awards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .flip-card {
+        height: 390px;
+      }
     }
 
     .section-divider {
@@ -760,59 +844,160 @@
   </section>
 
   <section id="awards" class="awards">
-    <div class="container">
-      <div class="section-title">
-        <h2>Awards & Certifications</h2>
-        <div class="gold-line"></div>
-      </div>
-
-      <div class="awards-grid">
-
-        <div class="award-card">
-          <img src="cswa.png" alt="CSWA">
-          <h3>CSWA Certification</h3>
-          <p>Certified SolidWorks Associate demonstrating proficiency in 3D modeling, assemblies, engineering drawings, and design principles.</p>
-        </div>
-
-        <div class="award-card">
-          <img src="osha.png" alt="OSHA">
-          <h3>OSHA-10 Certification</h3>
-          <p>Completed OSHA 10-Hour safety training covering workplace safety, hazard recognition, and accident prevention.</p>
-        </div>
-
-        <div class="award-card">
-          <img src="cpr.png" alt="CPR AED">
-          <h3>Adult CPR / AED Certification</h3>
-          <p>Certified in CPR and AED response, demonstrating preparedness for emergency situations.</p>
-        </div>
-
-        <div class="award-card">
-          <img src="welding.png" alt="AWS">
-          <h3>1st Place – AWS Competition</h3>
-          <p>Awarded 1st place for a research and poster presentation focused on welding defects, weld failures, and quality control methods.</p>
-        </div>
-
-        <div class="award-card">
-          <img src="skillsusa.png" alt="SkillsUSA">
-          <h3>2nd Place – SkillsUSA Drafting & GD&T</h3>
-          <p>Recognized for technical drafting accuracy, GD&T application, and engineering communication skills.</p>
-        </div>
-
-        <div class="award-card">
-          <img src="fcoe.png" alt="FCOE">
-          <h3>3rd Place – FCOE 3D CAD Competition</h3>
-          <p>Demonstrated design creativity, CAD modeling ability, and technical problem-solving.</p>
-        </div>
-
-        <div class="award-card">
-          <img src="ctec.png" alt="CTEC">
-          <h3>CTEC Pillars Award</h3>
-          <p>Awarded to one student annually who exemplifies: You Matter, Be Present, Raise the Bar, and Create an Impact.</p>
-        </div>
-
-      </div>
+  <div class="container">
+    <div class="section-title">
+      <h2>Awards & Certifications</h2>
+      <div class="gold-line"></div>
     </div>
-  </section>
+
+    <div class="awards-grid">
+
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="cswa.png" alt="CSWA">
+            <h3>CSWA Certification</h3>
+            <p>Certified SolidWorks Associate demonstrating 3D modeling, assemblies, and engineering drawing skills.</p>
+          </div>
+          <div class="flip-back">
+            <img src="cswa-cert.jpg" alt="CSWA Certificate">
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="osha.png" alt="OSHA">
+            <h3>OSHA-10 Certification</h3>
+            <p>Completed safety training focused on workplace hazards, prevention, and general industry safety.</p>
+          </div>
+          <div class="flip-back">
+            <img src="osha-cert.png" alt="OSHA Certificate">
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="cpr.png" alt="CPR AED">
+            <h3>Adult CPR / AED</h3>
+            <p>Certified in CPR and AED response through the American Heart Association Heartsaver program.</p>
+          </div>
+          <div class="flip-back">
+            <img src="cpr-cert.png" alt="CPR AED Certificate">
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="welding.png" alt="AWS">
+            <h3>1st Place – AWS Competition</h3>
+            <p>Earned 1st place for research and poster presentation on welding defects and quality control.</p>
+          </div>
+          <div class="flip-back">
+            <img src="aws-cert.png" alt="AWS Competition Award">
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="skillsusa.png" alt="SkillsUSA">
+            <h3>2nd Place – SkillsUSA Drafting & GD&T</h3>
+            <p>Recognized for technical drafting accuracy, GD&T application, and engineering communication.</p>
+          </div>
+          <div class="flip-back">
+            <img src="skillsusa-cert.png" alt="SkillsUSA Medal">
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="fcoe.png" alt="FCOE">
+            <h3>3rd Place – FCOE 3D CAD Competition</h3>
+            <p>Recognized for CAD modeling ability, design creativity, and technical problem-solving.</p>
+          </div>
+          <div class="flip-back">
+            <img src="fcoe cert.png" alt="FCOE CAD Medal">
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="ctec.png" alt="CTEC">
+            <h3>CTEC Pillars Award</h3>
+            <p>Awarded for representing the CTEC pillars: You Matter, Be Present, Raise the Bar, and Create an Impact.</p>
+          </div>
+          <div class="flip-back">
+            <img src="ctec-cert.png" alt="CTEC Pillars Award">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="education-divider"></div>
+
+    <div class="section-title education-title">
+      <h2>Education & Diplomas</h2>
+      <div class="gold-line"></div>
+    </div>
+
+    <div class="awards-grid education-grid">
+
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="fcoe.png" alt="Fresno City College">
+            <h3>Fresno City College</h3>
+            <p>Associate of Science in Industrial Technology with Manufacturing Emphasis.</p>
+          </div>
+          <div class="flip-back">
+            <img src="FCC-Diploma.png" alt="Fresno City College Diploma">
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="ctec.png" alt="CTEC">
+            <h3>CTEC High School Diploma</h3>
+            <p>Career Technical Education Charter High School diploma with a technical education background.</p>
+          </div>
+          <div class="flip-back">
+            <img src="CTEC-Diploma.jpg" alt="CTEC Diploma">
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="FCU-logo.png" alt="Fresno State">
+            <h3>California State University, Fresno</h3>
+            <p>Bachelor of Science in Civil Engineering, currently in progress.</p>
+          </div>
+          <div class="flip-back text-back">
+            <h3>Degree In Progress</h3>
+            <p>Civil Engineering student at California State University, Fresno.</p>
+            <p>Expected graduation: 2028</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
   <div class="section-divider"></div>
 
