@@ -11,8 +11,8 @@
   --navy:#0b1f3a;
   --navy-light:#142c54;
   --gold:#c9a15a;
+  --light-gold:#e2c88b;
   --light:#f8f8f6;
-  --white:#ffffff;
   --muted:#666;
 }
 
@@ -29,6 +29,11 @@ body{
   line-height:1.7;
 }
 
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
 nav{
   background:var(--navy);
   padding:18px 30px;
@@ -36,7 +41,6 @@ nav{
 
 nav a{
   color:white;
-  text-decoration:none;
   font-weight:bold;
 }
 
@@ -48,24 +52,61 @@ nav a:hover{
   background:linear-gradient(135deg,var(--navy),var(--navy-light));
   color:white;
   text-align:center;
-  padding:100px 20px;
+  padding:105px 20px;
 }
 
 .hero h1{
-  font-size:52px;
-  margin-bottom:15px;
+  font-size:54px;
+  margin-bottom:12px;
 }
 
 .hero p{
   max-width:850px;
   margin:auto;
   color:#e0e0e0;
+  font-size:18px;
 }
 
 .container{
-  max-width:1050px;
+  max-width:1080px;
   margin:auto;
   padding:80px 24px;
+}
+
+.current-box{
+  background:white;
+  border-radius:16px;
+  padding:34px;
+  box-shadow:0 12px 34px rgba(0,0,0,.08);
+  border-left:6px solid var(--gold);
+  margin-bottom:70px;
+}
+
+.current-box h2{
+  color:var(--navy);
+  font-size:32px;
+  margin-bottom:18px;
+}
+
+.current-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.current-item{
+  background:var(--light);
+  padding:22px;
+  border-radius:12px;
+}
+
+.current-item h3{
+  color:var(--navy);
+  margin-bottom:8px;
+}
+
+.current-item p{
+  color:#444;
 }
 
 .summary-grid{
@@ -103,7 +144,7 @@ nav a:hover{
 
 .year{
   color:var(--navy);
-  font-size:34px;
+  font-size:36px;
   margin:55px 0 25px;
 }
 
@@ -112,8 +153,14 @@ nav a:hover{
   background:white;
   padding:24px;
   margin-bottom:24px;
-  border-radius:12px;
+  border-radius:14px;
   box-shadow:0 10px 28px rgba(0,0,0,.08);
+  transition:.3s;
+}
+
+.timeline-item:hover{
+  transform:translateY(-4px);
+  box-shadow:0 15px 36px rgba(0,0,0,.12);
 }
 
 .timeline-item::before{
@@ -136,10 +183,20 @@ nav a:hover{
   margin-bottom:8px;
 }
 
+.timeline-title{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:8px;
+}
+
+.icon{
+  font-size:25px;
+}
+
 .timeline-item h3{
   color:var(--navy);
   font-size:23px;
-  margin-bottom:8px;
 }
 
 .timeline-item p{
@@ -148,12 +205,23 @@ nav a:hover{
 
 .tag{
   display:inline-block;
-  margin-top:12px;
+  margin-top:14px;
   background:var(--navy);
   color:white;
   padding:6px 12px;
   border-radius:20px;
   font-size:12px;
+}
+
+.timeline-link{
+  color:var(--gold);
+  font-weight:bold;
+  display:inline-block;
+  margin-top:14px;
+}
+
+.timeline-link:hover{
+  color:var(--navy);
 }
 
 footer{
@@ -164,24 +232,34 @@ footer{
   margin-top:80px;
 }
 
-@media(max-width:800px){
-  .summary-grid{
+@media(max-width:900px){
+  .summary-grid,
+  .current-grid{
     grid-template-columns:1fr 1fr;
   }
 
   .hero h1{
-    font-size:38px;
+    font-size:40px;
   }
 }
 
-@media(max-width:550px){
-  .summary-grid{
+@media(max-width:600px){
+  .summary-grid,
+  .current-grid{
     grid-template-columns:1fr;
   }
 
   .timeline{
     margin-left:10px;
     padding-left:25px;
+  }
+
+  .timeline-item::before{
+    left:-38px;
+  }
+
+  .hero h1{
+    font-size:36px;
   }
 }
 </style>
@@ -196,12 +274,33 @@ footer{
 <section class="hero">
   <h1>Engineering Journey</h1>
   <p>
-    A timeline of my education, engineering projects, certifications, competitions,
-    research, and professional experience.
+    Building one project at a time — a timeline of my education, projects, certifications,
+    competitions, research, and professional growth.
   </p>
 </section>
 
 <div class="container">
+
+  <div class="current-box">
+    <h2>Currently</h2>
+
+    <div class="current-grid">
+      <div class="current-item">
+        <h3>🎓 Civil Engineering Student</h3>
+        <p>California State University, Fresno<br>Current GPA: 3.91</p>
+      </div>
+
+      <div class="current-item">
+        <h3>🟢 Active Project</h3>
+        <p>Residential Wood House Structural Design</p>
+      </div>
+
+      <div class="current-item">
+        <h3>👷 ASCE Member</h3>
+        <p>Continuing professional development in civil engineering.</p>
+      </div>
+    </div>
+  </div>
 
   <div class="summary-grid">
     <div class="summary-card">
@@ -227,172 +326,244 @@ footer{
 
   <div class="timeline">
 
-    <h2 class="year">2021</h2>
+    <h2 class="year">2026</h2>
 
     <div class="timeline-item">
-      <div class="date">August 16, 2021</div>
-      <h3>Started CTEC High School</h3>
-      <p>Began technical education focused on engineering, manufacturing, CAD, and fabrication.</p>
-      <span class="tag">Education</span>
+      <div class="date">June 2026</div>
+      <div class="timeline-title">
+        <span class="icon">🛠️</span>
+        <h3>Residential Wood House Design</h3>
+      </div>
+      <p>Started active structural design project involving architectural review, load calculations, and framing plans.</p>
+      <span class="tag">Active Project</span><br>
+      <a class="timeline-link" href="projects/residential-house.html">View Project →</a>
     </div>
 
     <div class="timeline-item">
-      <div class="date">August 16, 2021</div>
-      <h3>Started Fresno City College</h3>
-      <p>Began pursuing college coursework while also attending high school.</p>
-      <span class="tag">Education</span>
-    </div>
-
-    <h2 class="year">2023</h2>
-
-    <div class="timeline-item">
-      <div class="date">February 10, 2023</div>
-      <h3>OSHA-10 Certification</h3>
-      <p>Completed OSHA 10-Hour General Industry safety training.</p>
-      <span class="tag">Certification</span>
+      <div class="date">May 2026</div>
+      <div class="timeline-title">
+        <span class="icon">🧮</span>
+        <h3>Structural Design Calculators</h3>
+      </div>
+      <p>Created Excel-based engineering tools for basement wall design, seismic loading, and vertical force distribution.</p>
+      <span class="tag">Engineering Tools</span><br>
+      <a class="timeline-link" href="projects/engineering-calculators.html">View Project →</a>
     </div>
 
     <div class="timeline-item">
-      <div class="date">May 8, 2023</div>
-      <h3>CPR / AED Certification</h3>
-      <p>Completed American Heart Association Heartsaver CPR/AED training.</p>
-      <span class="tag">Certification</span>
-    </div>
-
-    <div class="timeline-item">
-      <div class="date">May 25, 2023</div>
-      <h3>CSWA Certification</h3>
-      <p>Earned Certified SolidWorks Associate certification in mechanical design.</p>
-      <span class="tag">Certification</span>
-    </div>
-
-    <div class="timeline-item">
-      <div class="date">May 28, 2023</div>
-      <h3>CTEC Pillars Award</h3>
-      <p>Received the CTEC Pillars Award for representing the school values: You Matter, Be Present, Raise the Bar, and Create an Impact.</p>
-      <span class="tag">Award</span>
-    </div>
-
-    <div class="timeline-item">
-      <div class="date">December 15, 2023</div>
-      <h3>Armenian Firepit</h3>
-      <p>Designed and fabricated a commemorative firepit inspired by Tsitsernakabert, the Armenian Genocide Memorial.</p>
-      <span class="tag">Project</span>
-    </div>
-
-    <h2 class="year">2024</h2>
-
-    <div class="timeline-item">
-      <div class="date">May 15, 2024</div>
-      <h3>Farm Workers Monument</h3>
-      <p>Designed and fabricated a commemorative structure honoring the legacy and contributions of farm workers.</p>
-      <span class="tag">Project</span>
-    </div>
-
-    <div class="timeline-item">
-      <div class="date">September 15, 2024</div>
-      <h3>1st Place – AWS Competition</h3>
-      <p>Earned 1st place for a research and poster presentation focused on welding defects and quality control.</p>
-      <span class="tag">Award</span>
-    </div>
-
-    <div class="timeline-item">
-      <div class="date">September 30, 2024</div>
-      <h3>Engineering Internship – SAF-T-CAB</h3>
-      <p>Started engineering internship experience involving manufacturing, design, and technical documentation.</p>
-      <span class="tag">Internship</span>
-    </div>
-
-    <div class="timeline-item">
-      <div class="date">December 15, 2024</div>
-      <h3>Metropolitan Cathedral Model</h3>
-      <p>Created a detailed scale model studying architectural form, foundation behavior, and unstable soil conditions.</p>
-      <span class="tag">Project</span>
+      <div class="date">April 2026</div>
+      <div class="timeline-title">
+        <span class="icon">📖</span>
+        <h3>Stairway Evacuation Study Presentation</h3>
+      </div>
+      <p>Presented research studying stairway flow, congestion, and evacuation performance.</p>
+      <span class="tag">Research</span><br>
+      <a class="timeline-link" href="projects/staircase-study.html">View Project →</a>
     </div>
 
     <h2 class="year">2025</h2>
 
     <div class="timeline-item">
-      <div class="date">March 13, 2025</div>
-      <h3>3rd Place – FCOE 3D CAD Competition</h3>
-      <p>Recognized for CAD modeling ability, design creativity, and technical problem-solving.</p>
-      <span class="tag">Award</span>
+      <div class="date">November 2025</div>
+      <div class="timeline-title">
+        <span class="icon">👷</span>
+        <h3>ASCE Member</h3>
+      </div>
+      <p>Joined the American Society of Civil Engineers to continue professional development in civil engineering.</p>
+      <span class="tag">Professional Development</span>
     </div>
 
     <div class="timeline-item">
-      <div class="date">April 12, 2025</div>
-      <h3>2nd Place – SkillsUSA Drafting & GD&T</h3>
-      <p>Recognized for technical drafting accuracy, GD&T application, and engineering communication.</p>
-      <span class="tag">Award</span>
-    </div>
-
-    <div class="timeline-item">
-      <div class="date">April 30, 2025</div>
-      <h3>Stadium Design & Scale Model</h3>
-      <p>Developed a conceptual stadium model using SolidWorks, 3D printing, laser cutting, and hand assembly.</p>
-      <span class="tag">Project</span>
-    </div>
-
-    <div class="timeline-item">
-      <div class="date">May 23, 2025</div>
-      <h3>Graduated Fresno City College</h3>
-      <p>Earned Associate of Science in Industrial Technology with Manufacturing Emphasis. GPA: 4.00.</p>
-      <span class="tag">Education</span>
-    </div>
-
-    <div class="timeline-item">
-      <div class="date">May 28, 2025</div>
-      <h3>Graduated CTEC High School</h3>
-      <p>Graduated from Career Technical Education Charter High School. GPA: 4.00.</p>
-      <span class="tag">Education</span>
-    </div>
-
-    <div class="timeline-item">
-      <div class="date">June 1, 2025</div>
-      <h3>Completed SAF-T-CAB Internship</h3>
-      <p>Completed internship experience involving technical drawings, engineering documentation, and manufacturing support.</p>
-      <span class="tag">Internship</span>
-    </div>
-
-    <div class="timeline-item">
-      <div class="date">August 20, 2025</div>
-      <h3>Started Fresno State</h3>
+      <div class="date">August 2025</div>
+      <div class="timeline-title">
+        <span class="icon">🎓</span>
+        <h3>Started Fresno State</h3>
+      </div>
       <p>Started pursuing a Bachelor of Science in Civil Engineering at California State University, Fresno.</p>
       <span class="tag">Education</span>
     </div>
 
     <div class="timeline-item">
-      <div class="date">November 1, 2025</div>
-      <h3>ASCE Member</h3>
-      <p>Joined the American Society of Civil Engineers to continue professional development in civil engineering.</p>
-      <span class="tag">Professional Development</span>
-    </div>
-
-    <h2 class="year">2026</h2>
-
-    <div class="timeline-item">
-      <div class="date">April 31, 2026</div>
-      <h3>Stairway Evacuation Study Presentation</h3>
-      <p>Presented research studying stairway flow, congestion, and evacuation performance.</p>
-      <span class="tag">Research</span>
+      <div class="date">June 2025</div>
+      <div class="timeline-title">
+        <span class="icon">💼</span>
+        <h3>Completed SAF-T-CAB Internship</h3>
+      </div>
+      <p>Completed internship experience involving technical drawings, engineering documentation, and manufacturing support.</p>
+      <span class="tag">Internship</span>
     </div>
 
     <div class="timeline-item">
-      <div class="date">May 30, 2026</div>
-      <h3>Structural Design Calculators</h3>
-      <p>Created Excel-based engineering tools for basement wall design, seismic loading, and vertical force distribution.</p>
-      <span class="tag">Engineering Tools</span>
+      <div class="date">May 2025</div>
+      <div class="timeline-title">
+        <span class="icon">🎓</span>
+        <h3>Graduated Fresno City College</h3>
+      </div>
+      <p>Earned Associate of Science in Industrial Technology with Manufacturing Emphasis. GPA: 4.00.</p>
+      <span class="tag">Education</span>
     </div>
 
     <div class="timeline-item">
-      <div class="date">June 15, 2026</div>
-      <h3>Residential Wood House Design</h3>
-      <p>Started active structural design project involving architectural review, load calculations, and framing plans.</p>
-      <span class="tag">Active Project</span>
+      <div class="date">May 2025</div>
+      <div class="timeline-title">
+        <span class="icon">🎓</span>
+        <h3>Graduated CTEC High School</h3>
+      </div>
+      <p>Graduated from Career Technical Education Charter High School. GPA: 4.00.</p>
+      <span class="tag">Education</span>
+    </div>
+
+    <div class="timeline-item">
+      <div class="date">April 2025</div>
+      <div class="timeline-title">
+        <span class="icon">🛠️</span>
+        <h3>Stadium Design & Scale Model</h3>
+      </div>
+      <p>Developed a conceptual stadium model using SolidWorks, 3D printing, laser cutting, and hand assembly.</p>
+      <span class="tag">Project</span><br>
+      <a class="timeline-link" href="projects/stadium.html">View Project →</a>
+    </div>
+
+    <div class="timeline-item">
+      <div class="date">April 2025</div>
+      <div class="timeline-title">
+        <span class="icon">🏆</span>
+        <h3>2nd Place – SkillsUSA Drafting & GD&T</h3>
+      </div>
+      <p>Recognized for technical drafting accuracy, GD&T application, and engineering communication.</p>
+      <span class="tag">Award</span>
+    </div>
+
+    <div class="timeline-item">
+      <div class="date">March 2025</div>
+      <div class="timeline-title">
+        <span class="icon">🏆</span>
+        <h3>3rd Place – FCOE 3D CAD Competition</h3>
+      </div>
+      <p>Recognized for CAD modeling ability, design creativity, and technical problem-solving.</p>
+      <span class="tag">Award</span>
+    </div>
+
+    <h2 class="year">2024</h2>
+
+    <div class="timeline-item">
+      <div class="date">December 2024</div>
+      <div class="timeline-title">
+        <span class="icon">🏛️</span>
+        <h3>Metropolitan Cathedral Model</h3>
+      </div>
+      <p>Created a detailed scale model studying architectural form, foundation behavior, and unstable soil conditions.</p>
+      <span class="tag">Project</span><br>
+      <a class="timeline-link" href="projects/metropolitan-cathedral.html">View Project →</a>
+    </div>
+
+    <div class="timeline-item">
+      <div class="date">September 2024</div>
+      <div class="timeline-title">
+        <span class="icon">💼</span>
+        <h3>Engineering Internship – SAF-T-CAB</h3>
+      </div>
+      <p>Started engineering internship experience involving manufacturing, design, and technical documentation.</p>
+      <span class="tag">Internship</span>
+    </div>
+
+    <div class="timeline-item">
+      <div class="date">September 2024</div>
+      <div class="timeline-title">
+        <span class="icon">🏆</span>
+        <h3>1st Place – AWS Competition</h3>
+      </div>
+      <p>Earned 1st place for a research and poster presentation focused on welding defects and quality control.</p>
+      <span class="tag">Award</span>
+    </div>
+
+    <div class="timeline-item">
+      <div class="date">May 2024</div>
+      <div class="timeline-title">
+        <span class="icon">🛠️</span>
+        <h3>Farm Workers Monument</h3>
+      </div>
+      <p>Designed and fabricated a commemorative structure honoring the legacy and contributions of farm workers.</p>
+      <span class="tag">Project</span><br>
+      <a class="timeline-link" href="projects/farm-workers-monument.html">View Project →</a>
+    </div>
+
+    <h2 class="year">2023</h2>
+
+    <div class="timeline-item">
+      <div class="date">December 2023</div>
+      <div class="timeline-title">
+        <span class="icon">🔥</span>
+        <h3>Armenian Firepit</h3>
+      </div>
+      <p>Designed and fabricated a commemorative firepit inspired by Tsitsernakabert, the Armenian Genocide Memorial.</p>
+      <span class="tag">Project</span><br>
+      <a class="timeline-link" href="projects/armenian-firepit.html">View Project →</a>
+    </div>
+
+    <div class="timeline-item">
+      <div class="date">May 2023</div>
+      <div class="timeline-title">
+        <span class="icon">🏆</span>
+        <h3>CTEC Pillars Award</h3>
+      </div>
+      <p>Received the CTEC Pillars Award for representing the school values: You Matter, Be Present, Raise the Bar, and Create an Impact.</p>
+      <span class="tag">Award</span>
+    </div>
+
+    <div class="timeline-item">
+      <div class="date">May 2023</div>
+      <div class="timeline-title">
+        <span class="icon">📜</span>
+        <h3>CSWA Certification</h3>
+      </div>
+      <p>Earned Certified SolidWorks Associate certification in mechanical design.</p>
+      <span class="tag">Certification</span>
+    </div>
+
+    <div class="timeline-item">
+      <div class="date">May 2023</div>
+      <div class="timeline-title">
+        <span class="icon">❤️</span>
+        <h3>CPR / AED Certification</h3>
+      </div>
+      <p>Completed American Heart Association Heartsaver CPR/AED training.</p>
+      <span class="tag">Certification</span>
+    </div>
+
+    <div class="timeline-item">
+      <div class="date">February 2023</div>
+      <div class="timeline-title">
+        <span class="icon">🦺</span>
+        <h3>OSHA-10 Certification</h3>
+      </div>
+      <p>Completed OSHA 10-Hour General Industry safety training.</p>
+      <span class="tag">Certification</span>
+    </div>
+
+    <h2 class="year">2021</h2>
+
+    <div class="timeline-item">
+      <div class="date">Fall 2021</div>
+      <div class="timeline-title">
+        <span class="icon">🎓</span>
+        <h3>Started CTEC High School</h3>
+      </div>
+      <p>Began technical education focused on engineering, manufacturing, CAD, and fabrication.</p>
+      <span class="tag">Education</span>
+    </div>
+
+    <div class="timeline-item">
+      <div class="date">Fall 2021</div>
+      <div class="timeline-title">
+        <span class="icon">🎓</span>
+        <h3>Started Fresno City College</h3>
+      </div>
+      <p>Began pursuing college coursework while also attending high school.</p>
+      <span class="tag">Education</span>
     </div>
 
   </div>
-
 </div>
 
 <footer>
