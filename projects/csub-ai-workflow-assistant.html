@@ -6,7 +6,7 @@
 
 <meta
     name="description"
-    content="CSUB AI Workflow Assistant, a full-stack web application developed for California State University, Bakersfield."
+    content="CSUB AI Workflow Assistant, a cloud-based application created to help university staff navigate student hiring procedures, forms, policies, and grant information."
 >
 
 <title>CSUB AI Workflow Assistant | Artur Martirosyan</title>
@@ -264,8 +264,24 @@ footer{
 }
 
 @media (max-width:700px){
+    .hero{
+        padding:75px 20px;
+    }
+
     .hero h1{
         font-size:38px;
+    }
+
+    .container{
+        padding:55px 20px;
+    }
+
+    .section{
+        margin-top:55px;
+    }
+
+    .section h2{
+        font-size:28px;
     }
 
     .feature-grid{
@@ -305,9 +321,9 @@ footer{
     <h1>CSUB AI Workflow Assistant</h1>
 
     <p>
-        A full-stack cloud application developed for California State University,
-        Bakersfield to simplify student hiring workflows, locate forms, answer
-        policy questions, and provide grant information from one application.
+        A cloud-based application created to help university staff find the
+        right forms, follow student hiring procedures, and access policy and
+        grant information in one place.
     </p>
 </section>
 
@@ -320,58 +336,40 @@ footer{
     >
 
     <div class="section">
-        <h2>Project Overview</h2>
+        <h2>The Problem</h2>
         <div class="gold-line"></div>
 
         <p>
-            The CSUB AI Workflow Assistant is a full-stack web application
-            developed for California State University, Bakersfield through the
-            AI Summer Camp at Cal Poly.
+            University hiring procedures can be difficult to navigate when
+            forms, policies, approval routes, and grant information are spread
+            across different documents and systems. Staff may need to search
+            through several resources before knowing what to do next.
         </p>
 
         <p>
-            The application was created to simplify the student hiring process
-            by helping university staff navigate hiring workflows, determine
-            which forms are required, understand approval routing, answer policy
-            questions, and access grant information from a single location.
+            Through Cal Poly's AI Summer Camp, I worked on an application for
+            California State University, Bakersfield that brings this
+            information into one guided experience. The goal was to make the
+            process easier to follow without sacrificing the accuracy required
+            for administrative work.
         </p>
     </div>
 
     <div class="section">
-        <h2>Project Challenge</h2>
+        <h2>Choosing the Right Approach</h2>
         <div class="gold-line"></div>
 
         <p>
-            University hiring processes can involve multiple forms, funding
-            sources, approval paths, grant records, checklists, and policy
-            documents. Staff may need to search through several resources before
-            identifying the correct procedure for a single hiring request.
+            One of the main decisions was determining which parts of the system
+            should use AI and which parts should follow fixed rules. A chatbot
+            alone would not be reliable enough for every administrative task.
         </p>
 
         <p>
-            The goal was to create a system that made this information easier to
-            access while maintaining accuracy and ensuring that important
-            administrative decisions remained grounded in official university
-            procedures.
-        </p>
-    </div>
-
-    <div class="section">
-        <h2>Hybrid System Design</h2>
-        <div class="gold-line"></div>
-
-        <p>
-            Instead of relying entirely on a general-purpose chatbot, the
-            application uses a hybrid architecture. Guided hiring workflows and
-            grant lookups use deterministic application logic, allowing the
-            system to provide consistent results based on established rules.
-        </p>
-
-        <p>
-            Policy and documentation questions are handled using Amazon Bedrock
-            with a Knowledge Base built from official university documents.
-            This allows the AI component to retrieve information from trusted
-            sources rather than responding only from general model knowledge.
+            Guided hiring workflows and grant lookups use structured application
+            logic so the same inputs lead to consistent results. AI is used for
+            questions that require searching policy documents and explaining
+            information in plain language.
         </p>
     </div>
 
@@ -382,50 +380,56 @@ footer{
         <div class="feature-grid">
 
             <div class="feature-card">
-                <h3>Guided Hiring Workflows</h3>
+                <h3>Guided Hiring Workflow</h3>
+
                 <p>
-                    Guides staff through hire type, funding source, required
-                    forms, approval routing, and checklist requirements.
+                    Walks users through the hire type, funding source, required
+                    forms, approval route, and next steps.
                 </p>
             </div>
 
             <div class="feature-card">
-                <h3>Grant Information Lookup</h3>
+                <h3>Grant Information</h3>
+
                 <p>
-                    Provides relevant fund numbers, project numbers, principal
-                    investigators, and grant analyst information.
+                    Helps users locate fund numbers, project numbers, principal
+                    investigators, and grant contacts.
                 </p>
             </div>
 
             <div class="feature-card">
-                <h3>Grounded Policy Answers</h3>
+                <h3>Policy Questions</h3>
+
                 <p>
-                    Uses Amazon Bedrock and official university documentation to
-                    answer policy and procedural questions.
+                    Searches official university documents before generating an
+                    answer to a policy or procedure question.
                 </p>
             </div>
 
             <div class="feature-card">
                 <h3>Administrative Summary</h3>
+
                 <p>
-                    Produces a clear summary showing the recommended form,
-                    funding source, routing information, and next steps.
+                    Organizes the selected form, funding information, routing,
+                    and next steps into one clear summary.
                 </p>
             </div>
 
             <div class="feature-card">
-                <h3>Automated Document Processing</h3>
+                <h3>Document Updates</h3>
+
                 <p>
-                    Processes newly uploaded university documents and adds their
-                    information to the AI Knowledge Base.
+                    Processes newly uploaded university documents so the
+                    assistant can use more current information.
                 </p>
             </div>
 
             <div class="feature-card">
-                <h3>Expandable Workflow Platform</h3>
+                <h3>Expandable Design</h3>
+
                 <p>
-                    The application was structured so additional administrative
-                    workflows can be added as future modules.
+                    Allows additional university workflows to be added without
+                    rebuilding the entire application.
                 </p>
             </div>
 
@@ -433,20 +437,21 @@ footer{
     </div>
 
     <div class="section">
-        <h2>System Architecture</h2>
+        <h2>How the System Works</h2>
         <div class="gold-line"></div>
 
         <p>
-            The application separates the user interface, API routes, backend
-            processing, AI services, and document update workflow. The Next.js
-            frontend receives user questions and selections, while AWS Lambda
-            handles backend requests and communicates with Amazon Bedrock.
+            The application separates the user interface, backend processing,
+            AI services, and university documents. The Next.js interface
+            collects the user's questions and selections, while AWS Lambda
+            handles requests behind the scenes.
         </p>
 
         <p>
-            Amazon Bedrock searches the Knowledge Base containing official CSUB
-            documents before generating policy-based answers. Guardrails are
-            also used to support safer and more responsible responses.
+            For policy questions, Amazon Bedrock searches a Knowledge Base built
+            from official CSUB documents before generating a response. This
+            keeps the assistant focused on university information instead of
+            relying only on the model's general knowledge.
         </p>
 
         <img
@@ -457,14 +462,20 @@ footer{
     </div>
 
     <div class="section">
-        <h2>Application Interface</h2>
+        <h2>Designing the Interface</h2>
         <div class="gold-line"></div>
 
         <p>
-            The interface was designed around clear, guided interactions rather
-            than presenting users with only an empty chat box. Visible workflow
-            steps, structured choices, status indicators, and final summaries
-            help staff understand where they are in the process.
+            I wanted the application to feel more helpful than an empty chat
+            box. The interface uses visible steps, structured choices, status
+            indicators, and summaries so users can understand where they are in
+            the process.
+        </p>
+
+        <p>
+            This was especially important for the hiring workflow because users
+            need more than a final answer. They also need to understand which
+            choices led to that result.
         </p>
 
         <div class="gallery">
@@ -481,8 +492,8 @@ footer{
                     <h3>Guided Hiring Workflow</h3>
 
                     <p>
-                        A step-by-step process helps users determine the correct
-                        hiring type, funding source, required forms, and approval
+                        Users move through a step-by-step process to identify the
+                        hire type, funding source, required forms, and approval
                         route.
                     </p>
                 </div>
@@ -500,8 +511,8 @@ footer{
                     <h3>Hiring Summary</h3>
 
                     <p>
-                        The completed workflow organizes essential hiring and
-                        grant information into one clear administrative summary.
+                        The final screen brings the important hiring, funding,
+                        and routing information together in one place.
                     </p>
                 </div>
             </div>
@@ -510,12 +521,14 @@ footer{
     </div>
 
     <div class="section">
-        <h2>Automated Document Update Pipeline</h2>
+        <h2>Updating University Documents</h2>
         <div class="gold-line"></div>
 
         <p>
-            The application includes an automated process for keeping the
-            assistant current when university documentation changes.
+            Policies and procedures change, so the assistant also needed a way
+            to use updated university documents. The document pipeline was
+            designed to process new files and add their information to the
+            Knowledge Base.
         </p>
 
         <div class="pipeline">
@@ -524,11 +537,11 @@ footer{
                 <div class="step-number">1</div>
 
                 <div>
-                    <h3>Upload to Amazon S3</h3>
+                    <h3>Upload the Document</h3>
 
                     <p>
-                        An administrator uploads an updated university document
-                        to a designated Amazon S3 bucket.
+                        An administrator uploads a new or revised university
+                        document to an Amazon S3 bucket.
                     </p>
                 </div>
             </div>
@@ -537,11 +550,11 @@ footer{
                 <div class="step-number">2</div>
 
                 <div>
-                    <h3>AWS Lambda Trigger</h3>
+                    <h3>Start the Processing Workflow</h3>
 
                     <p>
-                        The new upload automatically triggers a serverless
-                        processing workflow using AWS Lambda.
+                        The upload triggers an AWS Lambda function that begins
+                        processing the document.
                     </p>
                 </div>
             </div>
@@ -550,11 +563,11 @@ footer{
                 <div class="step-number">3</div>
 
                 <div>
-                    <h3>Amazon Textract Processing</h3>
+                    <h3>Extract the Information</h3>
 
                     <p>
-                        Amazon Textract extracts text and structured information
-                        from scanned documents when necessary.
+                        Amazon Textract can extract text and structured
+                        information from scanned documents when needed.
                     </p>
                 </div>
             </div>
@@ -563,12 +576,11 @@ footer{
                 <div class="step-number">4</div>
 
                 <div>
-                    <h3>Knowledge Base Update</h3>
+                    <h3>Update the Knowledge Base</h3>
 
                     <p>
                         The processed content is added to the Amazon Bedrock
-                        Knowledge Base so the assistant can use the latest
-                        official information without code changes or redeployment.
+                        Knowledge Base so it can be used in future answers.
                     </p>
                 </div>
             </div>
@@ -598,20 +610,22 @@ footer{
     </div>
 
     <div class="section">
-        <h2>Skills Demonstrated</h2>
+        <h2>What I Learned</h2>
         <div class="gold-line"></div>
 
         <p>
-            This project strengthened my experience in full-stack development,
-            cloud computing, serverless architecture, API development, AI
-            integration, document automation, and user-centered software design.
+            The biggest lesson from this project was that AI should not be used
+            for every part of a system. Some tasks need flexible, document-based
+            answers, while others need fixed rules and predictable results.
+            Choosing between those approaches was just as important as building
+            the application itself.
         </p>
 
         <p>
-            It also reinforced the importance of understanding client needs,
-            selecting the appropriate type of logic for each task, grounding AI
-            responses in trusted information, and building systems that are
-            maintainable and scalable.
+            I also learned how much the user experience matters in a technical
+            project. A system can have a strong backend, but it still needs to
+            explain information clearly and help users feel confident about
+            what to do next.
         </p>
     </div>
 
