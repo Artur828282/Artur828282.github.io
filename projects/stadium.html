@@ -4,35 +4,177 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<meta
+  name="description"
+  content="A conceptual stadium design developed in CAD and built as a physical scale model using 3D printing, laser cutting, and hand assembly."
+>
+
 <title>Stadium Design & Scale Model | Artur Martirosyan</title>
 
 <style>
-:root{--navy:#0b1f3a;--navy-light:#142c54;--gold:#c9a15a;--light:#f8f8f6;}
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:Arial,sans-serif;background:var(--light);color:#222;line-height:1.7;}
-nav{background:var(--navy);padding:18px 30px;}
-nav a{color:white;text-decoration:none;font-weight:bold;}
-nav a:hover{color:var(--gold);}
-.hero{background:linear-gradient(135deg,var(--navy),var(--navy-light));color:white;text-align:center;padding:100px 20px;}
-.hero h1{font-size:52px;margin-bottom:15px;}
-.hero p{max-width:850px;margin:auto;color:#e0e0e0;}
-.container{max-width:1100px;margin:auto;padding:80px 24px;}
-.main-image{width:100%;border-radius:12px;box-shadow:0 15px 35px rgba(0,0,0,.15);}
-.section{margin-top:70px;}
-.section h2{color:var(--navy);margin-bottom:15px;font-size:32px;}
-.gold-line{width:70px;height:3px;background:var(--gold);margin-bottom:25px;}
-.skills{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px;}
-.skill{background:var(--navy);color:white;padding:10px 16px;border-radius:30px;font-size:14px;}
-.note{background:white;border:1px solid #ddd;padding:24px;border-radius:10px;margin-top:25px;}
-.project-nav{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:50px;}
-.back-btn{display:inline-block;background:var(--gold);color:var(--navy);text-decoration:none;padding:14px 22px;border-radius:4px;font-weight:bold;}
-.back-btn:hover{background:#e2c88b;}
-footer{background:var(--navy);color:white;text-align:center;padding:25px;margin-top:80px;}
+:root{
+  --navy:#0b1f3a;
+  --navy-light:#142c54;
+  --gold:#c9a15a;
+  --light:#f8f8f6;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:var(--light);
+  color:#222;
+  line-height:1.7;
+}
+
+nav{
+  background:var(--navy);
+  padding:18px 30px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+nav a:hover{
+  color:var(--gold);
+}
+
+.hero{
+  background:linear-gradient(135deg,var(--navy),var(--navy-light));
+  color:white;
+  text-align:center;
+  padding:100px 20px;
+}
+
+.hero h1{
+  font-size:52px;
+  margin-bottom:15px;
+}
+
+.hero p{
+  max-width:850px;
+  margin:auto;
+  color:#e0e0e0;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:80px 24px;
+}
+
+.main-image{
+  display:block;
+  width:100%;
+  border-radius:12px;
+  box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+.section{
+  margin-top:70px;
+}
+
+.section h2{
+  color:var(--navy);
+  margin-bottom:15px;
+  font-size:32px;
+}
+
+.gold-line{
+  width:70px;
+  height:3px;
+  background:var(--gold);
+  margin-bottom:25px;
+}
+
+.section p + p{
+  margin-top:20px;
+}
+
+.note{
+  background:white;
+  border:1px solid #ddd;
+  padding:24px;
+  border-radius:10px;
+  margin-top:25px;
+}
+
+.note h3{
+  color:var(--navy);
+  font-size:22px;
+  margin-bottom:10px;
+}
+
+.project-nav{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-top:50px;
+}
+
+.back-btn{
+  display:inline-block;
+  background:var(--gold);
+  color:var(--navy);
+  text-decoration:none;
+  padding:14px 22px;
+  border-radius:4px;
+  font-weight:bold;
+}
+
+.back-btn:hover{
+  background:#e2c88b;
+}
+
+footer{
+  background:var(--navy);
+  color:white;
+  text-align:center;
+  padding:25px;
+  margin-top:80px;
+}
 
 @media (max-width:700px){
-  .hero h1{font-size:38px;}
-  .project-nav{flex-direction:column;}
-  .back-btn{text-align:center;}
+  .hero{
+    padding:75px 20px;
+  }
+
+  .hero h1{
+    font-size:38px;
+  }
+
+  .container{
+    padding:55px 20px;
+  }
+
+  .section{
+    margin-top:55px;
+  }
+
+  .section h2{
+    font-size:28px;
+  }
+
+  .project-nav{
+    flex-direction:column;
+  }
+
+  .back-btn{
+    text-align:center;
+  }
 }
 </style>
 </head>
@@ -40,115 +182,170 @@ footer{background:var(--navy);color:white;text-align:center;padding:25px;margin-
 <body>
 
 <nav>
-<a href="../index.html#projects">← Back to Portfolio</a>
+  <a href="../index.html#projects">← Back to Portfolio</a>
 </nav>
 
 <section class="hero">
-<h1>Stadium Design & Scale Model</h1>
-<p>
-A conceptual stadium project exploring structural efficiency, architectural form,
-and spectator experience through digital modeling and physical fabrication.
-</p>
+  <h1>Stadium Design & Scale Model</h1>
+
+  <p>
+    A conceptual stadium developed in CAD and built as a physical model to
+    explore form, seating, circulation, and large-scale design.
+  </p>
 </section>
 
 <div class="container">
 
-<img class="main-image" src="../Stadium.png" alt="Stadium Design">
+  <img
+    class="main-image"
+    src="../Stadium.png"
+    alt="Completed conceptual stadium scale model"
+  >
 
-<div class="section">
-<h2>Project Overview</h2>
-<div class="gold-line"></div>
+  <div class="section">
+    <h2>The Project</h2>
+    <div class="gold-line"></div>
 
-<p>
-This project involved designing a conceptual stadium and transforming the design
-into a physical scale model. The goal was to balance structural efficiency,
-visual appearance, and the overall spectator experience.
-</p>
-</div>
+    <p>
+      This project began with the challenge of designing a stadium that felt
+      visually complete while still being practical to build as a scale model.
+      I wanted the design to communicate the size and character of a real venue
+      without making the physical model unnecessarily complicated.
+    </p>
 
-<div class="section">
-<h2>Design Objectives</h2>
-<div class="gold-line"></div>
+    <p>
+      I developed the stadium digitally in SolidWorks and then used 3D printing,
+      laser cutting, and hand assembly to turn the design into a finished model.
+    </p>
+  </div>
 
-<p>
-The project focused on understanding the challenges associated with large-span
-structures, seating arrangements, circulation, and overall stadium layout.
-Special attention was given to creating a design that was both functional and visually appealing.
-</p>
-</div>
+  <div class="section">
+    <h2>Designing the Stadium</h2>
+    <div class="gold-line"></div>
 
-<div class="section">
-<h2>Model Development</h2>
-<div class="gold-line"></div>
+    <p>
+      Stadium design involves more than shaping an exterior shell. The seating,
+      field, entrances, circulation paths, roofline, and surrounding structure
+      all need to feel connected.
+    </p>
 
-<p>
-The stadium was designed in SolidWorks as a complete digital model before fabrication began.
-The design process included developing the overall geometry, seating configuration,
-structural framing concepts, and architectural features.
-</p>
+    <p>
+      I focused on creating a clear overall form and arranging the seating so
+      the model would still read as a functioning stadium. I also considered how
+      people would enter, move through, and experience the space, even though
+      the project remained conceptual.
+    </p>
 
-<br>
+    <div class="note">
+      <h3>Designing at Model Scale</h3>
 
-<p>
-After the digital model was completed, components were manufactured using 3D printing
-and laser cutting techniques before being assembled by hand into the final scale model.
-</p>
-</div>
+      <p>
+        Some details that work in a full-size design become too small or fragile
+        in a physical model. I had to simplify certain features while keeping
+        the overall stadium recognizable and visually balanced.
+      </p>
+    </div>
+  </div>
 
-<div class="section">
-<h2>Fabrication Process</h2>
-<div class="gold-line"></div>
+  <div class="section">
+    <h2>From CAD to Physical Model</h2>
+    <div class="gold-line"></div>
 
-<p>
-The project required coordination between digital design and physical construction.
-Individual components were prepared for fabrication, manufactured using multiple methods,
-and carefully assembled to create a detailed representation of the final stadium concept.
-</p>
-</div>
+    <p>
+      Before fabrication, I divided the digital model into parts based on how
+      each one could be produced. Components with more complex geometry were
+      better suited for 3D printing, while flatter pieces could be prepared for
+      laser cutting.
+    </p>
 
-<div class="section">
-<h2>Tools & Skills</h2>
-<div class="gold-line"></div>
+    <p>
+      This required thinking ahead about scale, material thickness, part fit,
+      and assembly order. A component could look correct in SolidWorks but still
+      be difficult to print, cut, or connect to the rest of the model.
+    </p>
+  </div>
 
-<div class="skills">
-<div class="skill">SolidWorks</div>
-<div class="skill">3D Printing</div>
-<div class="skill">Laser Cutting</div>
-<div class="skill">Physical Modeling</div>
-<div class="skill">Structural Concepts</div>
-<div class="skill">Hand Assembly</div>
-</div>
-</div>
+  <div class="section">
+    <h2>Fabrication and Assembly</h2>
+    <div class="gold-line"></div>
 
-<div class="section">
-<h2>Project Gallery</h2>
-<div class="gold-line"></div>
+    <p>
+      After the parts were produced, I assembled the stadium by hand. This stage
+      involved fitting the seating areas, structural pieces, exterior elements,
+      and base together while checking alignment throughout the build.
+    </p>
 
-<div class="note">
-Additional renderings, fabrication photos, model details, and design process images can be added here
-as the project archive grows.
-</div>
-</div>
+    <p>
+      Small differences between the digital model and the fabricated parts
+      became more noticeable during assembly. Some pieces required adjustment so
+      that the final model would sit correctly and maintain its intended shape.
+    </p>
+  </div>
 
-<div class="section">
-<h2>Skills Demonstrated</h2>
-<div class="gold-line"></div>
+  <div class="section">
+    <h2>Balancing Form and Structure</h2>
+    <div class="gold-line"></div>
 
-<p>
-This project demonstrates conceptual design, large-scale structural thinking,
-digital modeling, fabrication planning, and physical model construction.
-</p>
-</div>
+    <p>
+      One of the main ideas I explored was how a stadium can feel open and
+      visually light while still appearing supported. Large venues often use
+      repeating structural elements to create rhythm, carry loads, and define
+      the architectural character of the building.
+    </p>
 
-<div class="project-nav">
-<a class="back-btn" href="metropolitan-cathedral.html">← Metropolitan Cathedral</a>
-<a class="back-btn" href="armenian-firepit.html">Armenian Firepit →</a>
-</div>
+    <p>
+      Although this was not a full structural design, developing the model made
+      me think about span, support locations, symmetry, and how structural
+      systems influence the appearance of a large public space.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>What I Learned</h2>
+    <div class="gold-line"></div>
+
+    <p>
+      This project taught me that physical models reveal problems that are easy
+      to overlook on a computer screen. Part thickness, connection points,
+      tolerances, and assembly order all became important once fabrication
+      began.
+    </p>
+
+    <p>
+      It also helped me understand how design decisions affect the overall
+      experience of a space. The seating, circulation, structure, and exterior
+      form could not be developed as separate pieces because each one influenced
+      the others.
+    </p>
+
+    <p>
+      My favorite part of the project was seeing the stadium move from a digital
+      concept into something physical. That process made the design feel more
+      real and gave me a better understanding of how ideas change as they move
+      from modeling into fabrication.
+    </p>
+  </div>
+
+  <div class="project-nav">
+    <a
+      class="back-btn"
+      href="metropolitan-cathedral.html"
+    >
+      ← Metropolitan Cathedral
+    </a>
+
+    <a
+      class="back-btn"
+      href="armenian-firepit.html"
+    >
+      Armenian Firepit →
+    </a>
+  </div>
 
 </div>
 
 <footer>
-© 2026 Artur Martirosyan
+  © 2026 Artur Martirosyan
 </footer>
 
 </body>
