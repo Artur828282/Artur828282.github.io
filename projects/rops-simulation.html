@@ -1,536 +1,611 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<meta
-    name="description"
-    content="ROPS structural analysis project involving SAE J1194 requirements, portal-frame calculations, nonlinear finite element analysis, and rollover protection."
->
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<title>ROPS Structural Analysis | Artur Martirosyan</title>
+    <meta
+        name="description"
+        content="ROPS structural analysis project involving SAE J1194 requirements, portal-frame calculations, nonlinear finite element analysis, and rollover protection."
+    >
 
-<style>
-:root{
-    --navy:#0b1f3a;
-    --navy-light:#142c54;
-    --gold:#c9a15a;
-    --light:#f8f8f6;
-}
+    <title>ROPS Structural Analysis | Artur Martirosyan</title>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+    <style>
+        :root {
+            --navy: #0b1f3a;
+            --navy-light: #142c54;
+            --gold: #c9a15a;
+            --gold-hover: #e2c88b;
+            --light: #f8f8f6;
+            --white: #ffffff;
+            --text: #252525;
+            --muted: #555555;
+            --border: #e8e8e4;
+            --shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+            --shadow-large: 0 16px 40px rgba(0, 0, 0, 0.14);
+        }
 
-html{
-    scroll-behavior:smooth;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body{
-    font-family:Arial, sans-serif;
-    background:var(--light);
-    color:#222;
-    line-height:1.7;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-nav{
-    background:var(--navy);
-    padding:18px 30px;
-}
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-}
+        img,
+        video {
+            max-width: 100%;
+        }
 
-nav a:hover{
-    color:var(--gold);
-}
+        nav {
+            background: var(--navy);
+            padding: 17px 24px;
+        }
 
-.hero{
-    background:linear-gradient(135deg,var(--navy),var(--navy-light));
-    color:white;
-    text-align:center;
-    padding:100px 20px;
-}
+        .nav-inner {
+            width: min(100%, 960px);
+            margin: 0 auto;
+        }
 
-.hero h1{
-    font-size:52px;
-    margin-bottom:15px;
-}
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.2s ease;
+        }
 
-.hero p{
-    max-width:850px;
-    margin:auto;
-    color:#e0e0e0;
-}
+        nav a:hover,
+        nav a:focus-visible {
+            color: var(--gold);
+        }
 
-.container{
-    max-width:1100px;
-    margin:auto;
-    padding:80px 24px;
-}
+        .hero {
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--navy),
+                    var(--navy-light)
+                );
+            color: var(--white);
+            text-align: center;
+            padding: 92px 24px;
+        }
 
-.main-image{
-    display:block;
-    width:100%;
-    border-radius:12px;
-    box-shadow:0 15px 35px rgba(0,0,0,.15);
-}
+        .hero-content {
+            width: min(100%, 820px);
+            margin: 0 auto;
+        }
 
-.section{
-    margin-top:70px;
-}
+        .hero h1 {
+            margin-bottom: 16px;
+            font-size: clamp(2.4rem, 6vw, 3.4rem);
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+        }
 
-.section h2{
-    color:var(--navy);
-    margin-bottom:15px;
-    font-size:32px;
-}
+        .hero p {
+            max-width: 720px;
+            margin: 0 auto;
+            color: #e4e8ee;
+            font-size: 1.08rem;
+        }
 
-.gold-line{
-    width:70px;
-    height:3px;
-    background:var(--gold);
-    margin-bottom:25px;
-}
+        .container {
+            width: min(100% - 40px, 960px);
+            margin: 0 auto;
+            padding: 72px 0 20px;
+        }
 
-.section p + p{
-    margin-top:20px;
-}
+        .main-image {
+            display: block;
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: var(--shadow-large);
+        }
 
-.highlight-box{
-    margin-top:25px;
-    padding:28px;
-    background:white;
-    border-left:5px solid var(--gold);
-    border-radius:8px;
-    box-shadow:0 8px 24px rgba(0,0,0,.07);
-}
+        .section {
+            margin-top: 68px;
+        }
 
-.highlight-box h3{
-    color:var(--navy);
-    margin-bottom:10px;
-    font-size:22px;
-}
+        .section h2 {
+            color: var(--navy);
+            margin-bottom: 12px;
+            font-size: clamp(1.8rem, 4vw, 2.15rem);
+            line-height: 1.25;
+            letter-spacing: -0.015em;
+        }
 
-.process{
-    display:grid;
-    gap:18px;
-    margin-top:25px;
-}
+        .gold-line {
+            width: 68px;
+            height: 3px;
+            margin-bottom: 24px;
+            background: var(--gold);
+        }
 
-.process-step{
-    display:grid;
-    grid-template-columns:55px 1fr;
-    gap:18px;
-    align-items:start;
-    background:white;
-    border-radius:10px;
-    padding:22px;
-    box-shadow:0 8px 24px rgba(0,0,0,.07);
-}
+        .section > p {
+            max-width: 800px;
+            font-size: 1.03rem;
+        }
 
-.step-number{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    width:48px;
-    height:48px;
-    border-radius:50%;
-    background:var(--navy);
-    color:white;
-    font-weight:bold;
-}
+        .section > p + p {
+            margin-top: 18px;
+        }
 
-.process-step h3{
-    color:var(--navy);
-    margin-bottom:5px;
-    font-size:20px;
-}
+        .process {
+            display: grid;
+            gap: 16px;
+            margin-top: 28px;
+        }
 
-.video-container{
-    margin-top:25px;
-    background:white;
-    border-radius:12px;
-    overflow:hidden;
-    box-shadow:0 15px 35px rgba(0,0,0,.15);
-}
+        .process-step {
+            display: grid;
+            grid-template-columns: 52px minmax(0, 1fr);
+            gap: 18px;
+            align-items: start;
+            padding: 22px 24px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
 
-.simulation-video{
-    display:block;
-    width:100%;
-    height:auto;
-    background:#000;
-}
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: var(--navy);
+            color: var(--white);
+            font-weight: 700;
+            line-height: 1;
+        }
 
-.video-caption{
-    padding:20px 24px;
-}
+        .process-step h3 {
+            margin-bottom: 4px;
+            color: var(--navy);
+            font-size: 1.22rem;
+            line-height: 1.35;
+        }
 
-.video-caption h3{
-    color:var(--navy);
-    margin-bottom:6px;
-    font-size:21px;
-}
+        .process-step p {
+            max-width: 730px;
+        }
 
-.video-caption p{
-    color:#555;
-}
+        .video-container {
+            margin-top: 28px;
+            overflow: hidden;
+            background: #000;
+            border-radius: 12px;
+            box-shadow: var(--shadow-large);
+        }
 
-.project-nav{
-    display:flex;
-    justify-content:space-between;
-    gap:20px;
-    flex-wrap:wrap;
-    margin-top:50px;
-}
+        .simulation-video {
+            display: block;
+            width: 100%;
+            height: auto;
+            background: #000;
+        }
 
-.back-btn{
-    display:inline-block;
-    background:var(--gold);
-    color:var(--navy);
-    text-decoration:none;
-    padding:14px 22px;
-    border-radius:4px;
-    font-weight:bold;
-}
+        .project-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 18px;
+            margin-top: 72px;
+        }
 
-.back-btn:hover{
-    background:#e2c88b;
-}
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 12px 20px;
+            background: var(--gold);
+            color: var(--navy);
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 700;
+            transition:
+                background-color 0.2s ease,
+                transform 0.2s ease;
+        }
 
-footer{
-    background:var(--navy);
-    color:white;
-    text-align:center;
-    padding:25px;
-    margin-top:80px;
-}
+        .back-btn:hover,
+        .back-btn:focus-visible {
+            background: var(--gold-hover);
+            transform: translateY(-2px);
+        }
 
-@media (max-width:700px){
-    .hero{
-        padding:75px 20px;
-    }
+        footer {
+            margin-top: 72px;
+            padding: 24px;
+            background: var(--navy);
+            color: var(--white);
+            text-align: center;
+        }
 
-    .hero h1{
-        font-size:38px;
-    }
+        @media (max-width: 700px) {
+            .hero {
+                padding: 68px 20px;
+            }
 
-    .container{
-        padding:55px 20px;
-    }
+            .hero p {
+                font-size: 1rem;
+            }
 
-    .section{
-        margin-top:55px;
-    }
+            .container {
+                width: min(100% - 32px, 960px);
+                padding-top: 50px;
+            }
 
-    .section h2{
-        font-size:28px;
-    }
+            .section {
+                margin-top: 52px;
+            }
 
-    .process-step{
-        grid-template-columns:1fr;
-    }
+            .section > p {
+                font-size: 1rem;
+            }
 
-    .project-nav{
-        flex-direction:column;
-    }
+            .process-step {
+                grid-template-columns: 44px minmax(0, 1fr);
+                gap: 14px;
+                padding: 20px;
+            }
 
-    .back-btn{
-        text-align:center;
-    }
-}
-</style>
+            .step-number {
+                width: 42px;
+                height: 42px;
+            }
+
+            .project-nav {
+                flex-direction: column;
+                align-items: stretch;
+                margin-top: 56px;
+            }
+
+            .back-btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 460px) {
+            nav {
+                padding: 15px 18px;
+            }
+
+            .container {
+                width: min(100% - 24px, 960px);
+            }
+
+            .process-step {
+                grid-template-columns: 1fr;
+            }
+
+            .step-number {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<nav>
-    <a href="../index.html#projects">← Back to Portfolio</a>
-</nav>
-
-<section class="hero">
-    <h1>ROPS Structural Analysis</h1>
-
-    <p>
-        A study of how rollover protective structures absorb energy and protect
-        the operator through structural calculations, nonlinear simulation, and
-        engineering design.
-    </p>
-</section>
-
-<div class="container">
-
-    <img
-        class="main-image"
-        src="../tractor.png"
-        alt="Agricultural tractor with a rollover protective structure and operator clearance zone"
-    >
-
-    <div class="section">
-        <h2>The Challenge</h2>
-        <div class="gold-line"></div>
-
-        <p>
-            Rollover protective structures, commonly called ROPS, are designed
-            to protect tractor operators during a rollover. The structure must
-            absorb a large amount of energy while keeping a safe clearance zone
-            around the operator.
-        </p>
-
-        <p>
-            For this project, I studied the early design and validation process
-            by reconstructing the required calculations, reviewing the frame's
-            load path, developing the structural model, and evaluating its
-            behavior through nonlinear finite element analysis.
-        </p>
-    </div>
-
-    <div class="section">
-        <h2>Design Requirement</h2>
-        <div class="gold-line"></div>
-
-        <p>
-            One of the most interesting parts of this project was learning that
-            a ROPS is not designed to remain perfectly rigid. Controlled
-            permanent deformation can help the frame absorb rollover energy.
-        </p>
-
-        <p>
-            The important requirement is that the deformation remains stable.
-            The structure must stay attached to the tractor and must not enter
-            the protected operator clearance zone.
-        </p>
-
-    </div>
-
-    <div class="section">
-        <h2>SAE J1194 Requirements</h2>
-        <div class="gold-line"></div>
-
-        <p>
-            SAE J1194 outlines the testing requirements for rollover protective
-            structures used on wheeled agricultural tractors. The standard
-            includes side loading, rear loading, and a vertical crush test.
-        </p>
-
-        <p>
-            Together, these tests evaluate whether the structure can absorb the
-            required energy, remain connected to the tractor, and continue
-            protecting the operator after it has deformed.
-        </p>
-    </div>
-
-    <div class="section">
-        <h2>My Approach</h2>
-        <div class="gold-line"></div>
-
-        <div class="process">
-
-            <div class="process-step">
-                <div class="step-number">1</div>
-
-                <div>
-                    <h3>Identify the Tractor</h3>
-
-                    <p>
-                        Start with the tractor mass, operating weight, and other
-                        machine information needed to establish the test
-                        requirements.
-                    </p>
-                </div>
-            </div>
-
-            <div class="process-step">
-                <div class="step-number">2</div>
-
-                <div>
-                    <h3>Calculate the Required Loads</h3>
-
-                    <p>
-                        Use SAE J1194 to determine the required side energy,
-                        rear energy, and vertical crush load.
-                    </p>
-                </div>
-            </div>
-
-            <div class="process-step">
-                <div class="step-number">3</div>
-
-                <div>
-                    <h3>Perform Preliminary Analysis</h3>
-
-                    <p>
-                        Model the structure as a simplified portal frame to
-                        estimate reactions, internal forces, and critical
-                        bending moments.
-                    </p>
-                </div>
-            </div>
-
-            <div class="process-step">
-                <div class="step-number">4</div>
-
-                <div>
-                    <h3>Develop the Structural Model</h3>
-
-                    <p>
-                        Build the frame around the required operator clearance
-                        zone and define the tubes, mounts, and connections.
-                    </p>
-                </div>
-            </div>
-
-            <div class="process-step">
-                <div class="step-number">5</div>
-
-                <div>
-                    <h3>Run the Nonlinear Simulation</h3>
-
-                    <p>
-                        Study deformation, stress development, load transfer,
-                        plastic behavior, and protection of the clearance zone.
-                    </p>
-                </div>
-            </div>
-            </div>
-
+    <nav>
+        <div class="nav-inner">
+            <a href="../index.html#projects">
+                ← Back to Portfolio
+            </a>
         </div>
-    </div>
+    </nav>
 
-    <div class="section">
-        <h2>Nonlinear Simulation</h2>
-        <div class="gold-line"></div>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>ROPS Structural Analysis</h1>
 
-        <p>
-            Because the frame is expected to experience permanent deformation,
-            a basic linear analysis would not fully represent its behavior. I
-            used nonlinear finite element analysis to study how the frame
-            deforms, where stresses develop, and whether the protected space
-            remains clear.
-        </p>
+            <p>
+                An investigation of how rollover protective structures absorb
+                energy and protect operators through structural calculations,
+                nonlinear simulation, and engineering design.
+            </p>
+        </div>
+    </header>
 
-        <div class="video-container">
-            <video
-                class="simulation-video"
-                autoplay
-                muted
-                loop
-                playsinline
-                preload="auto"
-                aria-label="ROPS finite element simulation"
+    <main class="container">
+
+        <img
+            class="main-image"
+            src="../tractor.png"
+            alt="Agricultural tractor with a rollover protective structure and operator clearance zone"
+        >
+
+        <section class="section">
+            <h2>The Challenge</h2>
+            <div class="gold-line"></div>
+
+            <p>
+                Rollover protective structures, commonly called ROPS, are
+                designed to protect tractor operators during a rollover. The
+                structure must absorb a significant amount of energy while
+                maintaining a safe clearance zone around the operator.
+            </p>
+
+            <p>
+                For this project, I studied the early design and validation
+                process by reconstructing the required calculations, reviewing
+                the frame's load path, developing a structural model, and
+                evaluating its behavior through nonlinear finite element
+                analysis.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Design Requirement</h2>
+            <div class="gold-line"></div>
+
+            <p>
+                One of the most interesting aspects of this project was learning
+                that a ROPS is not designed to remain perfectly rigid.
+                Controlled permanent deformation allows the frame to absorb
+                rollover energy.
+            </p>
+
+            <p>
+                The critical requirement is that this deformation remains
+                stable. The structure must stay attached to the tractor and
+                must not enter the protected operator clearance zone.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>SAE J1194 Requirements</h2>
+            <div class="gold-line"></div>
+
+            <p>
+                SAE J1194 outlines testing requirements for rollover protective
+                structures used on wheeled agricultural tractors. The standard
+                includes side loading, rear loading, and a vertical crush test.
+            </p>
+
+            <p>
+                Together, these tests evaluate whether the structure can absorb
+                the required energy, remain connected to the tractor, and
+                continue protecting the operator after deformation occurs.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>My Approach</h2>
+            <div class="gold-line"></div>
+
+            <div class="process">
+
+                <article class="process-step">
+                    <div class="step-number">1</div>
+
+                    <div>
+                        <h3>Identify the Tractor</h3>
+
+                        <p>
+                            Begin with the tractor mass, operating weight, and
+                            other machine information needed to establish the
+                            testing requirements.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="process-step">
+                    <div class="step-number">2</div>
+
+                    <div>
+                        <h3>Calculate the Required Loads</h3>
+
+                        <p>
+                            Use SAE J1194 to determine the required side energy,
+                            rear energy, and vertical crush load.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="process-step">
+                    <div class="step-number">3</div>
+
+                    <div>
+                        <h3>Perform Preliminary Analysis</h3>
+
+                        <p>
+                            Model the structure as a simplified portal frame to
+                            estimate reactions, internal forces, and critical
+                            bending moments.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="process-step">
+                    <div class="step-number">4</div>
+
+                    <div>
+                        <h3>Develop the Structural Model</h3>
+
+                        <p>
+                            Build the frame around the required operator
+                            clearance zone and define the tubes, mounts, and
+                            connections.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="process-step">
+                    <div class="step-number">5</div>
+
+                    <div>
+                        <h3>Run the Nonlinear Simulation</h3>
+
+                        <p>
+                            Study deformation, stress development, load
+                            transfer, plastic behavior, and protection of the
+                            operator clearance zone.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Nonlinear Simulation</h2>
+            <div class="gold-line"></div>
+
+            <p>
+                Because the frame is expected to experience permanent
+                deformation, a basic linear analysis would not fully represent
+                its behavior. I used nonlinear finite element analysis to study
+                how the frame deforms, where stresses develop, and whether the
+                protected operator space remains clear.
+            </p>
+
+            <div class="video-container">
+                <video
+                    class="simulation-video"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    controls
+                    preload="metadata"
+                    aria-label="ROPS finite element simulation"
+                >
+                    <source
+                        src="../simulation.mp4"
+                        type="video/mp4"
+                    >
+
+                    Your browser does not support the video element.
+                </video>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Reviewing the Model</h2>
+            <div class="gold-line"></div>
+
+            <p>
+                The simulation helped me understand how loads move through the
+                frame and where the greatest structural demands occur. I paid
+                particular attention to the fixed bases, upper corners, tube
+                bends, mounting plates, weld locations, and fastener
+                connections.
+            </p>
+
+            <p>
+                I also learned that a high stress value does not automatically
+                mean the design has failed. Sharp corners, idealized supports,
+                poor mesh connections, and unrealistic boundary conditions can
+                create numerical stress concentrations that must be reviewed
+                carefully.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Energy Absorption</h2>
+            <div class="gold-line"></div>
+
+            <p>
+                ROPS performance is evaluated using the relationship between
+                applied force and structural deflection. The area under the
+                force-deflection curve represents the energy absorbed by the
+                frame.
+            </p>
+
+            <p>
+                This means that deformation alone is not necessarily a failure.
+                What matters is whether the frame absorbs enough energy,
+                deforms in a stable manner, remains attached, and preserves the
+                protected operator space.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Manufacturing and Testing</h2>
+            <div class="gold-line"></div>
+
+            <p>
+                Even a detailed simulation cannot capture every factor that
+                affects the final structure. Material properties, weld quality,
+                tube forming, fasteners, mounting stiffness, manufacturing
+                tolerances, and assembly can all influence how the frame
+                behaves.
+            </p>
+
+            <p>
+                This is why physical testing remains an essential part of the
+                qualification process. The tested structure must represent the
+                production design because changes in materials, weld
+                procedures, or connections can alter both energy absorption and
+                the final failure mode.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>What I Learned</h2>
+            <div class="gold-line"></div>
+
+            <p>
+                Before this project, I thought the primary goal of structural
+                design was to prevent yielding whenever possible. Learning how
+                a ROPS uses controlled deformation to absorb energy gave me a
+                broader perspective on structural behavior.
+            </p>
+
+            <p>
+                The project also demonstrated how requirements, hand
+                calculations, CAD, simulation, manufacturing, and physical
+                testing support one another. Analysis helps predict how a
+                structure may behave, while testing confirms how the actual
+                design and manufacturing process perform together.
+            </p>
+        </section>
+
+        <nav class="project-nav" aria-label="Project navigation">
+            <a
+                class="back-btn"
+                href="../index.html#projects"
             >
-                <source src="../simulation.mp4" type="video/mp4">
+                ← All Projects
+            </a>
 
-                Your browser does not support the video element.
-            </video>
-        </div>
-    </div>
+            <a
+                class="back-btn"
+                href="engineering-calculators.html"
+            >
+                Structural Design Calculators →
+            </a>
+        </nav>
 
-    <div class="section">
-        <h2>Reviewing the Model</h2>
-        <div class="gold-line"></div>
+    </main>
 
-        <p>
-            The simulation helped me understand how loads move through the frame
-            and where the largest demands occur. I paid particular attention to
-            the fixed bases, upper corners, tube bends, mounting plates, weld
-            locations, and fastener connections.
-        </p>
-
-        <p>
-            I also learned that a high stress value does not automatically mean
-            the design has failed. Sharp corners, idealized supports, poor mesh
-            connections, and unrealistic boundary conditions can create
-            numerical stress concentrations that need to be reviewed carefully.
-        </p>
-    </div>
-
-    <div class="section">
-        <h2>Energy Absorption</h2>
-        <div class="gold-line"></div>
-
-        <p>
-            ROPS performance is evaluated using the relationship between applied
-            force and structural deflection. The area under the
-            force-deflection curve represents the energy absorbed by the frame.
-        </p>
-
-        <p>
-            This means that deformation by itself is not necessarily a failure.
-            What matters is whether the frame absorbs enough energy, deforms in
-            a stable way, remains attached, and preserves the protected operator
-            space.
-        </p>
-
-    </div>
-
-    <div class="section">
-        <h2>Manufacturing and Testing</h2>
-        <div class="gold-line"></div>
-
-        <p>
-            Even a detailed simulation cannot capture everything that affects
-            the final structure. Material properties, weld quality, tube
-            forming, fasteners, mounting stiffness, manufacturing tolerances,
-            and assembly can all change how the frame behaves.
-        </p>
-
-        <p>
-            This is why physical testing is still an important part of the
-            qualification process. The tested structure must represent the
-            production design because changes in materials, weld procedures, or
-            connections can change both the energy absorption and the final
-            failure mode.
-        </p>
-    </div>
-
-    <div class="section">
-        <h2>What I Learned</h2>
-        <div class="gold-line"></div>
-
-        <p>
-            Before this project, I thought the main goal of structural design
-            was to prevent yielding whenever possible. Learning how a ROPS uses
-            controlled deformation to absorb energy gave me a different
-            perspective on structural behavior.
-        </p>
-
-        <p>
-            The project also showed me how requirements, hand calculations,
-            CAD, simulation, manufacturing, and physical testing support one
-            another. Analysis helps predict how a structure may behave, but
-            testing confirms how the actual design and manufacturing process
-            perform together.
-        </p>
-    </div>
-
-    <div class="project-nav">
-        <a
-            class="back-btn"
-            href="../index.html#projects"
-        >
-            ← All Projects
-        </a>
-
-        <a
-            class="back-btn"
-            href="engineering-calculators.html"
-        >
-            Structural Design Calculators →
-        </a>
-    </div>
-
-</div>
-
-<footer>
-    © 2026 Artur Martirosyan
-</footer>
+    <footer>
+        © 2026 Artur Martirosyan
+    </footer>
 
 </body>
 </html>
