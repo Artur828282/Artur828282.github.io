@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<meta
+  name="description"
+  content="A detailed scale model of the Metropolitan Cathedral exploring architectural form, model fabrication, soil instability, and long-term foundation settlement."
+>
+
 <title>Metropolitan Cathedral Structural Model | Artur Martirosyan</title>
 
 <style>
@@ -18,6 +23,10 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
 }
 
 body{
@@ -67,6 +76,7 @@ nav a:hover{
 }
 
 .main-image{
+  display:block;
   width:100%;
   border-radius:12px;
   box-shadow:0 15px 35px rgba(0,0,0,.15);
@@ -89,37 +99,123 @@ nav a:hover{
   margin-bottom:25px;
 }
 
-.skills{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
+.section p + p{
   margin-top:20px;
 }
 
-.skill{
+.process{
+  display:grid;
+  gap:18px;
+  margin-top:25px;
+}
+
+.process-step{
+  display:grid;
+  grid-template-columns:55px 1fr;
+  gap:18px;
+  align-items:start;
+  background:white;
+  border-radius:10px;
+  padding:22px;
+  box-shadow:0 8px 24px rgba(0,0,0,.07);
+}
+
+.step-number{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:48px;
+  height:48px;
+  border-radius:50%;
   background:var(--navy);
   color:white;
-  padding:10px 16px;
-  border-radius:30px;
-  font-size:14px;
+  font-weight:bold;
+}
+
+.process-step h3{
+  color:var(--navy);
+  margin-bottom:5px;
+  font-size:20px;
+}
+
+.feature-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px;
+  margin-top:25px;
+}
+
+.feature-card{
+  background:white;
+  border-radius:10px;
+  padding:25px;
+  box-shadow:0 8px 24px rgba(0,0,0,.08);
+  border-top:4px solid var(--gold);
+}
+
+.feature-card h3{
+  color:var(--navy);
+  margin-bottom:10px;
+  font-size:21px;
+}
+
+.feature-card p{
+  color:#444;
+}
+
+.highlight-box{
+  margin-top:25px;
+  padding:28px;
+  background:white;
+  border-left:5px solid var(--gold);
+  border-radius:8px;
+  box-shadow:0 8px 24px rgba(0,0,0,.07);
+}
+
+.highlight-box h3{
+  color:var(--navy);
+  margin-bottom:10px;
+  font-size:22px;
 }
 
 .gallery{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-  margin-top:20px;
+  display:flex;
+  justify-content:center;
+  margin-top:25px;
 }
 
-.gallery img{
+.gallery-card{
   width:100%;
+  max-width:720px;
+  background:white;
+  padding:20px;
   border-radius:12px;
   box-shadow:0 12px 30px rgba(0,0,0,.12);
+}
+
+.gallery-card img{
+  display:block;
+  width:100%;
+  border-radius:10px;
   transition:.3s;
 }
 
-.gallery img:hover{
-  transform:scale(1.02);
+.gallery-card img:hover{
+  transform:scale(1.01);
+}
+
+.gallery-caption{
+  padding:20px 8px 4px;
+}
+
+.gallery-caption h3{
+  color:var(--navy);
+  margin-bottom:7px;
+  font-size:22px;
+}
+
+.gallery-caption p{
+  color:#555;
 }
 
 .project-nav{
@@ -154,12 +250,36 @@ footer{
 
 @media (max-width:700px){
 
+  .hero{
+    padding:75px 20px;
+  }
+
   .hero h1{
     font-size:38px;
   }
 
-  .gallery{
+  .container{
+    padding:55px 20px;
+  }
+
+  .section{
+    margin-top:55px;
+  }
+
+  .section h2{
+    font-size:28px;
+  }
+
+  .process-step{
     grid-template-columns:1fr;
+  }
+
+  .feature-grid{
+    grid-template-columns:1fr;
+  }
+
+  .gallery-card{
+    padding:12px;
   }
 
   .project-nav{
@@ -176,127 +296,304 @@ footer{
 <body>
 
 <nav>
-<a href="../index.html#projects">← Back to Portfolio</a>
+  <a href="../index.html#projects">← Back to Portfolio</a>
 </nav>
 
 <section class="hero">
-<h1>Metropolitan Cathedral Structural Model</h1>
-<p>
-A detailed scale model studying architectural form, foundation behavior, and the structural challenges
-of building on unstable soil.
-</p>
+  <h1>Metropolitan Cathedral Structural Model</h1>
+
+  <p>
+    A scale-model project exploring the cathedral's architecture, model
+    fabrication, and the foundation settlement caused by unstable ground.
+  </p>
 </section>
 
 <div class="container">
 
-<img class="main-image" src="../Metropolitan.png" alt="Metropolitan Cathedral Model">
+  <img
+    class="main-image"
+    src="../Metropolitan.png"
+    alt="Completed Metropolitan Cathedral scale model"
+  >
 
-<div class="section">
-<h2>Project Overview</h2>
-<div class="gold-line"></div>
+  <div class="section">
+    <h2>The Project</h2>
+    <div class="gold-line"></div>
 
-<p>
-This project focused on creating a detailed scale model of the Metropolitan Cathedral while studying
-the structural challenges related to unstable and sinking soil conditions.
-</p>
+    <p>
+      This project combined two things I wanted to understand: how to recreate
+      a complex historic building as a physical model and why a structure of
+      this size can experience settlement over time.
+    </p>
 
-<br>
+    <p>
+      I modeled and assembled a detailed representation of the Metropolitan
+      Cathedral while studying the unstable soil beneath it. That gave the
+      project a deeper purpose than simply reproducing its appearance.
+    </p>
+  </div>
 
-<p>
-The project combined architectural modeling, fabrication planning, and structural thinking to better
-understand how large historic structures respond to difficult foundation conditions.
-</p>
+  <div class="section">
+    <h2>Studying the Architecture</h2>
+    <div class="gold-line"></div>
 
-</div>
+    <p>
+      The cathedral has many layers of detail, including towers, openings,
+      columns, walls, and changes in elevation. Recreating every feature at full
+      complexity would have made the model difficult to fabricate and assemble.
+    </p>
 
-<div class="section">
-<h2>Design Objective</h2>
-<div class="gold-line"></div>
+    <p>
+      I had to decide which architectural elements were essential to the
+      cathedral's identity and which ones could be simplified. The goal was to
+      preserve its recognizable form while creating parts that could be cut,
+      printed, and assembled accurately.
+    </p>
+  </div>
 
-<p>
-The objective was to recreate the cathedral in a physical model while also highlighting the engineering
-issues connected to foundation settlement, soil instability, and long-term structural behavior.
-</p>
+  <div class="section">
+    <h2>From CAD to Physical Model</h2>
+    <div class="gold-line"></div>
 
-</div>
+    <div class="process">
 
-<div class="section">
-<h2>Modeling & Fabrication Process</h2>
-<div class="gold-line"></div>
+      <div class="process-step">
+        <div class="step-number">1</div>
 
-<p>
-The model was first developed in 3D using SolidWorks. Additional parts were prepared using Onshape
-and Adobe Illustrator to create pieces suitable for laser cutting and 3D printing.
-</p>
+        <div>
+          <h3>Study the Building</h3>
 
-<br>
+          <p>
+            Review the cathedral's overall form, proportions, towers, walls,
+            openings, and important architectural details.
+          </p>
+        </div>
+      </div>
 
-<p>
-After fabrication, the model was assembled by hand. This process required planning each component,
-checking fit between pieces, and balancing visual detail with constructability.
-</p>
+      <div class="process-step">
+        <div class="step-number">2</div>
 
-</div>
+        <div>
+          <h3>Develop the Digital Model</h3>
 
-<div class="section">
-<h2>Engineering Focus</h2>
-<div class="gold-line"></div>
+          <p>
+            Recreate the structure in CAD and separate it into components that
+            could be fabricated and assembled.
+          </p>
+        </div>
+      </div>
 
-<p>
-A major focus of the project was understanding how unstable soil can affect large structures.
-The project explored foundation behavior, architectural resilience, and possible reinforcement strategies
-that could help address movement or settlement over time.
-</p>
+      <div class="process-step">
+        <div class="step-number">3</div>
 
-</div>
+        <div>
+          <h3>Prepare the Parts</h3>
 
-<div class="section">
-<h2>Tools & Skills</h2>
-<div class="gold-line"></div>
+          <p>
+            Use SolidWorks, Onshape, and Adobe Illustrator to prepare geometry
+            for laser cutting and 3D printing.
+          </p>
+        </div>
+      </div>
 
-<div class="skills">
-<div class="skill">SolidWorks</div>
-<div class="skill">Onshape</div>
-<div class="skill">Adobe Illustrator</div>
-<div class="skill">Laser Cutting</div>
-<div class="skill">3D Printing</div>
-<div class="skill">Hand Assembly</div>
-<div class="skill">Foundation Concepts</div>
-</div>
+      <div class="process-step">
+        <div class="step-number">4</div>
 
-</div>
+        <div>
+          <h3>Fabricate the Components</h3>
 
-<div class="section">
-<h2>Project Gallery</h2>
-<div class="gold-line"></div>
+          <p>
+            Produce the walls, towers, decorative pieces, and supporting parts
+            using the most suitable fabrication method for each component.
+          </p>
+        </div>
+      </div>
 
-<div class="gallery">
-<img src="../Metropolitan.png" alt="Metropolitan Cathedral Physical Model">
-<img src="../Metropolitan CAD.png" alt="Metropolitan Cathedral CAD Model">
-</div>
+      <div class="process-step">
+        <div class="step-number">5</div>
 
-</div>
+        <div>
+          <h3>Assemble the Model</h3>
 
-<div class="section">
-<h2>Skills Demonstrated</h2>
-<div class="gold-line"></div>
+          <p>
+            Fit the pieces together by hand, correct alignment issues, and
+            complete the final architectural model.
+          </p>
+        </div>
+      </div>
 
-<p>
-This project demonstrates architectural modeling, fabrication planning, structural reasoning,
-and the ability to connect design details with real engineering challenges.
-</p>
+    </div>
+  </div>
 
-</div>
+  <div class="section">
+    <h2>The Foundation Problem</h2>
+    <div class="gold-line"></div>
 
-<div class="project-nav">
-<a class="back-btn" href="farm-workers-monument.html">← Farm Workers Monument</a>
-<a class="back-btn" href="stadium.html">Stadium Design & Scale Model →</a>
-</div>
+    <p>
+      While researching the cathedral, I learned that its long-term movement is
+      connected to the ground beneath it. A large and heavy structure does not
+      always settle evenly, especially when it is supported by soft or
+      inconsistent soil.
+    </p>
+
+    <p>
+      When one area settles more than another, the building can experience
+      differential settlement. That movement can lead to tilting, cracking,
+      distortion, and changes in how loads travel through the structure.
+    </p>
+
+    <div class="highlight-box">
+      <h3>What Made This Interesting</h3>
+
+      <p>
+        The cathedral may look rigid and permanent, but its behavior is still
+        influenced by slow changes in the soil below it. The project helped me
+        see that structural performance depends on the ground as much as the
+        building itself.
+      </p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Understanding Subsidence</h2>
+    <div class="gold-line"></div>
+
+    <div class="feature-grid">
+
+      <div class="feature-card">
+        <h3>Compressible Soil</h3>
+
+        <p>
+          Soft ground can compress under the weight of a large structure,
+          causing the foundation to move gradually over time.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Uneven Settlement</h3>
+
+        <p>
+          Different parts of the building may settle at different rates,
+          creating distortion instead of uniform downward movement.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Changing Ground Conditions</h3>
+
+        <p>
+          Changes in moisture, groundwater, and surrounding soil conditions can
+          influence how the ground supports the structure.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Long-Term Structural Effects</h3>
+
+        <p>
+          Continued movement can affect walls, towers, connections, finishes,
+          and the overall alignment of the building.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Responding to Settlement</h2>
+    <div class="gold-line"></div>
+
+    <p>
+      I also studied the types of approaches engineers can consider when a
+      historic structure experiences uneven settlement. The right response
+      depends on the soil, foundation system, rate of movement, and condition of
+      the building.
+    </p>
+
+    <p>
+      Possible strategies can include monitoring the movement, improving or
+      strengthening the foundation, transferring loads to more stable ground,
+      and carefully correcting uneven elevations. For a historic building,
+      every intervention must also protect the original structure and
+      architectural character.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>CAD Model</h2>
+    <div class="gold-line"></div>
+
+    <div class="gallery">
+
+      <div class="gallery-card">
+
+        <img
+          src="../Metropolitan CAD.png"
+          alt="CAD model of the Metropolitan Cathedral"
+        >
+
+        <div class="gallery-caption">
+          <h3>Digital Model</h3>
+
+          <p>
+            The CAD model was divided into manageable components so the
+            cathedral's form could be recreated through laser cutting, 3D
+            printing, and hand assembly.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>What I Learned</h2>
+    <div class="gold-line"></div>
+
+    <p>
+      Building the model taught me how much planning is required to turn a
+      detailed digital design into a physical object. Small errors in scale,
+      alignment, or part thickness could affect several pieces during assembly.
+    </p>
+
+    <p>
+      The research also introduced me to the connection between structural
+      engineering and geotechnical conditions. Before this project, I mostly
+      thought about the structure above ground. Learning about subsidence showed
+      me how soil behavior can influence a building for decades or even
+      centuries.
+    </p>
+
+    <p>
+      That combination made this project especially valuable to me. I was able
+      to build something visually detailed while also learning about a real
+      engineering problem hidden beneath the architecture.
+    </p>
+  </div>
+
+  <div class="project-nav">
+
+    <a
+      class="back-btn"
+      href="farm-workers-monument.html"
+    >
+      ← Farm Workers Monument
+    </a>
+
+    <a
+      class="back-btn"
+      href="stadium.html"
+    >
+      Stadium Design & Scale Model →
+    </a>
+
+  </div>
 
 </div>
 
 <footer>
-© 2026 Artur Martirosyan
+  © 2026 Artur Martirosyan
 </footer>
 
 </body>
