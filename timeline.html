@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<meta
+  name="description"
+  content="A timeline of Artur Martirosyan's education, engineering projects, research, internships, competitions, and professional development."
+>
+
 <title>Engineering Journey | Artur Martirosyan</title>
 
 <style>
@@ -20,6 +25,10 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
 }
 
 body{
@@ -111,7 +120,7 @@ nav a:hover{
 
 .summary-grid{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:repeat(3,1fr);
   gap:20px;
   margin-bottom:80px;
 }
@@ -146,6 +155,10 @@ nav a:hover{
   color:var(--navy);
   font-size:36px;
   margin:55px 0 25px;
+}
+
+.year:first-child{
+  margin-top:0;
 }
 
 .timeline-item{
@@ -224,6 +237,25 @@ nav a:hover{
   color:var(--navy);
 }
 
+.reflection-box{
+  background:white;
+  border-radius:16px;
+  padding:34px;
+  margin-top:75px;
+  box-shadow:0 12px 34px rgba(0,0,0,.08);
+  border-left:6px solid var(--gold);
+}
+
+.reflection-box h2{
+  color:var(--navy);
+  font-size:32px;
+  margin-bottom:14px;
+}
+
+.reflection-box p{
+  color:#444;
+}
+
 footer{
   background:var(--navy);
   color:white;
@@ -258,8 +290,25 @@ footer{
     left:-38px;
   }
 
+  .timeline-title{
+    align-items:flex-start;
+  }
+
+  .hero{
+    padding:80px 20px;
+  }
+
   .hero h1{
     font-size:36px;
+  }
+
+  .container{
+    padding:55px 20px;
+  }
+
+  .current-box,
+  .reflection-box{
+    padding:26px;
   }
 }
 </style>
@@ -273,9 +322,10 @@ footer{
 
 <section class="hero">
   <h1>Engineering Journey</h1>
+
   <p>
-    Building one project at a time — a timeline of my education, projects, certifications,
-    competitions, research, and professional growth.
+    A timeline of the projects, experiences, and opportunities that have
+    shaped my path into civil engineering.
   </p>
 </section>
 
@@ -285,32 +335,30 @@ footer{
     <h2>Currently</h2>
 
     <div class="current-grid">
+
       <div class="current-item">
         <h3>🎓 Civil Engineering Student</h3>
         <p>California State University, Fresno</p>
       </div>
 
       <div class="current-item">
-        <h3>🟢 Active Project</h3>
+        <h3>🟢 Current Project</h3>
         <p>Residential Wood House Structural Design</p>
       </div>
 
       <div class="current-item">
-        <h3>👷 ASCE Member</h3>
-        <p>Continuing professional development in civil engineering.</p>
+        <h3>👷 Professional Involvement</h3>
+        <p>Member of the American Society of Civil Engineers</p>
       </div>
+
     </div>
   </div>
 
   <div class="summary-grid">
-    <div class="summary-card">
-      <h3>2021</h3>
-      <p>Journey Started</p>
-    </div>
 
     <div class="summary-card">
       <h3>9</h3>
-      <p>Engineering Projects</p>
+      <p>Selected Projects</p>
     </div>
 
     <div class="summary-card">
@@ -320,8 +368,9 @@ footer{
 
     <div class="summary-card">
       <h3>3.91</h3>
-      <p>Current Fresno State GPA</p>
+      <p>Fresno State GPA</p>
     </div>
+
   </div>
 
   <div class="timeline">
@@ -329,146 +378,212 @@ footer{
     <h2 class="year">2026</h2>
 
     <div class="timeline-item">
-  <div class="date">July 2026</div>
+      <div class="date">July 2026</div>
 
-  <div class="timeline-title">
-    <span class="icon">☁️</span>
-    <h3>CSUB AI Workflow Assistant</h3>
-  </div>
+      <div class="timeline-title">
+        <span class="icon">☁️</span>
+        <h3>CSUB AI Workflow Assistant</h3>
+      </div>
 
-  <p>
-    Developed a full-stack application for California State University,
-    Bakersfield through the AI Summer Camp at Cal Poly. The system combines
-    deterministic student-hiring workflows with Amazon Bedrock, serverless
-    document processing, and a Knowledge Base grounded in official university
-    documentation.
-  </p>
+      <p>
+        Built an application through Cal Poly's AI Summer Camp to help CSUB
+        students and staff navigate university procedures using official
+        documentation.
+      </p>
 
-  <span class="tag">Cloud & AI</span>
+      <span class="tag">Cloud & AI</span>
 
-  <br>
+      <br>
 
-  <a
-    class="timeline-link"
-    href="projects/csub-ai-workflow-assistant.html"
-  >
-    View Project →
-  </a>
-</div>
-    
+      <a
+        class="timeline-link"
+        href="projects/csub-ai-workflow-assistant.html"
+      >
+        View Project →
+      </a>
+    </div>
+
     <div class="timeline-item">
       <div class="date">June 2026</div>
+
       <div class="timeline-title">
-        <span class="icon">🛠️</span>
+        <span class="icon">🏠</span>
         <h3>Residential Wood House Design</h3>
       </div>
-      <p>Started active structural design project involving architectural review, load calculations, and framing plans.</p>
-      <span class="tag">Active Project</span><br>
-      <a class="timeline-link" href="projects/residential-house.html">View Project →</a>
+
+      <p>
+        Began designing the structural framing for a residential wood-frame
+        home using architectural plans, load calculations, and framing layouts.
+      </p>
+
+      <span class="tag">In Progress</span>
+
+      <br>
+
+      <a
+        class="timeline-link"
+        href="projects/residential-house.html"
+      >
+        View Project →
+      </a>
     </div>
 
     <div class="timeline-item">
       <div class="date">May 2026</div>
+
       <div class="timeline-title">
         <span class="icon">🧮</span>
         <h3>Structural Design Calculators</h3>
       </div>
-      <p>Created Excel-based engineering tools for basement wall design, seismic loading, and vertical force distribution.</p>
-      <span class="tag">Engineering Tools</span><br>
-      <a class="timeline-link" href="projects/engineering-calculators.html">View Project →</a>
+
+      <p>
+        Created Excel tools for basement wall design, seismic loading, and
+        vertical force distribution to make common calculations easier to
+        organize and check.
+      </p>
+
+      <span class="tag">Engineering Tools</span>
+
+      <br>
+
+      <a
+        class="timeline-link"
+        href="projects/engineering-calculators.html"
+      >
+        View Project →
+      </a>
     </div>
 
     <div class="timeline-item">
       <div class="date">April 2026</div>
+
       <div class="timeline-title">
         <span class="icon">📖</span>
-        <h3>Stairway Evacuation Study Presentation</h3>
+        <h3>Stairway Evacuation Research Presentation</h3>
       </div>
-      <p>Presented research studying stairway flow, congestion, and evacuation performance.</p>
-      <span class="tag">Research</span><br>
-      <a class="timeline-link" href="projects/staircase-study.html">View Project →</a>
+
+      <p>
+        Presented research on how stairway congestion affects movement and
+        evacuation performance during emergencies.
+      </p>
+
+      <span class="tag">Research</span>
+
+      <br>
+
+      <a
+        class="timeline-link"
+        href="projects/staircase-study.html"
+      >
+        View Project →
+      </a>
     </div>
 
     <h2 class="year">2025</h2>
 
     <div class="timeline-item">
-      <div class="date">November 2025</div>
-      <div class="timeline-title">
-        <span class="icon">👷</span>
-        <h3>ASCE Member</h3>
-      </div>
-      <p>Joined the American Society of Civil Engineers to continue professional development in civil engineering.</p>
-      <span class="tag">Professional Development</span>
-    </div>
-
-    <div class="timeline-item">
       <div class="date">August 2025</div>
+
       <div class="timeline-title">
         <span class="icon">🎓</span>
-        <h3>Started Fresno State</h3>
+        <h3>Began Civil Engineering at Fresno State</h3>
       </div>
-      <p>Started pursuing a Bachelor of Science in Civil Engineering at California State University, Fresno.</p>
+
+      <p>
+        Began pursuing a Bachelor of Science in Civil Engineering at California
+        State University, Fresno.
+      </p>
+
       <span class="tag">Education</span>
     </div>
 
     <div class="timeline-item">
       <div class="date">June 2025</div>
+
       <div class="timeline-title">
         <span class="icon">💼</span>
         <h3>Completed SAF-T-CAB Internship</h3>
       </div>
-      <p>Completed internship experience involving technical drawings, engineering documentation, and manufacturing support.</p>
+
+      <p>
+        Completed an engineering internship focused on technical drawings,
+        manufacturing documentation, design support, and production processes.
+      </p>
+
       <span class="tag">Internship</span>
     </div>
 
     <div class="timeline-item">
       <div class="date">May 2025</div>
-      <div class="timeline-title">
-        <span class="icon">🎓</span>
-        <h3>Graduated Fresno City College</h3>
-      </div>
-      <p>Earned Associate of Science in Industrial Technology with Manufacturing Emphasis. GPA: 4.00.</p>
-      <span class="tag">Education</span>
-    </div>
 
-    <div class="timeline-item">
-      <div class="date">May 2025</div>
       <div class="timeline-title">
         <span class="icon">🎓</span>
-        <h3>Graduated CTEC High School</h3>
+        <h3>Graduated from Fresno City College and CTEC</h3>
       </div>
-      <p>Graduated from Career Technical Education Charter High School. GPA: 4.00.</p>
+
+      <p>
+        Earned an Associate of Science in Industrial Technology with a
+        Manufacturing Emphasis while graduating from CTEC High School. I
+        completed both programs with a 4.00 GPA.
+      </p>
+
       <span class="tag">Education</span>
     </div>
 
     <div class="timeline-item">
       <div class="date">April 2025</div>
+
       <div class="timeline-title">
-        <span class="icon">🛠️</span>
+        <span class="icon">🏟️</span>
         <h3>Stadium Design & Scale Model</h3>
       </div>
-      <p>Developed a conceptual stadium model using SolidWorks, 3D printing, laser cutting, and hand assembly.</p>
-      <span class="tag">Project</span><br>
-      <a class="timeline-link" href="projects/stadium.html">View Project →</a>
+
+      <p>
+        Designed and built a conceptual stadium model using SolidWorks,
+        3D printing, laser cutting, and hand assembly.
+      </p>
+
+      <span class="tag">Project</span>
+
+      <br>
+
+      <a
+        class="timeline-link"
+        href="projects/stadium.html"
+      >
+        View Project →
+      </a>
     </div>
 
     <div class="timeline-item">
       <div class="date">April 2025</div>
+
       <div class="timeline-title">
         <span class="icon">🏆</span>
-        <h3>2nd Place – SkillsUSA Drafting & GD&T</h3>
+        <h3>2nd Place — SkillsUSA Drafting & GD&T</h3>
       </div>
-      <p>Recognized for technical drafting accuracy, GD&T application, and engineering communication.</p>
+
+      <p>
+        Placed second in a competition focused on technical drafting and
+        geometric dimensioning and tolerancing.
+      </p>
+
       <span class="tag">Award</span>
     </div>
 
     <div class="timeline-item">
       <div class="date">March 2025</div>
+
       <div class="timeline-title">
         <span class="icon">🏆</span>
-        <h3>3rd Place – FCOE 3D CAD Competition</h3>
+        <h3>3rd Place — FCOE 3D CAD Competition</h3>
       </div>
-      <p>Recognized for CAD modeling ability, design creativity, and technical problem-solving.</p>
+
+      <p>
+        Placed third in a 3D CAD design competition hosted by the Fresno County
+        Office of Education.
+      </p>
+
       <span class="tag">Award</span>
     </div>
 
@@ -476,96 +591,142 @@ footer{
 
     <div class="timeline-item">
       <div class="date">December 2024</div>
+
       <div class="timeline-title">
         <span class="icon">🏛️</span>
         <h3>Metropolitan Cathedral Model</h3>
       </div>
-      <p>Created a detailed scale model studying architectural form, foundation behavior, and unstable soil conditions.</p>
-      <span class="tag">Project</span><br>
-      <a class="timeline-link" href="projects/metropolitan-cathedral.html">View Project →</a>
+
+      <p>
+        Built a detailed scale model to study the cathedral's architectural
+        form, foundation behavior, and the effects of unstable soil conditions.
+      </p>
+
+      <span class="tag">Project</span>
+
+      <br>
+
+      <a
+        class="timeline-link"
+        href="projects/metropolitan-cathedral.html"
+      >
+        View Project →
+      </a>
     </div>
 
     <div class="timeline-item">
       <div class="date">September 2024</div>
+
       <div class="timeline-title">
         <span class="icon">💼</span>
-        <h3>Engineering Internship – SAF-T-CAB</h3>
+        <h3>Joined SAF-T-CAB as an Engineering Intern</h3>
       </div>
-      <p>Started engineering internship experience involving manufacturing, design, and technical documentation.</p>
+
+      <p>
+        Began working with technical drawings, manufacturing documentation,
+        design changes, and production support.
+      </p>
+
       <span class="tag">Internship</span>
     </div>
 
     <div class="timeline-item">
       <div class="date">September 2024</div>
+
       <div class="timeline-title">
         <span class="icon">🏆</span>
-        <h3>1st Place – AWS Competition</h3>
+        <h3>1st Place — AWS Competition</h3>
       </div>
-      <p>Earned 1st place for a research and poster presentation focused on welding defects and quality control.</p>
+
+      <p>
+        Earned first place for a research and poster presentation on welding
+        defects and quality control.
+      </p>
+
       <span class="tag">Award</span>
     </div>
 
     <div class="timeline-item">
       <div class="date">May 2024</div>
+
       <div class="timeline-title">
         <span class="icon">🛠️</span>
         <h3>Farm Workers Monument</h3>
       </div>
-      <p>Designed and fabricated a commemorative structure honoring the legacy and contributions of farm workers.</p>
-      <span class="tag">Project</span><br>
-      <a class="timeline-link" href="projects/farm-workers-monument.html">View Project →</a>
+
+      <p>
+        Designed and fabricated a steel monument honoring the legacy and
+        contributions of farm workers.
+      </p>
+
+      <span class="tag">Project</span>
+
+      <br>
+
+      <a
+        class="timeline-link"
+        href="projects/farm-workers-monument.html"
+      >
+        View Project →
+      </a>
     </div>
 
     <h2 class="year">2023</h2>
 
     <div class="timeline-item">
       <div class="date">December 2023</div>
+
       <div class="timeline-title">
         <span class="icon">🔥</span>
         <h3>Armenian Firepit</h3>
       </div>
-      <p>Designed and fabricated a commemorative firepit inspired by Tsitsernakabert, the Armenian Genocide Memorial.</p>
-      <span class="tag">Project</span><br>
-      <a class="timeline-link" href="projects/armenian-firepit.html">View Project →</a>
+
+      <p>
+        Designed and fabricated a functional firepit inspired by
+        Tsitsernakaberd, the Armenian Genocide Memorial.
+      </p>
+
+      <span class="tag">Project</span>
+
+      <br>
+
+      <a
+        class="timeline-link"
+        href="projects/armenian-firepit.html"
+      >
+        View Project →
+      </a>
     </div>
 
     <div class="timeline-item">
       <div class="date">May 2023</div>
+
       <div class="timeline-title">
         <span class="icon">🏆</span>
         <h3>CTEC Pillars Award</h3>
       </div>
-      <p>Received the CTEC Pillars Award for representing the school values: You Matter, Be Present, Raise the Bar, and Create an Impact.</p>
+
+      <p>
+        Received the CTEC Pillars Award for representing the school's values:
+        You Matter, Be Present, Raise the Bar, and Create an Impact.
+      </p>
+
       <span class="tag">Award</span>
     </div>
 
     <div class="timeline-item">
       <div class="date">May 2023</div>
+
       <div class="timeline-title">
         <span class="icon">📜</span>
         <h3>CSWA Certification</h3>
       </div>
-      <p>Earned Certified SolidWorks Associate certification in mechanical design.</p>
-      <span class="tag">Certification</span>
-    </div>
 
-    <div class="timeline-item">
-      <div class="date">May 2023</div>
-      <div class="timeline-title">
-        <span class="icon">❤️</span>
-        <h3>CPR / AED Certification</h3>
-      </div>
-      <p>Completed American Heart Association Heartsaver CPR/AED training.</p>
-      <span class="tag">Certification</span>
-    </div>
+      <p>
+        Earned the Certified SolidWorks Associate certification in mechanical
+        design.
+      </p>
 
-    <div class="timeline-item">
-      <div class="date">February 2023</div>
-      <div class="timeline-title">
-        <span class="icon">🦺</span>
-        <h3>OSHA-10 Certification</h3>
-      </div>
-      <p>Completed OSHA 10-Hour General Industry safety training.</p>
       <span class="tag">Certification</span>
     </div>
 
@@ -573,25 +734,34 @@ footer{
 
     <div class="timeline-item">
       <div class="date">Fall 2021</div>
-      <div class="timeline-title">
-        <span class="icon">🎓</span>
-        <h3>Started Fresno City College</h3>
-      </div>
-      <p>Began pursuing college coursework while also attending high school.</p>
-      <span class="tag">Education</span>
-    </div>
 
-    <div class="timeline-item">
-      <div class="date">Fall 2021</div>
       <div class="timeline-title">
         <span class="icon">🎓</span>
-        <h3>Started CTEC High School</h3>
+        <h3>Began Technical and College Studies</h3>
       </div>
-      <p>Began technical education focused on engineering, manufacturing, CAD, and fabrication.</p>
+
+      <p>
+        Started engineering and manufacturing coursework at CTEC while also
+        taking college classes at Fresno City College.
+      </p>
+
       <span class="tag">Education</span>
     </div>
 
   </div>
+
+  <div class="reflection-box">
+    <h2>Looking Back</h2>
+
+    <p>
+      My path into civil engineering began with drafting, manufacturing, and
+      hands-on fabrication. Over time, those experiences led me toward
+      structural analysis and design. I still enjoy the full process—from
+      understanding how a structure behaves to thinking about how it can
+      actually be built.
+    </p>
+  </div>
+
 </div>
 
 <footer>
