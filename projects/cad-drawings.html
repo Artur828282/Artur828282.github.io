@@ -4,37 +4,193 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<meta
+  name="description"
+  content="A collection of manufacturing, fabrication, reverse engineering, and assembly drawings created to support production and shop communication."
+>
+
 <title>Manufacturing Drawings Archive | Artur Martirosyan</title>
 
 <style>
-:root{--navy:#0b1f3a;--navy-light:#142c54;--gold:#c9a15a;--light:#f8f8f6;}
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:Arial,sans-serif;background:var(--light);color:#222;line-height:1.7;}
-nav{background:var(--navy);padding:18px 30px;}
-nav a{color:white;text-decoration:none;font-weight:bold;}
-nav a:hover{color:var(--gold);}
-.hero{background:linear-gradient(135deg,var(--navy),var(--navy-light));color:white;text-align:center;padding:100px 20px;}
-.hero h1{font-size:52px;margin-bottom:15px;}
-.hero p{max-width:850px;margin:auto;color:#e0e0e0;}
-.container{max-width:1100px;margin:auto;padding:80px 24px;}
-.main-image{width:100%;border-radius:12px;box-shadow:0 15px 35px rgba(0,0,0,.15);}
-.section{margin-top:70px;}
-.section h2{color:var(--navy);margin-bottom:15px;font-size:32px;}
-.gold-line{width:70px;height:3px;background:var(--gold);margin-bottom:25px;}
-.drawing-card{background:white;padding:30px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.08);margin-top:35px;}
-.drawing-card h3{color:var(--navy);margin-bottom:15px;font-size:24px;}
-.drawing-card img{width:100%;margin-top:20px;border-radius:10px;box-shadow:0 10px 25px rgba(0,0,0,.12);}
-.skills{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px;}
-.skill{background:var(--navy);color:white;padding:10px 16px;border-radius:30px;font-size:14px;}
-.project-nav{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:50px;}
-.back-btn{display:inline-block;background:var(--gold);color:var(--navy);text-decoration:none;padding:14px 22px;border-radius:4px;font-weight:bold;}
-.back-btn:hover{background:#e2c88b;}
-footer{background:var(--navy);color:white;text-align:center;padding:25px;margin-top:80px;}
+:root{
+  --navy:#0b1f3a;
+  --navy-light:#142c54;
+  --gold:#c9a15a;
+  --light:#f8f8f6;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:var(--light);
+  color:#222;
+  line-height:1.7;
+}
+
+nav{
+  background:var(--navy);
+  padding:18px 30px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+nav a:hover{
+  color:var(--gold);
+}
+
+.hero{
+  background:linear-gradient(135deg,var(--navy),var(--navy-light));
+  color:white;
+  text-align:center;
+  padding:100px 20px;
+}
+
+.hero h1{
+  font-size:52px;
+  margin-bottom:15px;
+}
+
+.hero p{
+  max-width:850px;
+  margin:auto;
+  color:#e0e0e0;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:80px 24px;
+}
+
+.main-image{
+  display:block;
+  width:100%;
+  border-radius:12px;
+  box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+.section{
+  margin-top:70px;
+}
+
+.section h2{
+  color:var(--navy);
+  margin-bottom:15px;
+  font-size:32px;
+}
+
+.gold-line{
+  width:70px;
+  height:3px;
+  background:var(--gold);
+  margin-bottom:25px;
+}
+
+.section p + p{
+  margin-top:20px;
+}
+
+.drawing-card{
+  background:white;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  margin-top:35px;
+}
+
+.drawing-card h3{
+  color:var(--navy);
+  margin-bottom:15px;
+  font-size:24px;
+}
+
+.drawing-card p + p{
+  margin-top:18px;
+}
+
+.drawing-card img{
+  display:block;
+  width:100%;
+  margin-top:20px;
+  border-radius:10px;
+  box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+.project-nav{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-top:50px;
+}
+
+.back-btn{
+  display:inline-block;
+  background:var(--gold);
+  color:var(--navy);
+  text-decoration:none;
+  padding:14px 22px;
+  border-radius:4px;
+  font-weight:bold;
+}
+
+.back-btn:hover{
+  background:#e2c88b;
+}
+
+footer{
+  background:var(--navy);
+  color:white;
+  text-align:center;
+  padding:25px;
+  margin-top:80px;
+}
 
 @media (max-width:700px){
-  .hero h1{font-size:38px;}
-  .project-nav{flex-direction:column;}
-  .back-btn{text-align:center;}
+  .hero{
+    padding:75px 20px;
+  }
+
+  .hero h1{
+    font-size:38px;
+  }
+
+  .container{
+    padding:55px 20px;
+  }
+
+  .section{
+    margin-top:55px;
+  }
+
+  .section h2{
+    font-size:28px;
+  }
+
+  .drawing-card{
+    padding:22px;
+  }
+
+  .project-nav{
+    flex-direction:column;
+  }
+
+  .back-btn{
+    text-align:center;
+  }
 }
 </style>
 </head>
@@ -47,33 +203,37 @@ footer{background:var(--navy);color:white;text-align:center;padding:25px;margin-
 
 <section class="hero">
   <h1>Manufacturing Drawings Archive</h1>
+
   <p>
-    A collection of manufacturing, fabrication, reverse engineering, and assembly drawings
-    developed to support production, accuracy, and engineering communication.
+    A collection of drawings created to turn design ideas, existing parts, and
+    assemblies into clear instructions for manufacturing and shop use.
   </p>
 </section>
 
 <div class="container">
 
-  <img class="main-image" src="../Fixture%20P2.jpg" alt="Manufacturing Drawing Cover">
+  <img
+    class="main-image"
+    src="../Fixture%20P2.jpg"
+    alt="Manufacturing drawing for a custom welding fixture"
+  >
 
   <div class="section">
-    <h2>Project Overview</h2>
+    <h2>The Challenge</h2>
     <div class="gold-line"></div>
 
     <p>
-      This archive contains manufacturing and fabrication drawings developed to support
-      production, assembly, reverse engineering, and quality control activities.
-      The collection demonstrates technical drafting, CAD modeling, manufacturing communication,
-      and the ability to transform engineering concepts into production-ready documentation.
+      A part may look complete in a CAD model, but it still needs to be
+      communicated clearly before someone can manufacture or assemble it.
+      Dimensions, tolerances, materials, part relationships, and fabrication
+      details all need to be easy to understand.
     </p>
 
-    <br>
-
     <p>
-      The drawings shown here were created for real-world manufacturing and fabrication
-      processes, ranging from custom fixture design to reverse engineered components and
-      assembly documentation.
+      This collection includes drawings I created for shop production, fixture
+      design, reverse engineering, and assembly work. Each drawing had a
+      different purpose, but the goal was always the same: give the person
+      building or reviewing the part the information they actually needed.
     </p>
   </div>
 
@@ -83,96 +243,136 @@ footer{background:var(--navy);color:white;text-align:center;padding:25px;margin-
 
     <div class="drawing-card">
       <h3>Welding Fixture Design</h3>
+
       <p>
-        Engineered and designed a custom welding fixture used in the shop to improve
-        part accuracy, consistency, and repeatability. The fixture was developed to help
-        prevent welding defects by holding components in the correct position during fabrication.
+        Parts can shift or distort during welding if they are not held in the
+        correct position. I designed this fixture to locate the components,
+        support them during fabrication, and make the setup more repeatable.
       </p>
 
-      <img src="../Fixture%20P1.jpg" alt="Welding Fixture Drawing P1">
-      <img src="../Fixture%20P2.jpg" alt="Welding Fixture Drawing P2">
-      <img src="../Fixture%20P3.jpg" alt="Welding Fixture Drawing P3">
+      <p>
+        The drawing set communicates the individual parts, dimensions, and
+        assembly needed to manufacture and use the fixture in the shop.
+      </p>
+
+      <img
+        src="../Fixture%20P1.jpg"
+        alt="First manufacturing drawing for the welding fixture"
+      >
+
+      <img
+        src="../Fixture%20P2.jpg"
+        alt="Second manufacturing drawing for the welding fixture"
+      >
+
+      <img
+        src="../Fixture%20P3.jpg"
+        alt="Third manufacturing drawing for the welding fixture"
+      >
     </div>
 
     <div class="drawing-card">
       <h3>Spray Nozzle Reverse Engineering</h3>
+
       <p>
-        Reverse engineered an existing spray nozzle component by measuring the original part,
-        recreating the geometry in CAD, and producing a technical drawing for documentation
-        and manufacturing reference.
+        The original component did not begin with an existing CAD model or
+        drawing. I measured the physical part, recreated its geometry, and
+        produced a drawing that could be used for documentation and future
+        manufacturing reference.
       </p>
 
-      <img src="../Spray%20Nozzle.jpg" alt="Spray Nozzle Drawing">
+      <p>
+        This required deciding which dimensions controlled the shape and
+        function of the nozzle rather than simply recording every measurement.
+      </p>
+
+      <img
+        src="../Spray%20Nozzle.jpg"
+        alt="Reverse-engineered spray nozzle drawing"
+      >
     </div>
 
     <div class="drawing-card">
       <h3>Wire Harness Assembly</h3>
+
       <p>
-        Created assembly documentation for a wire harness system, showing component organization,
-        assembly relationships, and the information needed to support production and proper installation.
+        Wire harness documentation needs to show how several components connect
+        without making the page difficult to follow. I created this assembly
+        drawing to organize the components, identify their relationships, and
+        support consistent installation.
       </p>
 
-      <img src="../Wire%20Harness.jpg" alt="Wire Harness Assembly Drawing">
+      <img
+        src="../Wire%20Harness.jpg"
+        alt="Wire harness assembly drawing"
+      >
     </div>
 
     <div class="drawing-card">
       <h3>Valve Assembly</h3>
+
       <p>
-        Developed assembly documentation for a valve system, identifying component relationships,
-        assembly requirements, and manufacturing details needed for production and maintenance.
+        This drawing explains how the valve components fit and work together as
+        an assembly. I focused on showing the part relationships and the details
+        needed for production, assembly, and future reference.
       </p>
 
-      <img src="../Valve.jpg" alt="Valve Assembly Drawing">
+      <img
+        src="../Valve.jpg"
+        alt="Valve assembly drawing"
+      >
     </div>
   </div>
 
   <div class="section">
-    <h2>Engineering Importance</h2>
+    <h2>Designing for the Shop</h2>
     <div class="gold-line"></div>
 
     <p>
-      Engineering drawings are the bridge between design and manufacturing. A successful drawing
-      must communicate dimensions, tolerances, materials, assembly requirements, and fabrication
-      details clearly enough for accurate production.
+      Creating these drawings taught me to think beyond whether a model looked
+      correct on the screen. I also had to consider how the part would be
+      measured, fabricated, assembled, and inspected.
     </p>
 
-    <br>
-
     <p>
-      This project demonstrates the ability to create documentation that supports shop work,
-      quality control, and clear communication between engineering and fabrication teams.
+      A drawing with too little information leaves room for guessing, while one
+      with too much information can become difficult to read. The challenge was
+      deciding what mattered most and presenting it clearly.
     </p>
   </div>
 
   <div class="section">
-    <h2>Software & Skills</h2>
-    <div class="gold-line"></div>
-
-    <div class="skills">
-      <div class="skill">SolidWorks</div>
-      <div class="skill">AutoCAD</div>
-      <div class="skill">Technical Drafting</div>
-      <div class="skill">Manufacturing Documentation</div>
-      <div class="skill">Reverse Engineering</div>
-      <div class="skill">Fixture Design</div>
-      <div class="skill">Assembly Drawings</div>
-      <div class="skill">Engineering Communication</div>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>Skills Demonstrated</h2>
+    <h2>What I Learned</h2>
     <div class="gold-line"></div>
 
     <p>
-      This archive demonstrates technical drafting, design documentation, fixture development,
-      reverse engineering, assembly communication, and manufacturing awareness.
+      The biggest lesson from this work was that drafting is not only about
+      placing dimensions on a page. A good drawing should answer the questions
+      someone is likely to have before they need to ask them.
+    </p>
+
+    <p>
+      Working with manufacturing and assembly drawings also helped me understand
+      how design decisions affect the people responsible for building the final
+      product. Clear documentation saves time, reduces mistakes, and keeps the
+      design connected to what can actually be produced.
     </p>
   </div>
 
   <div class="project-nav">
-    <a class="back-btn" href="residential-house.html">← Residential Wood House Design</a>
-    <a class="back-btn" href="staircase-study.html">Stairway Evacuation Study →</a>
+    <a
+      class="back-btn"
+      href="residential-house.html"
+    >
+      ← Residential Wood House Design
+    </a>
+
+    <a
+      class="back-btn"
+      href="staircase-study.html"
+    >
+      Stairway Evacuation Study →
+    </a>
   </div>
 
 </div>
