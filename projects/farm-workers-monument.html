@@ -4,34 +4,217 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<meta
+  name="description"
+  content="A commemorative monument designed and fabricated to honor the contributions of farm workers through steelwork, woodworking, and symbolic design."
+>
+
 <title>Farm Workers Monument | Artur Martirosyan</title>
 
 <style>
-:root{--navy:#0b1f3a;--navy-light:#142c54;--gold:#c9a15a;--light:#f8f8f6;}
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:Arial,sans-serif;background:var(--light);color:#222;line-height:1.7;}
-nav{background:var(--navy);padding:18px 30px;}
-nav a{color:white;text-decoration:none;font-weight:bold;}
-nav a:hover{color:var(--gold);}
-.hero{background:linear-gradient(135deg,var(--navy),var(--navy-light));color:white;text-align:center;padding:100px 20px;}
-.hero h1{font-size:52px;margin-bottom:15px;}
-.hero p{max-width:850px;margin:auto;color:#e0e0e0;}
-.container{max-width:1100px;margin:auto;padding:80px 24px;}
-.main-image{width:100%;border-radius:12px;box-shadow:0 15px 35px rgba(0,0,0,.15);}
-.section{margin-top:70px;}
-.section h2{color:var(--navy);margin-bottom:15px;font-size:32px;}
-.gold-line{width:70px;height:3px;background:var(--gold);margin-bottom:25px;}
-.skills{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px;}
-.skill{background:var(--navy);color:white;padding:10px 16px;border-radius:30px;font-size:14px;}
-.project-nav{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:50px;}
-.back-btn{display:inline-block;background:var(--gold);color:var(--navy);text-decoration:none;padding:14px 22px;border-radius:4px;font-weight:bold;}
-.back-btn:hover{background:#e2c88b;}
-footer{background:var(--navy);color:white;text-align:center;padding:25px;margin-top:80px;}
+:root{
+  --navy:#0b1f3a;
+  --navy-light:#142c54;
+  --gold:#c9a15a;
+  --light:#f8f8f6;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:var(--light);
+  color:#222;
+  line-height:1.7;
+}
+
+nav{
+  background:var(--navy);
+  padding:18px 30px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+nav a:hover{
+  color:var(--gold);
+}
+
+.hero{
+  background:linear-gradient(135deg,var(--navy),var(--navy-light));
+  color:white;
+  text-align:center;
+  padding:100px 20px;
+}
+
+.hero h1{
+  font-size:52px;
+  margin-bottom:15px;
+}
+
+.hero p{
+  max-width:850px;
+  margin:auto;
+  color:#e0e0e0;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:80px 24px;
+}
+
+.main-image{
+  display:block;
+  width:100%;
+  border-radius:12px;
+  box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+.section{
+  margin-top:70px;
+}
+
+.section h2{
+  color:var(--navy);
+  margin-bottom:15px;
+  font-size:32px;
+}
+
+.gold-line{
+  width:70px;
+  height:3px;
+  background:var(--gold);
+  margin-bottom:25px;
+}
+
+.section p + p{
+  margin-top:20px;
+}
+
+.process{
+  display:grid;
+  gap:18px;
+  margin-top:25px;
+}
+
+.process-step{
+  display:grid;
+  grid-template-columns:55px 1fr;
+  gap:18px;
+  align-items:start;
+  background:white;
+  border-radius:10px;
+  padding:22px;
+  box-shadow:0 8px 24px rgba(0,0,0,.07);
+}
+
+.step-number{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  background:var(--navy);
+  color:white;
+  font-weight:bold;
+}
+
+.process-step h3{
+  color:var(--navy);
+  margin-bottom:5px;
+  font-size:20px;
+}
+
+.highlight-box{
+  margin-top:25px;
+  padding:28px;
+  background:white;
+  border-left:5px solid var(--gold);
+  border-radius:8px;
+  box-shadow:0 8px 24px rgba(0,0,0,.07);
+}
+
+.highlight-box h3{
+  color:var(--navy);
+  margin-bottom:10px;
+  font-size:22px;
+}
+
+.project-nav{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-top:50px;
+}
+
+.back-btn{
+  display:inline-block;
+  background:var(--gold);
+  color:var(--navy);
+  text-decoration:none;
+  padding:14px 22px;
+  border-radius:4px;
+  font-weight:bold;
+}
+
+.back-btn:hover{
+  background:#e2c88b;
+}
+
+footer{
+  background:var(--navy);
+  color:white;
+  text-align:center;
+  padding:25px;
+  margin-top:80px;
+}
 
 @media (max-width:700px){
-  .hero h1{font-size:38px;}
-  .project-nav{flex-direction:column;}
-  .back-btn{text-align:center;}
+  .hero{
+    padding:75px 20px;
+  }
+
+  .hero h1{
+    font-size:38px;
+  }
+
+  .container{
+    padding:55px 20px;
+  }
+
+  .section{
+    margin-top:55px;
+  }
+
+  .section h2{
+    font-size:28px;
+  }
+
+  .process-step{
+    grid-template-columns:1fr;
+  }
+
+  .project-nav{
+    flex-direction:column;
+  }
+
+  .back-btn{
+    text-align:center;
+  }
 }
 </style>
 </head>
@@ -44,69 +227,192 @@ footer{background:var(--navy);color:white;text-align:center;padding:25px;margin-
 
 <section class="hero">
   <h1>Farm Workers Monument</h1>
+
   <p>
-    A commemorative design and fabrication project honoring the legacy and contributions of farm workers.
+    A commemorative structure designed and built to honor the work,
+    sacrifice, and lasting contributions of farm workers.
   </p>
 </section>
 
 <div class="container">
 
-  <img class="main-image" src="../Farm%20Workers%20Manument.png" alt="Farm Workers Monument">
+  <img
+    class="main-image"
+    src="../Farm%20Workers%20Manument.png"
+    alt="Completed Farm Workers Monument"
+  >
 
   <div class="section">
-    <h2>Project Overview</h2>
+    <h2>The Idea</h2>
     <div class="gold-line"></div>
+
     <p>
-      This project focused on designing and fabricating a commemorative monument honoring national farm workers.
-      The structure was created as both a tribute and a place of gathering, combining symbolic design with
-      hands-on fabrication.
+      This project began with the idea of creating something that would honor
+      farm workers in a physical and lasting way. I wanted the structure to feel
+      more personal than a simple sign or plaque, so the design combined a
+      symbolic centerpiece with a bench that people could actually use.
+    </p>
+
+    <p>
+      The goal was to create a place for reflection while also recognizing the
+      labor and contributions of farm workers in the community.
     </p>
   </div>
 
   <div class="section">
-    <h2>Design Intent</h2>
+    <h2>Design Decisions</h2>
     <div class="gold-line"></div>
-    <p>
-      The monument was designed to represent respect, labor, memory, and community. The goal was to create
-      a meaningful structure that could serve as a visual tribute while also functioning as a public gathering space.
-    </p>
-  </div>
 
-  <div class="section">
-    <h2>Fabrication Process</h2>
-    <div class="gold-line"></div>
     <p>
-      The project involved multiple fabrication methods, including shielded metal arc welding, plasma cutting,
-      and woodworking. Steel components were cut and assembled to form the monument structure, while wood elements
-      were used for the bench and seating areas.
+      The central eagle shape became the main visual element of the monument.
+      It was designed to be recognizable from a distance while remaining simple
+      enough to fabricate from steel.
     </p>
-  </div>
 
-  <div class="section">
-    <h2>Tools & Skills</h2>
-    <div class="gold-line"></div>
-    <div class="skills">
-      <div class="skill">Shielded Metal Arc Welding</div>
-      <div class="skill">Plasma Cutting</div>
-      <div class="skill">Woodworking</div>
-      <div class="skill">Fabrication</div>
-      <div class="skill">Design Planning</div>
-      <div class="skill">Assembly</div>
+    <p>
+      I also had to think about how the frame, decorative pieces, and seating
+      would work together as one structure. The design needed to feel balanced,
+      remain stable, and be practical to assemble with the tools and materials
+      available.
+    </p>
+
+    <div class="highlight-box">
+      <h3>More Than a Display Piece</h3>
+
+      <p>
+        Adding the bench changed the project from something people would only
+        look at into a space they could sit beside, gather around, and spend
+        time with.
+      </p>
     </div>
   </div>
 
   <div class="section">
-    <h2>Skills Demonstrated</h2>
+    <h2>Building the Monument</h2>
     <div class="gold-line"></div>
+
+    <div class="process">
+
+      <div class="process-step">
+        <div class="step-number">1</div>
+
+        <div>
+          <h3>Plan the Structure</h3>
+
+          <p>
+            Develop the overall form, seating layout, steel frame, and
+            decorative elements before fabrication began.
+          </p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-number">2</div>
+
+        <div>
+          <h3>Cut the Steel Components</h3>
+
+          <p>
+            Use plasma cutting to create the eagle, maple leaves, and other
+            decorative pieces from steel plate.
+          </p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-number">3</div>
+
+        <div>
+          <h3>Assemble the Frame</h3>
+
+          <p>
+            Fit and weld the steel members together while checking alignment,
+            spacing, and overall stability.
+          </p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-number">4</div>
+
+        <div>
+          <h3>Build the Seating</h3>
+
+          <p>
+            Cut, finish, and install the wood components that form the bench
+            and complete the gathering space.
+          </p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-number">5</div>
+
+        <div>
+          <h3>Finish and Assemble</h3>
+
+          <p>
+            Bring the steel and wood elements together, review the final
+            appearance, and complete the monument for display.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Working Through Fabrication</h2>
+    <div class="gold-line"></div>
+
     <p>
-      This project demonstrates my ability to combine design, fabrication, welding, and woodworking into a
-      finished physical structure with cultural and community meaning.
+      One of the main challenges was turning a symbolic idea into something
+      that could actually be fabricated. Some details that looked good in the
+      design had to be simplified so they could be cut cleanly, welded securely,
+      and assembled without losing the original meaning.
+    </p>
+
+    <p>
+      The project also required switching between steelwork and woodworking.
+      Each material behaved differently, so the design had to account for how
+      the frame would be welded, how the bench would be supported, and how the
+      finished pieces would fit together.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>What I Learned</h2>
+    <div class="gold-line"></div>
+
+    <p>
+      This project taught me that fabrication often improves a design by forcing
+      you to make practical decisions. Dimensions, connections, material
+      thickness, and assembly order all became more important once I started
+      building the structure.
+    </p>
+
+    <p>
+      It was also one of the first projects that showed me how engineering and
+      fabrication can carry cultural and community meaning. The finished result
+      was not only something I built, but something meant to represent and honor
+      other people.
     </p>
   </div>
 
   <div class="project-nav">
-    <a class="back-btn" href="staircase-study.html">← Stairway Evacuation Study</a>
-    <a class="back-btn" href="metropolitan-cathedral.html">Metropolitan Cathedral →</a>
+    <a
+      class="back-btn"
+      href="staircase-study.html"
+    >
+      ← Stairway Evacuation Study
+    </a>
+
+    <a
+      class="back-btn"
+      href="metropolitan-cathedral.html"
+    >
+      Metropolitan Cathedral →
+    </a>
   </div>
 
 </div>
