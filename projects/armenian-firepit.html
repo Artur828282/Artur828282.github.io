@@ -6,7 +6,7 @@
 
 <meta
   name="description"
-  content="A commemorative steel firepit inspired by Tsitsernakabert, designed and fabricated to connect cultural meaning with practical metalwork."
+  content="A team-designed commemorative steel firepit inspired by Tsitsernakabert, connecting Armenian cultural meaning with practical metal fabrication."
 >
 
 <title>Armenian Firepit | Artur Martirosyan</title>
@@ -103,6 +103,38 @@ nav a:hover{
   margin-top:20px;
 }
 
+.reference-card{
+  width:100%;
+  max-width:720px;
+  margin:25px auto 0;
+  background:white;
+  padding:18px;
+  border-radius:12px;
+  box-shadow:0 12px 30px rgba(0,0,0,.12);
+}
+
+.reference-card img{
+  display:block;
+  width:100%;
+  max-height:470px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+.reference-caption{
+  padding:18px 8px 4px;
+}
+
+.reference-caption h3{
+  color:var(--navy);
+  margin-bottom:7px;
+  font-size:22px;
+}
+
+.reference-caption p{
+  color:#555;
+}
+
 .process{
   display:grid;
   gap:18px;
@@ -160,15 +192,25 @@ nav a:hover{
   margin-top:20px;
 }
 
-.gallery img{
-  display:block;
+.gallery-item{
   width:100%;
+  aspect-ratio:4 / 3;
+  overflow:hidden;
   border-radius:12px;
   box-shadow:0 12px 30px rgba(0,0,0,.12);
+  background:white;
+}
+
+.gallery-item img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
   transition:.3s;
 }
 
-.gallery img:hover{
+.gallery-item img:hover{
   transform:scale(1.02);
 }
 
@@ -231,6 +273,14 @@ footer{
     grid-template-columns:1fr;
   }
 
+  .gallery-item{
+    aspect-ratio:4 / 3;
+  }
+
+  .reference-card{
+    padding:12px;
+  }
+
   .project-nav{
     flex-direction:column;
   }
@@ -252,8 +302,8 @@ footer{
   <h1>Armenian Firepit</h1>
 
   <p>
-    A functional steel firepit inspired by Tsitsernakabert, created to connect
-    remembrance, cultural identity, and hands-on fabrication.
+    A team fabrication project inspired by Tsitsernakabert, combining Armenian
+    cultural meaning with a functional steel design.
   </p>
 </section>
 
@@ -270,16 +320,43 @@ footer{
     <div class="gold-line"></div>
 
     <p>
-      I wanted to create something that was useful as an everyday object but
-      still carried personal and cultural meaning. The design was inspired by
-      Tsitsernakabert, the Armenian Genocide Memorial in Yerevan.
+      Our team wanted to create something that could function as an everyday
+      object while still carrying personal and cultural meaning. The design was
+      inspired by Tsitsernakabert, the Armenian Genocide Memorial in Yerevan.
     </p>
 
     <p>
-      Rather than copying the monument directly, I used its recognizable form as
-      the starting point for a smaller steel structure that could function as a
-      firepit while still representing remembrance and resilience.
+      Rather than making a direct copy of the monument, we used its recognizable
+      form as the starting point for a smaller steel structure that could serve
+      as a firepit while still representing remembrance and resilience.
     </p>
+  </div>
+
+  <div class="section">
+    <h2>The Original Inspiration</h2>
+    <div class="gold-line"></div>
+
+    <p>
+      Tsitsernakabert is built around a circle of inward-facing stone slabs that
+      surround an eternal flame. That arrangement became the main visual
+      reference for the firepit.
+    </p>
+
+    <div class="reference-card">
+      <img
+        src="../tsitsernakabert.jpg"
+        alt="Tsitsernakabert Armenian Genocide Memorial in Yerevan"
+      >
+
+      <div class="reference-caption">
+        <h3>Tsitsernakabert</h3>
+
+        <p>
+          The inward-facing memorial slabs and central flame influenced the
+          geometry and symbolism of the firepit design.
+        </p>
+      </div>
+    </div>
   </div>
 
   <div class="section">
@@ -287,25 +364,25 @@ footer{
     <div class="gold-line"></div>
 
     <p>
-      The original memorial was designed at a monumental scale, so its geometry
-      could not simply be reduced and used without changes. I had to decide
-      which parts of the form were most important and how they could be adapted
-      into a compact fabricated piece.
+      The original memorial exists at a monumental scale, so its geometry could
+      not simply be reduced without adjustment. As a team, we identified the
+      parts of the form that made it recognizable and considered how those
+      features could work in a compact fabricated object.
     </p>
 
     <p>
-      The sloped steel panels became the main feature of the design. Their
-      arrangement creates the familiar inward-facing shape while also forming
-      an enclosed space for the fire.
+      The sloped steel panels became the main element of the design. Their
+      inward-facing arrangement reflects the memorial while also creating a
+      protected central space for the fire.
     </p>
 
     <div class="highlight-box">
-      <h3>Keeping the Meaning Without Copying the Monument</h3>
+      <h3>Inspired, Not Replicated</h3>
 
       <p>
-        The goal was not to make a miniature replica. I wanted the finished
-        piece to feel inspired by Tsitsernakabert while still working as its own
-        functional design.
+        The goal was not to build a miniature replica. We wanted the firepit to
+        carry the visual character and meaning of Tsitsernakabert while still
+        working as its own practical design.
       </p>
     </div>
   </div>
@@ -324,7 +401,7 @@ footer{
 
           <p>
             Review the geometry and symbolism of Tsitsernakabert and identify
-            the elements that made the memorial recognizable.
+            the features that made the memorial recognizable.
           </p>
         </div>
       </div>
@@ -336,8 +413,8 @@ footer{
           <h3>Develop the CAD Design</h3>
 
           <p>
-            Create the overall shape, panel dimensions, angles, and base layout
-            before beginning fabrication.
+            Create the overall shape, panel dimensions, angles, spacing, and
+            base layout before fabrication began.
           </p>
         </div>
       </div>
@@ -349,8 +426,8 @@ footer{
           <h3>Prepare the Steel Pieces</h3>
 
           <p>
-            Cut the sheet-metal components with a shear and prepare the edges
-            and surfaces for assembly.
+            Cut the sheet-metal components using a shear and prepare the edges
+            and surfaces for fitting and welding.
           </p>
         </div>
       </div>
@@ -359,11 +436,11 @@ footer{
         <div class="step-number">4</div>
 
         <div>
-          <h3>Fit and TIG Weld the Structure</h3>
+          <h3>Fit the Panels</h3>
 
           <p>
-            Position the panels, check their spacing and angles, and TIG weld
-            the pieces together into the final form.
+            Position the repeated steel panels and check their spacing, angles,
+            and alignment before joining them permanently.
           </p>
         </div>
       </div>
@@ -372,16 +449,47 @@ footer{
         <div class="step-number">5</div>
 
         <div>
-          <h3>Review the Finished Piece</h3>
+          <h3>TIG Weld the Structure</h3>
 
           <p>
-            Check the overall alignment, stability, appearance, and function of
-            the firepit after fabrication.
+            Weld the panels and supporting frame together while maintaining the
+            intended geometry and a clean finished appearance.
+          </p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-number">6</div>
+
+        <div>
+          <h3>Review the Final Piece</h3>
+
+          <p>
+            Check the stability, alignment, appearance, and function of the
+            completed firepit as a team.
           </p>
         </div>
       </div>
 
     </div>
+  </div>
+
+  <div class="section">
+    <h2>Working as a Team</h2>
+    <div class="gold-line"></div>
+
+    <p>
+      The project was completed as a team effort, with responsibilities shared
+      across research, CAD development, material preparation, fitting, welding,
+      and final assembly.
+    </p>
+
+    <p>
+      Because every panel affected the overall shape, communication was
+      important throughout the build. Measurements, cutting, positioning, and
+      welding all had to remain coordinated so the repeated geometry would come
+      together evenly.
+    </p>
   </div>
 
   <div class="section">
@@ -391,14 +499,15 @@ footer{
     <p>
       The design depended on several similar panels meeting at consistent
       angles. Small differences in cutting or positioning could make the final
-      shape appear uneven, so fit-up was an important part of the build.
+      shape appear uneven, so careful fit-up became one of the most important
+      parts of the project.
     </p>
 
     <p>
-      TIG welding allowed me to create cleaner and more controlled joints, but
-      it also required careful preparation and steady alignment. Because the
-      panels were visible from every side, both the structure and appearance of
-      the welds mattered.
+      TIG welding gave the team greater control over the joints and helped
+      create a cleaner finished appearance. Since the structure could be viewed
+      from every side, the alignment of the panels and the quality of the welds
+      were both visible in the final result.
     </p>
   </div>
 
@@ -407,15 +516,15 @@ footer{
     <div class="gold-line"></div>
 
     <p>
-      The fire gives the design an additional connection to remembrance. At
-      night, the light appears between the steel panels and makes the form more
-      visually similar to a memorial space.
+      The fire adds another connection to the original memorial. At night, light
+      passes between the steel panels and draws attention toward the center of
+      the structure.
     </p>
 
     <p>
       At the same time, the piece remains functional. It can be used as a
       firepit rather than existing only as a display object, which was an
-      important part of the original idea.
+      important part of the team's original idea.
     </p>
   </div>
 
@@ -424,15 +533,21 @@ footer{
     <div class="gold-line"></div>
 
     <div class="gallery">
-      <img
-        src="../Armenain%20Firepit%20at%20Day.png"
-        alt="Armenian firepit during the day"
-      >
 
-      <img
-        src="../Armenian%20Firepit%20at%20Night.png"
-        alt="Armenian firepit illuminated at night"
-      >
+      <div class="gallery-item">
+        <img
+          src="../Armenain%20Firepit%20at%20Day.png"
+          alt="Armenian firepit during the day"
+        >
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="../Armenian%20Firepit%20at%20Night.png"
+          alt="Armenian firepit illuminated at night"
+        >
+      </div>
+
     </div>
   </div>
 
@@ -441,22 +556,22 @@ footer{
     <div class="gold-line"></div>
 
     <p>
-      This project taught me how much care is needed when translating a symbolic
-      idea into a fabricated object. The design still needed to be practical,
-      stable, and possible to build with the available tools.
+      This project showed me how much coordination is required to turn a shared
+      idea into a finished physical object. The design needed to be meaningful,
+      practical, stable, and possible to fabricate with the available tools.
     </p>
 
     <p>
-      It also helped me become more comfortable moving between CAD, sheet-metal
-      preparation, fit-up, and welding. Each stage affected the next, and small
-      inaccuracies became much more visible once the panels were assembled.
+      It also strengthened my understanding of how CAD, sheet-metal preparation,
+      fit-up, welding, and teamwork depend on one another. A small change or
+      inaccuracy in one stage could affect the rest of the build.
     </p>
 
     <p>
-      What made the project especially important to me was that the final piece
-      had a purpose beyond fabrication practice. It allowed me to connect
-      technical work with my Armenian heritage in a way that felt personal and
-      lasting.
+      What made the project especially important to me was that the finished
+      piece had a purpose beyond fabrication practice. It allowed our team to
+      create something functional while connecting the work to Armenian history
+      and cultural identity.
     </p>
   </div>
 
