@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<meta
+    name="description"
+    content="A stairway evacuation research project studying how occupant demand and congestion affect movement, travel time, and evacuation performance."
+>
+
 <title>Stairway Evacuation Study | Artur Martirosyan</title>
 
 <style>
@@ -18,6 +23,10 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
@@ -67,6 +76,7 @@ nav a:hover{
 }
 
 .main-image{
+    display:block;
     width:100%;
     border-radius:12px;
     box-shadow:0 15px 35px rgba(0,0,0,.15);
@@ -89,19 +99,83 @@ nav a:hover{
     margin-bottom:25px;
 }
 
-.skills{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
+.section p + p{
     margin-top:20px;
 }
 
-.skill{
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+    margin-top:25px;
+}
+
+.feature-card{
+    background:white;
+    border-radius:10px;
+    padding:25px;
+    box-shadow:0 8px 24px rgba(0,0,0,.08);
+    border-top:4px solid var(--gold);
+}
+
+.feature-card h3{
+    color:var(--navy);
+    margin-bottom:10px;
+    font-size:21px;
+}
+
+.feature-card p{
+    color:#444;
+}
+
+.highlight-box{
+    margin-top:25px;
+    padding:28px;
+    background:white;
+    border-left:5px solid var(--gold);
+    border-radius:8px;
+    box-shadow:0 8px 24px rgba(0,0,0,.07);
+}
+
+.highlight-box h3{
+    color:var(--navy);
+    margin-bottom:10px;
+    font-size:22px;
+}
+
+.process{
+    display:grid;
+    gap:18px;
+    margin-top:25px;
+}
+
+.process-step{
+    display:grid;
+    grid-template-columns:55px 1fr;
+    gap:18px;
+    align-items:start;
+    background:white;
+    border-radius:10px;
+    padding:22px;
+    box-shadow:0 8px 24px rgba(0,0,0,.07);
+}
+
+.step-number{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:48px;
+    height:48px;
+    border-radius:50%;
     background:var(--navy);
     color:white;
-    padding:10px 16px;
-    border-radius:30px;
-    font-size:14px;
+    font-weight:bold;
+}
+
+.process-step h3{
+    color:var(--navy);
+    margin-bottom:5px;
+    font-size:20px;
 }
 
 .project-nav{
@@ -135,8 +209,32 @@ footer{
 }
 
 @media (max-width:700px){
+    .hero{
+        padding:75px 20px;
+    }
+
     .hero h1{
         font-size:38px;
+    }
+
+    .container{
+        padding:55px 20px;
+    }
+
+    .section{
+        margin-top:55px;
+    }
+
+    .section h2{
+        font-size:28px;
+    }
+
+    .feature-grid{
+        grid-template-columns:1fr;
+    }
+
+    .process-step{
+        grid-template-columns:1fr;
     }
 
     .project-nav{
@@ -158,104 +256,254 @@ footer{
 
 <section class="hero">
     <h1>Stairway Evacuation Study</h1>
+
     <p>
-        A research project studying how stairway congestion affects movement, flow rate,
-        and evacuation performance in multi-story buildings.
+        A research study exploring how increasing stairway demand affects
+        movement, travel time, and the early development of congestion.
     </p>
 </section>
 
 <div class="container">
 
-    <img class="main-image" src="../Staircase%20Study%20Poster.jpg" alt="Stairway Evacuation Study Poster">
+    <img
+        class="main-image"
+        src="../Staircase%20Study%20Poster.jpg"
+        alt="Research poster for the stairway flow, congestion, and evacuation study"
+    >
 
     <div class="section">
-        <h2>Project Overview</h2>
+        <h2>The Question</h2>
         <div class="gold-line"></div>
-        <p>
-            This research project focused on understanding how people move through stairways during
-            emergency evacuations. Stairways are one of the main evacuation routes in multi-story
-            buildings, especially when elevators are not available or cannot be used.
-        </p>
-        <br>
-        <p>
-            The study looked at how congestion, flow rate, and occupant density can affect evacuation
-            performance. The goal was to better understand when stairway movement begins to slow down
-            and how that impacts overall evacuation efficiency.
-        </p>
-    </div>
 
-    <div class="section">
-        <h2>Research Objective</h2>
-        <div class="gold-line"></div>
         <p>
-            The objective was to study stairway flow under different usage conditions and compare
-            observed movement behavior with published evacuation research. This helped create a
-            foundation for future simulation work involving multi-story buildings and larger occupant loads.
+            Stairways are one of the main evacuation routes in multi-story
+            buildings, especially when elevators cannot be used. As more people
+            enter a stairway, movement becomes increasingly affected by limited
+            space and interaction between occupants.
+        </p>
+
+        <p>
+            This project asked a simple question: how does stairway performance
+            begin to change as demand increases? I focused on identifying the
+            early signs of congestion rather than only studying conditions after
+            severe crowding had already developed.
         </p>
     </div>
 
     <div class="section">
-        <h2>Methodology</h2>
+        <h2>My Approach</h2>
         <div class="gold-line"></div>
-        <p>
-            The project included a pilot observation study of stair movement at Fresno State, literature
-            benchmarking, and early simulation development. Real-world observations were used to compare
-            low-flow and high-flow conditions and examine how travel time changed as stair usage increased.
-        </p>
-    </div>
 
-    <div class="section">
-        <h2>Tools & Topics</h2>
-        <div class="gold-line"></div>
-        <div class="skills">
-            <div class="skill">Civil Engineering Research</div>
-            <div class="skill">Evacuation Performance</div>
-            <div class="skill">Flow Rate Analysis</div>
-            <div class="skill">Congestion Study</div>
-            <div class="skill">BIM Concepts</div>
-            <div class="skill">Pathfinder Simulation</div>
+        <div class="process">
+
+            <div class="process-step">
+                <div class="step-number">1</div>
+
+                <div>
+                    <h3>Observe a Real Stairway</h3>
+
+                    <p>
+                        Conduct a pilot study at the Fresno State library and
+                        record stairway travel under lower- and higher-flow
+                        conditions.
+                    </p>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">2</div>
+
+                <div>
+                    <h3>Compare Travel Times</h3>
+
+                    <p>
+                        Review how long occupants took to move through the
+                        stairway as the number of users increased.
+                    </p>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">3</div>
+
+                <div>
+                    <h3>Benchmark the Results</h3>
+
+                    <p>
+                        Compare the pilot observations with published stairway
+                        evacuation data, including research from NIST.
+                    </p>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">4</div>
+
+                <div>
+                    <h3>Prepare for Simulation</h3>
+
+                    <p>
+                        Use the observations and literature review as a starting
+                        point for future BIM-based evacuation models in
+                        Pathfinder.
+                    </p>
+                </div>
+            </div>
+
         </div>
     </div>
 
     <div class="section">
-        <h2>Key Findings</h2>
+        <h2>Pilot Observation Study</h2>
         <div class="gold-line"></div>
+
         <p>
-            The study showed that higher stairway flow can increase travel time and reduce movement
-            efficiency. Performance does not drop all at once; instead, early signs of congestion can
-            appear before the stairway reaches severe crowding.
+            The pilot study compared two stairway usage conditions at the Fresno
+            State library. During lower-flow periods, the observed flow rate was
+            approximately 1.07 people per minute, with an average travel time of
+            21.68 seconds.
         </p>
-        <br>
+
         <p>
-            The results supported the idea that stairway performance depends on demand, occupant
-            movement speed, stair geometry, and interaction between individuals.
+            During the higher-flow condition, the flow rate increased to about
+            5.32 people per minute, while the average travel time rose to 23.57
+            seconds. The change was not dramatic, but it suggested that movement
+            was already becoming less efficient as demand increased.
         </p>
+
+        <div class="highlight-box">
+            <h3>An Early Sign of Congestion</h3>
+
+            <p>
+                The stairway did not need to appear fully crowded before its
+                performance began to change. Reduced movement freedom and greater
+                variation in travel time appeared before severe congestion.
+            </p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>What the Data Suggested</h2>
+        <div class="gold-line"></div>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <h3>Travel Time Increased</h3>
+
+                <p>
+                    Occupants generally took longer to move through the stairway
+                    during the higher-flow observation period.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Movement Became Less Consistent</h3>
+
+                <p>
+                    Travel times varied more as stairway use increased,
+                    suggesting that occupants had less freedom to move naturally.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Performance Changed Gradually</h3>
+
+                <p>
+                    The stairway did not suddenly fail at one exact point.
+                    Efficiency began to decrease as demand moved closer to the
+                    available capacity.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Demand Matters More Than Occupant Count Alone</h3>
+
+                <p>
+                    Stairway performance depends on how occupant demand compares
+                    with available width, geometry, movement speed, and capacity.
+                </p>
+            </div>
+
+        </div>
     </div>
 
     <div class="section">
         <h2>Study Data</h2>
         <div class="gold-line"></div>
 
-        <img class="main-image" src="../Staircase%20Study%20Data.jpg" alt="Staircase Study Data">
+        <img
+            class="main-image"
+            src="../Staircase%20Study%20Data.jpg"
+            alt="Charts and data comparing lower- and higher-flow stairway conditions"
+        >
 
         <p style="margin-top:25px;">
-            This data helped compare low-flow and high-flow stairway conditions and supported the analysis
-            of how increased stairway use affects travel time, movement efficiency, and congestion.
+            The charts compare the distribution of observed travel times during
+            lower- and higher-use periods. The higher-flow condition showed a
+            shift toward longer travel times and greater variability.
+        </p>
+
+        <p>
+            Because this was a small pilot study, I treated the results as an
+            early indication rather than a final conclusion. The observations
+            helped identify patterns that could be studied more closely with a
+            larger dataset and controlled simulation.
         </p>
     </div>
 
     <div class="section">
-        <h2>Skills Demonstrated</h2>
+        <h2>Connecting Observation and Simulation</h2>
         <div class="gold-line"></div>
+
         <p>
-            This project strengthened my experience in research, data interpretation, engineering
-            presentation, evacuation planning, and the study of building safety systems.
+            Real-world observation shows how people behave in an existing
+            stairway, but it is difficult to test emergency conditions or very
+            high occupant loads in a real building. Simulation provides a way to
+            explore those scenarios without placing people at risk.
+        </p>
+
+        <p>
+            The next step would be to model building geometry in BIM and import
+            it into Pathfinder. That would allow different occupant loads,
+            movement speeds, stair configurations, and blocked-exit scenarios to
+            be compared under controlled conditions.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>What I Learned</h2>
+        <div class="gold-line"></div>
+
+        <p>
+            One of my biggest takeaways was that congestion is not always a
+            sudden event. A stairway can begin losing efficiency before the
+            crowd looks severe, which makes early changes in travel time and
+            movement consistency important.
+        </p>
+
+        <p>
+            This project also helped me understand the value of combining field
+            observations, published research, and simulation. Each method has
+            limits on its own, but together they can provide a clearer picture
+            of how a building system may perform during an evacuation.
         </p>
     </div>
 
     <div class="project-nav">
-        <a class="back-btn" href="cad-drawings.html">← Manufacturing Drawings Archive</a>
-        <a class="back-btn" href="farm-workers-monument.html">Farm Workers Monument →</a>
+        <a
+            class="back-btn"
+            href="cad-drawings.html"
+        >
+            ← Manufacturing Drawings Archive
+        </a>
+
+        <a
+            class="back-btn"
+            href="farm-workers-monument.html"
+        >
+            Farm Workers Monument →
+        </a>
     </div>
 
 </div>
