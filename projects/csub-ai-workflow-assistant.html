@@ -76,6 +76,7 @@ nav a:hover{
 }
 
 .main-image{
+    display:block;
     width:100%;
     border-radius:12px;
     box-shadow:0 15px 35px rgba(0,0,0,.15);
@@ -128,6 +129,7 @@ nav a:hover{
 }
 
 .architecture-image{
+    display:block;
     width:100%;
     margin-top:25px;
     border-radius:12px;
@@ -136,39 +138,49 @@ nav a:hover{
 
 .gallery{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:25px;
+    grid-template-columns:1fr;
+    gap:35px;
     margin-top:25px;
 }
 
 .gallery-item{
+    width:100%;
     background:white;
     border-radius:10px;
     overflow:hidden;
     box-shadow:0 10px 28px rgba(0,0,0,.1);
 }
 
+.gallery-image-area{
+    width:100%;
+    padding:20px;
+    background:white;
+    border-bottom:1px solid #e8e8e8;
+}
+
 .gallery-item img{
     display:block;
     width:100%;
-    aspect-ratio:16 / 9;
-    object-fit:cover;
-    object-position:top;
+    height:auto;
+    max-height:720px;
+    object-fit:contain;
+    object-position:center;
+    margin:auto;
 }
 
 .gallery-caption{
-    padding:20px;
+    padding:24px;
 }
 
 .gallery-caption h3{
     color:var(--navy);
     margin-bottom:7px;
-    font-size:20px;
+    font-size:22px;
 }
 
 .gallery-caption p{
     color:#555;
-    font-size:15px;
+    font-size:16px;
 }
 
 .pipeline{
@@ -256,9 +268,16 @@ footer{
         font-size:38px;
     }
 
-    .feature-grid,
-    .gallery{
+    .feature-grid{
         grid-template-columns:1fr;
+    }
+
+    .gallery-image-area{
+        padding:10px;
+    }
+
+    .gallery-item img{
+        max-height:none;
     }
 
     .pipeline-step{
@@ -451,65 +470,38 @@ footer{
         <div class="gallery">
 
             <div class="gallery-item">
-                <img
-                    src="../dashboard.png"
-                    alt="CSUB AI Workflow Assistant dashboard"
-                >
-
-                <div class="gallery-caption">
-                    <h3>Application Dashboard</h3>
-
-                    <p>
-                        The main dashboard provides access to student hiring and
-                        future administrative workflow modules.
-                    </p>
+                <div class="gallery-image-area">
+                    <img
+                        src="../hiring-workflow.png"
+                        alt="Guided student hiring workflow"
+                    >
                 </div>
-            </div>
-
-            <div class="gallery-item">
-                <img
-                    src="../hiring-workflow.png"
-                    alt="Guided student hiring workflow"
-                >
 
                 <div class="gallery-caption">
                     <h3>Guided Hiring Workflow</h3>
 
                     <p>
                         A step-by-step process helps users determine the correct
-                        hiring type, funding source, forms, and approval route.
+                        hiring type, funding source, required forms, and approval
+                        route.
                     </p>
                 </div>
             </div>
 
             <div class="gallery-item">
-                <img
-                    src="../hiring-summary.png"
-                    alt="Student hiring administrative summary"
-                >
+                <div class="gallery-image-area">
+                    <img
+                        src="../hiring-summary.png"
+                        alt="Student hiring administrative summary"
+                    >
+                </div>
 
                 <div class="gallery-caption">
                     <h3>Hiring Summary</h3>
 
                     <p>
                         The completed workflow organizes essential hiring and
-                        grant information into one administrative summary.
-                    </p>
-                </div>
-            </div>
-
-            <div class="gallery-item">
-                <img
-                    src="../architecture.png"
-                    alt="Cloud architecture diagram"
-                >
-
-                <div class="gallery-caption">
-                    <h3>Cloud Architecture</h3>
-
-                    <p>
-                        The system connects the web application, API routes,
-                        serverless backend, AI services, and document pipeline.
+                        grant information into one clear administrative summary.
                     </p>
                 </div>
             </div>
