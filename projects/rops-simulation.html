@@ -75,11 +75,45 @@ nav a:hover{
     padding:80px 24px;
 }
 
-.main-image{
-    display:block;
+/* Three-image ROPS gallery */
+.rops-gallery{
+    display:flex;
+    align-items:stretch;
+    gap:18px;
     width:100%;
+}
+
+.rops-image-card{
+    height:330px;
+    padding:12px;
+    background:white;
     border-radius:12px;
     box-shadow:0 15px 35px rgba(0,0,0,.15);
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.rops-image-card:nth-child(1){
+    flex:2.2;
+}
+
+.rops-image-card:nth-child(2){
+    flex:1.25;
+}
+
+.rops-image-card:nth-child(3){
+    flex:.75;
+}
+
+.rops-image-card img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    object-position:center;
+    border-radius:8px;
 }
 
 .section{
@@ -212,6 +246,12 @@ footer{
     margin-top:80px;
 }
 
+@media (max-width:900px){
+    .rops-image-card{
+        height:280px;
+    }
+}
+
 @media (max-width:700px){
     .hero{
         padding:75px 20px;
@@ -223,6 +263,19 @@ footer{
 
     .container{
         padding:55px 20px;
+    }
+
+    .rops-gallery{
+        flex-direction:column;
+    }
+
+    .rops-image-card,
+    .rops-image-card:nth-child(1),
+    .rops-image-card:nth-child(2),
+    .rops-image-card:nth-child(3){
+        flex:none;
+        width:100%;
+        height:300px;
     }
 
     .section{
@@ -259,18 +312,37 @@ footer{
 
     <p>
         A study of how rollover protective structures are designed and evaluated
-    through SAE J1194 requirements, portal-frame calculations, and nonlinear
-    finite element analysis.
+        through SAE J1194 requirements, portal-frame calculations, and nonlinear
+        finite element analysis.
     </p>
 </section>
 
 <div class="container">
 
-    <img
-        class="main-image"
-        src="../tractor.png"
-        alt="Agricultural tractor with a rollover protective structure and operator clearance zone"
-    >
+    <div class="rops-gallery">
+
+        <div class="rops-image-card">
+            <img
+                src="../tractor.png"
+                alt="Agricultural tractor with a rollover protective structure and operator clearance zone"
+            >
+        </div>
+
+        <div class="rops-image-card">
+            <img
+                src="../rops-bent.png"
+                alt="ROPS frame shown in a bent or folded position"
+            >
+        </div>
+
+        <div class="rops-image-card">
+            <img
+                src="../rops-straight.png"
+                alt="ROPS frame shown in the upright position"
+            >
+        </div>
+
+    </div>
 
     <div class="section">
         <h2>The Challenge</h2>
@@ -306,7 +378,6 @@ footer{
             The structure must stay attached to the tractor and must not enter
             the protected operator clearance zone.
         </p>
-
     </div>
 
     <div class="section">
@@ -398,6 +469,8 @@ footer{
                     </p>
                 </div>
             </div>
+
+        </div>
     </div>
 
     <div class="section">
@@ -432,7 +505,7 @@ footer{
 
                 <p>
                     The simulation shows how deformation and stress develop as
-                    the structure responds to the applied loading. 
+                    the structure responds to the applied loading.
                 </p>
             </div>
         </div>
@@ -457,43 +530,43 @@ footer{
         </p>
     </div>
 
-<div class="section">
-    <h2>Interpreting the Results</h2>
-    <div class="gold-line"></div>
+    <div class="section">
+        <h2>Interpreting the Results</h2>
+        <div class="gold-line"></div>
 
-    <p>
-        The simulation was used to study how the frame carried load, where
-        deformation developed, and whether the operator clearance zone remained
-        protected.
-    </p>
+        <p>
+            The simulation was used to study how the frame carried load, where
+            deformation developed, and whether the operator clearance zone remained
+            protected.
+        </p>
 
-    <p>
-        I focused on the overall behavior of the structure rather than relying
-        on a single stress value. Areas such as the fixed bases, upper corners,
-        tube bends, and mounting connections required closer review because
-        idealized supports and sharp geometry can create local stress
-        concentrations.
-    </p>
-</div>
+        <p>
+            I focused on the overall behavior of the structure rather than relying
+            on a single stress value. Areas such as the fixed bases, upper corners,
+            tube bends, and mounting connections required closer review because
+            idealized supports and sharp geometry can create local stress
+            concentrations.
+        </p>
+    </div>
 
-<div class="section">
-    <h2>What I Learned</h2>
-    <div class="gold-line"></div>
+    <div class="section">
+        <h2>What I Learned</h2>
+        <div class="gold-line"></div>
 
-    <p>
-        This project helped me better understand the difference between linear
-        and nonlinear structural behavior. It also showed me why deformation,
-        load paths, boundary conditions, and connection details all need to be
-        considered together when reviewing a finite element model.
-    </p>
+        <p>
+            This project helped me better understand the difference between linear
+            and nonlinear structural behavior. It also showed me why deformation,
+            load paths, boundary conditions, and connection details all need to be
+            considered together when reviewing a finite element model.
+        </p>
 
-    <p>
-        My biggest takeaway was that simulation results need engineering
-        judgment. A model can show where the structure may be vulnerable, but
-        the assumptions behind the model are just as important as the results
-        it produces.
-    </p>
-</div>
+        <p>
+            My biggest takeaway was that simulation results need engineering
+            judgment. A model can show where the structure may be vulnerable, but
+            the assumptions behind the model are just as important as the results
+            it produces.
+        </p>
+    </div>
 
     <div class="project-nav">
         <a
