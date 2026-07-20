@@ -6,7 +6,7 @@
 
 <meta
   name="description"
-  content="A conceptual stadium design developed in CAD and built as a physical scale model using 3D printing, laser cutting, and hand assembly."
+  content="A multi-use stadium concept featuring a retractable grass pitch, grow-light preservation system, operable roof, increased capacity, and adaptable event space."
 >
 
 <title>Stadium Design & Scale Model | Artur Martirosyan</title>
@@ -117,6 +117,66 @@ nav a:hover{
   margin-bottom:10px;
 }
 
+.feature-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px;
+  margin-top:25px;
+}
+
+.feature-card{
+  background:white;
+  border-radius:10px;
+  padding:25px;
+  box-shadow:0 8px 24px rgba(0,0,0,.08);
+  border-top:4px solid var(--gold);
+}
+
+.feature-card h3{
+  color:var(--navy);
+  margin-bottom:10px;
+  font-size:21px;
+}
+
+.feature-card p{
+  color:#444;
+}
+
+.process{
+  display:grid;
+  gap:18px;
+  margin-top:25px;
+}
+
+.process-step{
+  display:grid;
+  grid-template-columns:55px 1fr;
+  gap:18px;
+  align-items:start;
+  background:white;
+  border-radius:10px;
+  padding:22px;
+  box-shadow:0 8px 24px rgba(0,0,0,.07);
+}
+
+.step-number{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  background:var(--navy);
+  color:white;
+  font-weight:bold;
+}
+
+.process-step h3{
+  color:var(--navy);
+  margin-bottom:5px;
+  font-size:20px;
+}
+
 .project-nav{
   display:flex;
   justify-content:space-between;
@@ -168,6 +228,14 @@ footer{
     font-size:28px;
   }
 
+  .feature-grid{
+    grid-template-columns:1fr;
+  }
+
+  .process-step{
+    grid-template-columns:1fr;
+  }
+
   .project-nav{
     flex-direction:column;
   }
@@ -189,8 +257,8 @@ footer{
   <h1>Stadium Design & Scale Model</h1>
 
   <p>
-    A conceptual stadium developed in CAD and built as a physical model to
-    explore form, seating, circulation, and large-scale design.
+    A multi-use stadium concept designed to remain active beyond game days
+    through a retractable pitch, adaptable event space, and all-weather use.
   </p>
 </section>
 
@@ -199,104 +267,254 @@ footer{
   <img
     class="main-image"
     src="../Stadium.png"
-    alt="Completed conceptual stadium scale model"
+    alt="Completed conceptual multi-use stadium scale model"
   >
 
   <div class="section">
-    <h2>The Project</h2>
+    <h2>The Idea</h2>
     <div class="gold-line"></div>
 
     <p>
-      This project began with the challenge of designing a stadium that felt
-      visually complete while still being practical to build as a scale model.
-      I wanted the design to communicate the size and character of a real venue
-      without making the physical model unnecessarily complicated.
+      Stadiums are large and expensive buildings, but many are only used for a
+      limited number of events each week. I wanted to explore whether one
+      stadium could serve more purposes instead of remaining mostly empty
+      between games.
     </p>
 
     <p>
-      I developed the stadium digitally in SolidWorks and then used 3D printing,
-      laser cutting, and hand assembly to turn the design into a finished model.
-    </p>
-  </div>
-
-  <div class="section">
-    <h2>Designing the Stadium</h2>
-    <div class="gold-line"></div>
-
-    <p>
-      Stadium design involves more than shaping an exterior shell. The seating,
-      field, entrances, circulation paths, roofline, and surrounding structure
-      all need to feel connected.
-    </p>
-
-    <p>
-      I focused on creating a clear overall form and arranging the seating so
-      the model would still read as a functioning stadium. I also considered how
-      people would enter, move through, and experience the space, even though
-      the project remained conceptual.
+      My goal was to design a venue that could host field sports, concerts,
+      indoor events, and other activities while still functioning as a
+      full-size stadium with increased seating capacity.
     </p>
 
     <div class="note">
-      <h3>Designing at Model Scale</h3>
+      <h3>The Main Question</h3>
 
       <p>
-        Some details that work in a full-size design become too small or fragile
-        in a physical model. I had to simplify certain features while keeping
-        the overall stadium recognizable and visually balanced.
+        How can one large stadium support more events, more users, and more
+        revenue without losing the quality of the playing field?
       </p>
     </div>
   </div>
 
   <div class="section">
-    <h2>From CAD to Physical Model</h2>
+    <h2>Designing for Multiple Uses</h2>
     <div class="gold-line"></div>
 
     <p>
-      Before fabrication, I divided the digital model into parts based on how
-      each one could be produced. Components with more complex geometry were
-      better suited for 3D printing, while flatter pieces could be prepared for
-      laser cutting.
+      The main feature of the concept is a retractable grass pitch. When the
+      field is not needed, it can move beneath the stadium and open the central
+      floor for concerts, exhibitions, or sports that do not require natural
+      grass.
     </p>
 
     <p>
-      This required thinking ahead about scale, material thickness, part fit,
-      and assembly order. A component could look correct in SolidWorks but still
-      be difficult to print, cut, or connect to the rest of the model.
+      This allows the same space to change function without permanently covering
+      or damaging the playing surface. Instead of building separate venues for
+      every event type, the stadium can adapt to different uses throughout the
+      year.
     </p>
   </div>
 
   <div class="section">
-    <h2>Fabrication and Assembly</h2>
+    <h2>Preserving the Retracted Pitch</h2>
     <div class="gold-line"></div>
 
     <p>
-      After the parts were produced, I assembled the stadium by hand. This stage
-      involved fitting the seating areas, structural pieces, exterior elements,
-      and base together while checking alignment throughout the build.
+      Moving the field beneath the stadium created another problem: keeping the
+      grass healthy without direct sunlight. I explored several ways the pitch
+      could be preserved while stored.
     </p>
 
     <p>
-      Small differences between the digital model and the fabricated parts
-      became more noticeable during assembly. Some pieces required adjustment so
-      that the final model would sit correctly and maintain its intended shape.
+      The most practical solution was a grow-light system beneath the stadium.
+      The lights would support the grass while the event floor above remained
+      available for other activities.
+    </p>
+
+    <div class="feature-grid">
+
+      <div class="feature-card">
+        <h3>Pitch Protection</h3>
+
+        <p>
+          The grass can be stored away from foot traffic, staging equipment,
+          and other activities that could damage the playing surface.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Grow-Light System</h3>
+
+        <p>
+          Artificial lighting helps provide the grass with the light it needs
+          while it is stored below the main stadium floor.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Adaptable Event Floor</h3>
+
+        <p>
+          Once the pitch is retracted, the central space can support concerts,
+          exhibitions, and sports that do not require grass.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3>More Frequent Use</h3>
+
+        <p>
+          The stadium can host more events throughout the week instead of being
+          limited mainly to game days.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>All-Weather Operation</h2>
+    <div class="gold-line"></div>
+
+    <p>
+      The stadium also includes an operable roof that can open or close
+      depending on the weather. This would allow events to continue during rain,
+      snow, or other difficult conditions while still providing an open-air
+      experience when the weather is suitable.
+    </p>
+
+    <p>
+      Combining the retractable pitch and operable roof means the venue is not
+      limited by either the event type or the season.
     </p>
   </div>
 
   <div class="section">
-    <h2>Balancing Form and Structure</h2>
+    <h2>Balancing Capacity and Flexibility</h2>
     <div class="gold-line"></div>
 
     <p>
-      One of the main ideas I explored was how a stadium can feel open and
-      visually light while still appearing supported. Large venues often use
-      repeating structural elements to create rhythm, carry loads, and define
-      the architectural character of the building.
+      Increasing seating capacity was another part of the design, but the goal
+      was not simply to fit more people into the building. The stadium still
+      needed clear circulation, usable event space, and enough room for the
+      pitch and roof systems.
     </p>
 
     <p>
-      Although this was not a full structural design, developing the model made
-      me think about span, support locations, symmetry, and how structural
-      systems influence the appearance of a large public space.
+      This made the design a balance between capacity, flexibility, and
+      practical operation. Every major feature affected the others.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>From Concept to Model</h2>
+    <div class="gold-line"></div>
+
+    <div class="process">
+
+      <div class="process-step">
+        <div class="step-number">1</div>
+
+        <div>
+          <h3>Define the Main Problem</h3>
+
+          <p>
+            Begin with the idea of creating a stadium that could be used more
+            often and for more than one type of event.
+          </p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-number">2</div>
+
+        <div>
+          <h3>Develop the Stadium Layout</h3>
+
+          <p>
+            Create the overall form, seating arrangement, event floor,
+            circulation, and increased-capacity concept.
+          </p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-number">3</div>
+
+        <div>
+          <h3>Design the Retractable Pitch</h3>
+
+          <p>
+            Plan how the natural-grass field could move beneath the stadium and
+            be stored without interfering with other events.
+          </p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-number">4</div>
+
+        <div>
+          <h3>Study Grass Preservation</h3>
+
+          <p>
+            Compare different ways to protect the stored pitch and select a
+            grow-light system as the most practical solution.
+          </p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-number">5</div>
+
+        <div>
+          <h3>Add the Operable Roof</h3>
+
+          <p>
+            Include a roof that can open or close so the stadium can operate
+            during different weather conditions.
+          </p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-number">6</div>
+
+        <div>
+          <h3>Build the Scale Model</h3>
+
+          <p>
+            Develop the stadium in SolidWorks, divide it into parts, and
+            fabricate the model using 3D printing, laser cutting, and hand
+            assembly.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Building the Physical Model</h2>
+    <div class="gold-line"></div>
+
+    <p>
+      I developed the stadium in SolidWorks and used the digital model to work
+      through the overall form, seating, pitch movement, roof geometry, and
+      supporting spaces.
+    </p>
+
+    <p>
+      The design was then divided into components for 3D printing, laser
+      cutting, and hand assembly. Building the scale model helped me understand
+      how the different systems would need to fit together in a real structure.
+    </p>
+
+    <p>
+      Some features also needed to be simplified at model scale. Parts that
+      worked digitally could become too small, fragile, or difficult to assemble
+      once they were fabricated.
     </p>
   </div>
 
@@ -305,24 +523,24 @@ footer{
     <div class="gold-line"></div>
 
     <p>
-      This project taught me that physical models reveal problems that are easy
-      to overlook on a computer screen. Part thickness, connection points,
-      tolerances, and assembly order all became important once fabrication
-      began.
+      This project taught me to begin with how a building will actually be used,
+      not only how it will look. The strongest part of the concept was not one
+      individual feature, but the way the pitch, roof, seating, and event floor
+      worked together.
     </p>
 
     <p>
-      It also helped me understand how design decisions affect the overall
-      experience of a space. The seating, circulation, structure, and exterior
-      form could not be developed as separate pieces because each one influenced
-      the others.
+      It also showed me that solving one problem often creates another. The
+      retractable pitch created more usable space, but it also required a way to
+      preserve the grass. Working through that challenge made the design feel
+      much more realistic.
     </p>
 
     <p>
-      My favorite part of the project was seeing the stadium move from a digital
-      concept into something physical. That process made the design feel more
-      real and gave me a better understanding of how ideas change as they move
-      from modeling into fabrication.
+      My main takeaway was that efficiency in a large building is not only about
+      structure or energy use. It is also about how often the space can be used,
+      how easily it can adapt, and how much value it can provide throughout the
+      year.
     </p>
   </div>
 
