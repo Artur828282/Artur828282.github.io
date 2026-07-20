@@ -258,9 +258,9 @@ footer{
     <h1>ROPS Structural Analysis</h1>
 
     <p>
-        A study of how rollover protective structures absorb energy and protect
-        the operator through structural calculations, nonlinear simulation, and
-        engineering design.
+        A study of how rollover protective structures are designed and evaluated
+    through SAE J1194 requirements, portal-frame calculations, and nonlinear
+    finite element analysis.
     </p>
 </section>
 
@@ -457,73 +457,43 @@ footer{
         </p>
     </div>
 
-    <div class="section">
-        <h2>Energy Absorption</h2>
-        <div class="gold-line"></div>
+<div class="section">
+    <h2>Interpreting the Results</h2>
+    <div class="gold-line"></div>
 
-        <p>
-            ROPS performance is evaluated using the relationship between applied
-            force and structural deflection. The area under the
-            force-deflection curve represents the energy absorbed by the frame.
-        </p>
+    <p>
+        The simulation was used to study how the frame carried load, where
+        deformation developed, and whether the operator clearance zone remained
+        protected.
+    </p>
 
-        <p>
-            This means that deformation by itself is not necessarily a failure.
-            What matters is whether the frame absorbs enough energy, deforms in
-            a stable way, remains attached, and preserves the protected operator
-            space.
-        </p>
+    <p>
+        I focused on the overall behavior of the structure rather than relying
+        on a single stress value. Areas such as the fixed bases, upper corners,
+        tube bends, and mounting connections required closer review because
+        idealized supports and sharp geometry can create local stress
+        concentrations.
+    </p>
+</div>
 
-        <div class="highlight-box">
-            <h3>The Goal Is Not Zero Deformation</h3>
+<div class="section">
+    <h2>What I Learned</h2>
+    <div class="gold-line"></div>
 
-            <p>
-                A successful ROPS is not necessarily the one that stays
-                perfectly straight. It is the one that absorbs the required
-                energy while continuing to protect the operator.
-            </p>
-        </div>
-    </div>
+    <p>
+        This project helped me better understand the difference between linear
+        and nonlinear structural behavior. It also showed me why deformation,
+        load paths, boundary conditions, and connection details all need to be
+        considered together when reviewing a finite element model.
+    </p>
 
-    <div class="section">
-        <h2>Manufacturing and Testing</h2>
-        <div class="gold-line"></div>
-
-        <p>
-            Even a detailed simulation cannot capture everything that affects
-            the final structure. Material properties, weld quality, tube
-            forming, fasteners, mounting stiffness, manufacturing tolerances,
-            and assembly can all change how the frame behaves.
-        </p>
-
-        <p>
-            This is why physical testing is still an important part of the
-            qualification process. The tested structure must represent the
-            production design because changes in materials, weld procedures, or
-            connections can change both the energy absorption and the final
-            failure mode.
-        </p>
-    </div>
-
-    <div class="section">
-        <h2>What I Learned</h2>
-        <div class="gold-line"></div>
-
-        <p>
-            Before this project, I thought the main goal of structural design
-            was to prevent yielding whenever possible. Learning how a ROPS uses
-            controlled deformation to absorb energy gave me a different
-            perspective on structural behavior.
-        </p>
-
-        <p>
-            The project also showed me how requirements, hand calculations,
-            CAD, simulation, manufacturing, and physical testing support one
-            another. Analysis helps predict how a structure may behave, but
-            testing confirms how the actual design and manufacturing process
-            perform together.
-        </p>
-    </div>
+    <p>
+        My biggest takeaway was that simulation results need engineering
+        judgment. A model can show where the structure may be vulnerable, but
+        the assumptions behind the model are just as important as the results
+        it produces.
+    </p>
+</div>
 
     <div class="project-nav">
         <a
